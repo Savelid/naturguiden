@@ -20,13 +20,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#2E3AA1">
+  <meta name="theme-color" content="#FFC107">
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
 
   <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-TileColor" content="#FFC107">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -57,13 +57,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
 
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.amber-red.min.css" />
+  <!-- Material Design icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body unresolved class="fullbleed layout vertical">
+
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel">
+    <paper-drawer-panel force-narrow id="paperDrawerPanel">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
 
@@ -97,29 +102,88 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-          <span class="flex"></span>
-
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
 
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Polymer Starter Kit</div>
+            <div class="app-name">Naturguiden</div>
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">The future of the web today</div>
+            <div class="bottom-title paper-font-subhead">Ice-skating and adventures in Sweden</div>
           </div>
+          <div class="bottom flex"></div>
+          <paper-tabs selected="[[route]]" class="bottom self-end" link attr-for-selected="data-route">
+            <paper-tab data-route="home" link><a href$="{{baseUrl}}" class="link">Home</a></paper-tab>
+            <paper-tab>TAB ONE</paper-tab>
+            <paper-tab>TAB TWO</paper-tab>
+            <paper-tab>TAB THREE</paper-tab>
+            <paper-tab data-route="users" link><a href$="{{baseUrl}}users" class="link">Users</a></paper-tab>
+            <paper-tab data-route="contact" link><a href$="{{baseUrl}}contact" class="link">Contact</a></paper-tab>
+          </paper-tabs>
 
         </paper-toolbar>
 
         <!-- Main Content -->
         <div class="content">
+          <div class="card-stack">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
             <section data-route="home">
+              <my-left-image-paper-card heading="Longing for outdoor adventures?!" image="http://naturguiden.com/images/stories/dust_clears.jpg">
+                <div class="mdl-card__supporting-text">
+                  Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS
+                </div>
+              </my-left-image-paper-card>
+              <my-left-image-paper-card heading="Adventure Tours in Sweden" image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
+                <div class="mdl-card__supporting-text">
+                  Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours.
+                  We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.
+                </div>
+                <div class="card-actions">
+                  <paper-button>Some action</paper-button>
+                </div>
+              </my-left-image-paper-card>
+              <paper-card heading="Longing for outdoor adventures?!">
+                <div class="card-content">Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</div>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/SdfL2nY-Xs8?start=63&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <div class="card-actions">
+                  <paper-button>Some action</paper-button>
+                </div>
+              </paper-card>
+              <paper-card heading="They write about our skating trips:">
+                <div class="card-content">
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                    <div class="section__circle-container__circle mdl-color--primary this-layout-content-image-kajak"></div>
+                  </div>
+                  <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                    <a href="http://www.theguardian.com/travel/2013/oct/25/skating-on-sea-ice-in-sweden?INTCMP=SRCH" target="_blank"><h5>The guardian 25 Oct 2013</h5></a>
+                    John Savelid is waiting for me at Stockholm airport holding a strange bag that looks like a rucksack with too many straps. "It's a day sack for skating," he tells me, "but also a life jacket in case you go through."
+                  </div>
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                    <div class="section__circle-container__circle mdl-color--primary"></div>
+                  </div>
+                  <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                    <a href="http://www.independent.co.uk/travel/europe/sweden-go-with-the-floe-this-winter-8959544.html" target="_blank"><h5>The Independent 24 Nov 2013</h5></a>
+                    It was the question on all of our minds, but I asked it: "How do you know when the ice isn't safe to skate on?" Niklas, our imperturbable guide, rubbed his chin, looked thoughtful for a moment, then offered up the distilled wisdom of a lifetime spent playing around on frozen water. "When it breaks," he said with a broad smile.
+                  </div>
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                    <div class="section__circle-container__circle mdl-color--primary"></div>
+                  </div>
+                  <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+                  </div>
+                </div>
+                <div class="card-actions">
+                  <paper-button>Read our features</paper-button>
+                </div>
+              </paper-card>
+              <my-left-image-paper-card heading="Inspiration" image="http://naturguiden.com/images/stories/youtube.jpg">
+                <div class="mdl-card__supporting-text">
+                  A nice video from one of our guest.
+                  Coming here for Nordic skating 2015
+                </div>
+              </my-left-image-paper-card>
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
 
@@ -130,25 +194,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
               <paper-material elevation="1">
                 <p class="paper-font-body2">This is another card.</p>
-              </paper-material>
-
-              <paper-material elevation="1" class="paper-font-body2">
-                <h1 id="license">License</h1>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-                <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
-                </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
               </paper-material>
 
             </section>
@@ -179,6 +224,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
           </iron-pages>
+        </div>
+          <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer--middle-section">
+              <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Features</h1>
+                <ul class="mdl-mega-footer--link-list">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+              <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Details</h1>
+                <ul class="mdl-mega-footer--link-list">
+                  <li><a href="#">Spec</a></li>
+                  <li><a href="#">Tools</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+              <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Technology</h1>
+                <ul class="mdl-mega-footer--link-list">
+                  <li><a href="#">How it works</a></li>
+                  <li><a href="#">Patterns</a></li>
+                  <li><a href="#">Usage</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Contracts</a></li>
+                </ul>
+              </div>
+              <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">FAQ</h1>
+                <ul class="mdl-mega-footer--link-list">
+                  <li><a href="#">Questions</a></li>
+                  <li><a href="#">Answers</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mdl-mega-footer--bottom-section">
+              <div class="mdl-logo">
+                More Information
+              </div>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy and Terms</a></li>
+              </ul>
+            </div>
+          </footer>
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>

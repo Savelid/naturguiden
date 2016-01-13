@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   :root {
     --dark-primary-color: #303F9F;
-    --default-primary-color: #3F51B5;
+    --default-primary-color: #FFC107;
     --light-primary-color: #C5CAE9;
     --text-primary-color: #ffffff; /*text/icons*/
     --accent-color: #FF4081;
@@ -43,7 +43,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* paper-menu */
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
+
   }
+
+  paper-scroll-header-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--paper-grey-200, #eee);
+        /* background for toolbar when it is at its full size */
+        --paper-scroll-header-panel-full-header: {
+          background-image: url(images/tempheader.jpg);
+        };
+        /* background for toolbar when it is condensed */
+        --paper-scroll-header-panel-condensed-header: {
+          background-color: var(--default-primary-color);
+        };
+      }
 
   /* General styles */
 
@@ -53,8 +71,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     border-bottom: var(--drawer-toolbar-border-color);
   }
 
+  paper-tabs.pink::shadow #selectionBar {
+    background-color: #ff4081;
+  }
+
   paper-scroll-header-panel {
     height: 100%;
+  }
+
+  paper-card {
+    border-radius: 2px;
+    height: 100%;
+    padding: 16px 0 16px 0;
+    width: calc(98.66% - 16px);
+    margin: 16px auto;
+    background: white;
+  }
+
+  my-left-image-paper-card {
+    width: calc(97.33% - 32px);
+    margin-bottom: 16px;
   }
 
   paper-material {
@@ -96,7 +132,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* Required for main area's paper-scroll-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
+    background-color: transparent;
+
   }
+  paper-toolbar.tall {
+      background-color: transparent;
+    }
 
   #mainToolbar .middle-container  {
     height: 100%;
@@ -120,6 +161,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 900px;
   }
 
+  .card-stack {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+
   #toast .toast-hide-button {
     color: #eeff41;
     margin: 10px;
@@ -135,6 +181,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: calc(97.33% - 32px);
       padding-left: 16px;
       padding-right: 16px;
+    }
+
+    paper-card {
+      --menu-container-display: none;
+      width: calc(97.33% - 32px);
     }
 
     paper-toolbar.tall .app-name {
@@ -156,6 +207,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-bottom: 32px;
       padding-left: 30px;
       padding-right: 30px;
+    }
+
+    paper-card {
+      width: calc(98% - 46px);
+      margin-bottom: 32px;
     }
 
     #drawer.paper-drawer-panel > [drawer] {
