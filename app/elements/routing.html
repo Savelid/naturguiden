@@ -54,8 +54,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.params = data.params;
     });
 
+    page('/adventures', function() {
+      app.route = 'adventures';
+    });
+
+    page('/adventures/skating', function() {
+      app.route = 'skating';
+    });
+
+    page('/adventures/skiing', function() {
+      app.route = 'skiing';
+    });
+
+    page('/adventures/canoe', function() {
+      app.route = 'canoe';
+    });
+
+    page('/adventures/hiking', function() {
+      app.route = 'hiking';
+    });
+
+    page('/adventures/mtb', function() {
+      app.route = 'mtb';
+    });
+
+    page('/adventures/multi', function() {
+      app.route = 'multi';
+    });
+
+    page('/info', function() {
+      app.route = 'info';
+    });
+
+    page('/booking', function() {
+      app.route = 'booking';
+    });
+
     page('/contact', function() {
       app.route = 'contact';
+    });
+
+    page('/about', function() {
+      app.route = 'about';
     });
 
     // 404

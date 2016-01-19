@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --text-primary-color: #ffffff; /*text/icons*/
     --accent-color: #FF4081;
     --primary-background-color: #c5cae9;
-    --primary-text-color: #212121;
+    --primary-text-color: --paper-gray-800, #212121;
     --secondary-text-color: #727272;
     --disabled-text-color: #bdbdbd;
     --divider-color: #B6B6B6;
@@ -44,6 +44,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
 
+    --image-replacement-color: --paper-teal-100, rgb(178,223,219);
+
+    --paper-card-background-color: #FFF;
+
   }
 
   paper-scroll-header-panel {
@@ -55,11 +59,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: var(--paper-grey-200, #eee);
         /* background for toolbar when it is at its full size */
         --paper-scroll-header-panel-full-header: {
-          background-image: url(images/tempheader.jpg);
+          background-image: url(../images/tempheader.jpg);
         };
         /* background for toolbar when it is condensed */
         --paper-scroll-header-panel-condensed-header: {
-          background-color: var(--default-primary-color);
+          background-color: var(--paper-amber-500, #FFC107);
         };
       }
 
@@ -74,6 +78,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   paper-tabs.pink::shadow #selectionBar {
     background-color: #ff4081;
   }
+  paper-tabs {
+    width: calc(100% - 330px);
+    max-width: 900px;
+  }
+  paper-tab {
+  }
 
   paper-scroll-header-panel {
     height: 100%;
@@ -82,22 +92,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   paper-card {
     border-radius: 2px;
     height: 100%;
-    padding: 16px 0 16px 0;
-    width: calc(98.66% - 16px);
-    margin: 16px auto;
+    width: 100%;
+    margin: 16px 0 16px 0;
     background: white;
   }
 
   my-left-image-paper-card {
-    width: calc(97.33% - 32px);
-    margin-bottom: 16px;
+    border-radius: 2px;
+    padding: 16px 0 16px 0;
+    width: 100%;
+    margin: 16px 0 16px 0;
   }
 
   paper-material {
     border-radius: 2px;
     height: 100%;
-    padding: 16px 0 16px 0;
-    width: calc(98.66% - 16px);
+    width: 100%;
     margin: 16px auto;
     background: white;
   }
@@ -163,7 +173,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   .card-stack {
     max-width: 1200px;
-    margin: 0px auto;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .link {
+    @apply(--layout-horizontal);
+    @apply(--layout-center-center);
   }
 
   #toast .toast-hide-button {
@@ -179,11 +195,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-material {
       --menu-container-display: none;
       width: calc(97.33% - 32px);
-      padding-left: 16px;
-      padding-right: 16px;
     }
 
-    paper-card {
+    .card-stack {
       --menu-container-display: none;
       width: calc(97.33% - 32px);
     }
@@ -205,13 +219,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-material {
       width: calc(98% - 46px);
       margin-bottom: 32px;
-      padding-left: 30px;
-      padding-right: 30px;
     }
 
-    paper-card {
+    .card-stack {
       width: calc(98% - 46px);
-      margin-bottom: 32px;
     }
 
     #drawer.paper-drawer-panel > [drawer] {

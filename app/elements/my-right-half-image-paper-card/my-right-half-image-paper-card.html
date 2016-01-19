@@ -9,64 +9,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-image/iron-image.html">
-
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../bower_components/paper-material/paper-material.html">
-<link rel="import" href="../../bower_components/paper-styles/default-theme.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
 
 
-<dom-module id="my-left-image-paper-card">
+<dom-module id="my-right-half-image-paper-card">
   <template>
-  <style include="paper-material">
-    :host {
-      display: inline-block;
-      position: relative;
-      box-sizing: border-box;
-      background-color: var(--paper-card-background-color, --primary-background-color, #fff);
-      border-radius: 2px;
-      @apply(--paper-card);
-    }
-    /* IE 10 support for HTML5 hidden attr */
-    [hidden] {
-      display: none !important;
-    }
-    .header {
-      position: relative;
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
-      overflow: hidden;
-      @apply(--paper-card-header);
-    }
-    .header iron-image {
-      width: 100%;
-      --iron-image-width: 100%;
-      pointer-events: none;
-      @apply(--paper-card-header-image);
-    }
-    .header .title-text {
-      padding: 16px;
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--paper-card-header-color, #000);
-      @apply(--paper-card-header-text);
-    }
-    .header .title-text.over-image {
-      position: absolute;
-      bottom: 0px;
-      @apply(--paper-card-header-image-text);
-    }
-    :host ::content .card-content {
-      padding: 16px;
-      position:relative;
-      @apply(--paper-card-content);
-    }
-    :host ::content .card-actions {
-      border-top: 1px solid #e8e8e8;
-      padding: 5px 16px;
-      position:relative;
-      @apply(--paper-card-actions);
-    }
-
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
       iron-image {
         min-height: 150px;
         box-sizing: border-box;
@@ -93,14 +45,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-radius: 2px;
         box-sizing: border-box;
       }
-      .my-card-title {
-        font-family: 'Roboto', 'Noto', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        font-size: 45px;
-        font-weight: 400;
-        letter-spacing: -.018em;
-        line-height: 48px;
-      }
       @media (max-width: 479px) {
         iron-image {
           width: calc(100%);
@@ -111,30 +55,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       @media (min-width: 480px) and (max-width: 839px) {
         iron-image {
-          width: calc(25%);
+          width: calc(100%);
         }
         .mdl-card {
-          width: calc(75%);
+          width: calc(100%);
         }
       }
       @media (min-width: 840px) {
         iron-image {
-          width: calc(25%);
+          width: calc(50%);
         }
         .mdl-card {
-          width: calc(75%);
-        }
-      }
-      @media (max-width: 1000px) {
-        .my-card-title {
-          font-size: 24px;
-          font-weight: 400;
-        }
-      }
-      @media (min-width: 1001px) and (max-width: 1290px) {
-        .my-card-title {
-          font-size: 35px;
-          font-weight: 400;
+          width: calc(50%);
         }
       }
       section {
@@ -152,24 +84,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 align-items: stretch;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       }
-      .mdl-card__supporting-text {
+        .mdl-card__supporting-text {
           font-size: 13px;
           line-height: 18px;
           overflow: hidden;
           padding: 16px 16px;
-          width: 90%;
+          width: 90%; }
+      h4 {
+        margin: 0px;
+        font-size: 24px;
+        line-height: 32px;
       }
-
     </style>
 
     <section>
       <iron-image src="[[image]]" sizing="cover">
-      <div class="header">
-      </div>
+      <header>
+      </header>
       </iron-image>
       <div class="mdl-card">
         <div hidden$="[[!heading]]" class="mdl-card__supporting-text">
-          <h4 class="my-card-title">[[heading]]</h4>
+          <h4>[[heading]]</h4>
         </div>
         <div class="mdl-card__supporting-text">
           <content></content>
@@ -181,7 +116,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'my-left-image-paper-card',
+      is: 'my-right-half-image-paper-card',
 
       properties: {
 
