@@ -172,14 +172,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     -->
 
             <section data-route="home">
-              <my-left-image-paper-card heading="Longing for outdoor adventures?! ii j" image="http://naturguiden.com/images/stories/dust_clears.jpg">
+
+              <my-left-image-paper-card image="http://naturguiden.com/images/stories/dust_clears.jpg">
                   <div class="card-content">
+                    <h2 class="page-title">Longing for outdoor adventures?!</h2>
                     <p>Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</p>
                   </div>
                   <div class="card-actions">
                     <paper-button>Watch video</paper-button>
                   </div>
               </my-left-image-paper-card>
+
               <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
                 <div class="card-content">
                   <h2 class="page-title">Adventure Tours in Sweden</h2>
@@ -192,35 +195,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <paper-button>Some action</paper-button>
                 </div>
               </my-left-image-paper-card>
+
               <paper-card>
                 <div class="card-content">
                   <h2 class="page-title">They write about our skating trips:</h2>
-                  <div class="">
-                    <div class=""></div>
-                  </div>
-                  <div class="">
+
                     <a href="http://www.theguardian.com/travel/2013/oct/25/skating-on-sea-ice-in-sweden?INTCMP=SRCH" target="_blank"><h5>The guardian 25 Oct 2013</h5></a>
                     John Savelid is waiting for me at Stockholm airport holding a strange bag that looks like a rucksack with too many straps. "It's a day sack for skating," he tells me, "but also a life jacket in case you go through."
-                  </div>
-                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                    <div class="section__circle-container__circle mdl-color--primary"></div>
-                  </div>
-                  <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+
                     <a href="http://www.independent.co.uk/travel/europe/sweden-go-with-the-floe-this-winter-8959544.html" target="_blank"><h5>The Independent 24 Nov 2013</h5></a>
                     It was the question on all of our minds, but I asked it: "How do you know when the ice isn't safe to skate on?" Niklas, our imperturbable guide, rubbed his chin, looked thoughtful for a moment, then offered up the distilled wisdom of a lifetime spent playing around on frozen water. "When it breaks," he said with a broad smile.
-                  </div>
-                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                    <div class="section__circle-container__circle mdl-color--primary"></div>
-                  </div>
-                  <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+
                     <h5>Lorem ipsum dolor sit amet</h5>
                     Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                  </div>
                 </div>
                 <div class="card-actions">
                   <paper-button>Read our features</paper-button>
                 </div>
               </paper-card>
+
               <paper-card>
                 <div class="card-content">
                   <h2 class="page-title">Inspiration</h2>
@@ -232,21 +225,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section data-route="users">
-              <paper-material elevation="1">
-                <h2 class="page-title">Users</h2>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
-              </paper-material>
+              <paper-card>
+                <div class="card-content">
+                  <h2 class="page-title">Users</h2>
+                  <p>This is the users section</p>
+                  <a href$="{{baseUrl}}users/Addy">Addy</a><br>
+                  <a href$="{{baseUrl}}users/Rob">Rob</a><br>
+                  <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
+                  <a href$="{{baseUrl}}users/Sam">Sam</a>
+                </div>
+              </paper-card>
             </section>
 
             <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="page-title">User: {{params.name}}</h2>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
+              <paper-card>
+                <div class="card-content">
+                  <h2 class="page-title">User: {{params.name}}</h2>
+                  <div>This is {{params.name}}'s section</div>
+                </div>
+              </paper-card>
             </section>
 
             <section data-route="adventures">
@@ -387,24 +384,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section data-route="info">
-              <paper-material elevation="1">
-                <h2 class="page-title">Info</h2>
-                <p>This is the info section</p>
-              </paper-material>
+              <paper-card>
+                <div class="card-content">
+                  <h2 class="page-title">Info</h2>
+                  <p>This is the info section</p>
+                </div>
+              </paper-card>
             </section>
 
             <section data-route="booking">
-              <paper-material elevation="1">
-                <h2 class="page-title">Booking</h2>
-                <p>This is the booking section</p>
-              </paper-material>
+              <paper-card>
+                <div class="card-content">
+                  <h2 class="page-title">Booking</h2>
+                  <p>This is the booking section</p>
+                </div>
+              </paper-card>
             </section>
 
             <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="page-title">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
+              <paper-card>
+                <div class="card-content">
+                  <h2 class="page-title">Contact</h2>
+                  <p>This is the contact section</p>
+                </div>
+              </paper-card>
             </section>
 
             <section data-route="about">
@@ -456,14 +459,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card>
                 <iron-image src="http://naturguiden.com/images/stories/sweden-map.gif" style="float: left; margin: 0 16px 16px 0; max-width: 100%"></iron-image>
-                <h2 class="page-title">About Sweden</h2>
                 <div class="card-content">
+                  <h2 class="page-title">About Sweden</h2>
                   <p>Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
                   <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
                   <p>Then we have the mountains, high areas without trees. Down hill skies is almost a national sport . Cross country skies something all kids learn. Hiking on skies in the mountain is popular in wintertime and hiking in summertime of course. Visit the mountains in April the fifth season. Still cold and snow but long lasting sunny days.</p>
                   <p>Sweden is a long country 1.570 km and the climate change a lot from north to south. In winter the average temperature is around 0 degree in south and about minus 20 - 30 degrees in north. In summer the temperature is around 20 - 25 degrees in south and around 10 degrees in north. Midnight sun in summer and no sun at all during a couple of week around Christmas in north. To tell what´s normal in Sweden is not possible, it´s all about were you are.</p>
-
-
 
                   <p>It is all about space, we have 20 persons/km2 in Sweden. 8,8 million on 450.000 km2. Compare with Netherlands that have 375 persons/km2. Together with the ”allemansrätt” that gives us the right to travel and camp anywhere (except in someone garden) Sweden is a perfect if you looking for freedom and peacefulness.</p>
 

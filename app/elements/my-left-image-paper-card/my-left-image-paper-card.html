@@ -93,10 +93,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-radius: 2px;
         box-sizing: border-box;
       }
-      .my-card-title {
+      .my-card-title h2 {
         font-family: 'Roboto', 'Noto', sans-serif;
         -webkit-font-smoothing: antialiased;
-        font-size: 45px;
+        font-size: 24px;
         font-weight: 400;
         letter-spacing: -.018em;
         line-height: 48px;
@@ -125,15 +125,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           width: calc(75%);
         }
       }
-      @media (max-width: 1000px) {
-        .my-card-title {
-          font-size: 24px;
-          font-weight: 400;
-        }
-      }
       @media (min-width: 1001px) and (max-width: 1290px) {
         .my-card-title {
           font-size: 35px;
+          font-weight: 400;
+        }
+      }
+      @media (min-width: 1291px) {
+        .my-card-title {
+          font-size: 45px;
           font-weight: 400;
         }
       }
@@ -153,11 +153,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       }
       .mdl-card__supporting-text {
-          font-size: 13px;
-          line-height: 18px;
-          overflow: hidden;
-          padding: 16px 16px;
-          width: 90%;
+          padding: 0 16px;
+          width: 95%;
       }
 
     </style>
@@ -169,7 +166,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </iron-image>
       <div class="mdl-card">
         <div hidden$="[[!heading]]" class="mdl-card__supporting-text">
-          <h4 class="my-card-title">[[heading]]</h4>
+          <h2 class="my-card-title">[[heading]]</h2>
         </div>
         <div class="mdl-card__supporting-text">
           <content></content>
