@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#FFC107">
+  <!-- <meta name="theme-color" content="#FFC107"> -->
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
@@ -200,7 +200,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-menu>
           </paper-submenu>
 
-          <a href="{{baseUrl}}booking" data-route="booking" >
+          <a href="{{baseUrl}}booking" data-route="booking">
             <paper-item class="top-layer-link">
               <iron-icon icon="event"></iron-icon>
               Booking
@@ -544,7 +544,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </section>
 
                 <section data-route="info">
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/mtb_forest.jpg">
+                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/tours/2012/glottern.jpg">
                     <div class="card-content">
                       <h2 class="page-title">About our tours</h2>
                       <p>Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
@@ -556,7 +556,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/mtb_forest.jpg">
+                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/country_road.jpg">
                     <div class="card-content">
                       <h2 class="page-title">How to get here</h2>
                       <p>We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
@@ -578,7 +578,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://www.naturguiden.com/images/stories/Logo_RGB.jpg">
+                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/guardian.jpg">
                     <div class="card-content">
                       <h2 class="page-title">About Naturguiden</h2>
                       <p>Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
@@ -602,7 +602,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/sweden-map.gif">
+                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Weather in Sweden</h2>
                       <p>What about the weather, what can we expect when coming to Sweden?</p>
@@ -839,6 +839,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                 <section data-route="weather-sweden">
                   <paper-card>
+                    <iron-image src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image medium-image"></iron-image>
                     <div class="card-content">
                       <h2 class="page-title">Weather in Sweden</h2>
                       <p>What about the weather, what can we expect when coming to Sweden?</p>
@@ -1190,54 +1191,91 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="mdl-mega-footer--middle-section">
               <div class="mdl-mega-footer--drop-down-section">
                 <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer--heading">Our adventures</h1>
+                <h1 class="mdl-mega-footer--heading">
+                  <a href$="{{baseUrl}}adventures" data-route="adventures">Our adventures</a>
+                </h1>
                 <ul class="mdl-mega-footer--link-list">
-                  <li><a href="#">Skating</a></li>
-                  <li><a href="#">Skating - Dutch</a></li>
-                  <li><a href="#">Skating - French</a></li>
-                  <li><a href="#">Skiing</a></li>
-                  <li><a href="#">Skiing - French</a></li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/skating" data-route="skating">Skating </a>
+                    <a href$="{{baseUrl}}adventures/skating/dutch" data-route="skating-dutch">- Dutch </a>
+                    <a href$="{{baseUrl}}adventures/skating/french" data-route="skating-french">- French </a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">Skiing </a>
+                    <a href$="{{baseUrl}}adventures/skiing/french" data-route="skiing-french">- French </a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">Kayak & canoe</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">Hiking</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">Mountain bike</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}adventures/multi" data-route="multi">Multi activity</a>
+                  </li>
                 </ul>
               </div>
               <div class="mdl-mega-footer--drop-down-section">
                 <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer--heading">More adventures</h1>
+                <h1 class="mdl-mega-footer--heading">
+                  <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">More info</a>
+                </h1>
                 <ul class="mdl-mega-footer--link-list">
-                  <li><a href="#">Hiking</a></li>
-                  <li><a href="#">Kayak & canoe</a></li>
-                  <li><a href="#">Mountain bike</a></li>
-                  <li><a href="#">Multi activity</a></li>
+                  <li>
+                    <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">About our tours</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">How to get here</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">About Naturguiden</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">About Sweden</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">Weather in Sweden</a>
+                  </li>
+                  <li>
+                    <a href$="{{baseUrl}}info/contact" data-route="contact">Contact us</a>
+                  </li>
                 </ul>
               </div>
               <div class="mdl-mega-footer--drop-down-section">
                 <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer--heading">More info</h1>
+                <h1 class="mdl-mega-footer--heading">Other</h1>
                 <ul class="mdl-mega-footer--link-list">
-                  <li><a href="#">About our tours</a></li>
-                  <li><a href="#">How to get here</a></li>
-                  <li><a href="#">Accommodations</a></li>
-                  <li><a href="#">About Sweden</a></li>
-                  <li><a href="#">Weather in Sweden</a></li>
-                </ul>
-              </div>
-              <div class="mdl-mega-footer--drop-down-section">
-                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer--heading">Contact</h1>
-                <ul class="mdl-mega-footer--link-list">
-                  <li><a href="#">Booking</a></li>
-                  <li><a href="#">Contact us</a></li>
-                  <li><a href="#">About Naturguiden</a></li>
+                  <li>
+                    <a href="{{baseUrl}}booking" data-route="booking">Booking</a>
+                  </li>
+                  <li>
+                    <a href="{{baseUrl}}pictures" data-route="pictures">Photos</a>
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mdl-mega-footer--bottom-section">
               <div class="mdl-logo">
-                More Information
+                Contact information
               </div>
               <ul class="mdl-mega-footer--link-list">
-                <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy and Terms</a></li>
+                <li>
+                  Naturguiden<br />
+                  Munkhagsgatan 120B<br />
+ 	                587 25 LINKÖPING<br />
+ 	                SWEDEN
+                </li>
+                <li>
+                  +46 70 53 53 630<br />
+                  info@naturguiden.se<br />
+                  <a href="https://www.naturguiden.com">naturguiden.com</a>
+                </li>
               </ul>
             </div>
           </footer>
