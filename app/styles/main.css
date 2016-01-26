@@ -25,12 +25,43 @@ iframe {
 audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
+
+.left-menu {
+  max-width: 300px;
+}
+
+.top-layer-link {
+  padding-left: 0;
+}
+
 .link{
   text-decoration: inherit;
   color: inherit;
   height: 100%;
 
 }
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+
 
 .mdl-mega-footer {
   padding: 16px 40px;
