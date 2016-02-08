@@ -69,6 +69,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* General styles */
 
+   ul.flame-list {
+    list-style-image: url('../images/postbullets.png');
+  }
+  ul.nothing-list {
+   list-style-type: none;
+ }
+
   #drawerToolbar {
     color: var(--secondary-text-color);
     background-color: var(--drawer-menu-color);
@@ -96,11 +103,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     margin: 16px 0 16px 0;
     background: white;
   }
-  .my-top-card-image {
-    max-height: 300px;
-    width: 100%;
-    height:300px;
-  }
 
   my-left-image-paper-card {
     border-radius: 2px;
@@ -109,13 +111,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     margin: 16px 0 16px 0;
   }
 
-  paper-material {
-    border-radius: 2px;
-    height: 100%;
-    width: 100%;
-    margin: 16px auto;
-    background: white;
-  }
 
   paper-menu iron-icon {
     margin-right: 33px;
@@ -164,11 +159,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     padding-bottom: 0;
   }
 
-  #mainToolbar .bottom {
+  #mainToolbar .tab-menu-container {
     margin-left: 48px;
     /* Required for main area's paper-scroll-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
+  }
+
+  .tab-menu-container {
+     max-width: 1406px;
+     width:100%;
+     background-color: red;
   }
 
   /* Height of the scroll area */
@@ -178,8 +179,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   .card-stack {
     max-width: 1200px;
-    width: 80%;
     margin: 0 auto;
+    width: calc(100% - 16px);
   }
 
   .link {
@@ -189,17 +190,52 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   .left-image {
     float: left;
-    margin: 0 16px 16px 0;
+    margin: 0;
+    margin-right: 16px;
+    margin-bottom: 8px;
   }
-
-  .large-image,
-  .medium-image{
+  .right-image {
+    float: right;
+    margin: 0;
+    margin-left: 16px;
+    margin-bottom: 8px;
+  }
+  .image-width-md {
+    width: 30%;
+    max-width: 100%;
+  }
+  .image-height-md {
+    height: 300px;
+    max-width: 100%;
+  }
+  .image-width-lg{
+    width: 50%;
+    max-width: 100%;
+  }
+  .image-width-full{
     width: 100%;
+    max-width: 100%;
+  }
+  .image-height-auto {
     --iron-image-width: 100%;
   }
+  .image-with-margin.left-image{
+     margin-top: 36px;
+     margin-left:16px;
+  }
+  .image-with-margin.right-image{
+     margin-top: 36px;
+     margin-right:16px;
+  }
+  .dont-wrap-image {
+     display: block;
+     overflow: hidden;
+  }
 
-  .medium-image {
-    max-height: 200px;
+  footer{
+    padding: 16px 40px;
+    color: rgb(158,158,158);
+    background-color: rgb(66,66,66);
   }
 
   #toast .toast-hide-button {
@@ -209,111 +245,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* Breakpoints */
 
-  /* Small */
-  @media (max-width: 600px) {
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default */
 
-    paper-material {
-      --menu-container-display: none;
-      width: calc(97.33% - 32px);
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+
+  }
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .content-left {
+      width: 270px;
+    }
+    .content-right {
+      max-width: calc(100% - 270px);
+    }
+    .card-stack {
+      margin: 0 auto 0 0;
+      width: calc(100% - 16px);
+    }
+  }
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+
+  }
+
+  /* None bootstrap standards */
+  /* Smaller than the standard span */
+  @media (max-width: 720px) {
+
+  }
+  /* larger than the standard span */
+  @media (min-width: 1325px) {
+
+  }
+
+  @media (max-width: 550px) {
+    .image-width-md,
+    .image-width-lg{
+      width: 100%
     }
 
-    .card-stack {
-      --menu-container-display: none;
-      width: calc(100% - 16px);
+    .image-height-md {
+      height: 200px;
     }
 
     paper-toolbar.tall .app-name {
       font-size: 24px;
       font-weight: 400;
-    }
-
-    #drawer .paper-toolbar {
-      margin-left: 16px;
-    }
-
-  }
-
-  /* Tablet+ */
-  @media (min-width: 601px) {
-
-    paper-material {
-      width: calc(100% - 46px);
-      margin-bottom: 32px;
-    }
-
-    .card-stack {
-      width: calc(100% - 16px);
-    }
-
-    #drawer.paper-drawer-panel > [drawer] {
-      border-right: 1px solid rgba(0, 0, 0, 0.14);
-    }
-
-    iron-pages {
-      padding: 0px 16px;
-    }
-
-  }
-
-  /* Material Design Adaptive Breakpoints */
-  /*
-    Below you'll find CSS media queries based on the breakpoint guidance
-    published by the Material Design team. You can choose to use, customise
-    or remove these breakpoints based on your needs.
-
-    http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints
-   */
-
-  /* mobile-small */
-  @media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }
-  /* mobile-large */
-  @media all and (min-width: 361px) and (orientation: portrait) { }
-  /* mobile-small-landscape */
-  @media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
-  /* mobile-large-landscape */
-  @media all and (min-width: 481px) and (orientation: landscape) { }
-  /* tablet-small-landscape */
-  @media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }
-  /* tablet-large-landscape */
-  @media all and (min-width: 961px) and (orientation: landscape) {
-    .large-image {
-      width: 60%;
-    }
-  }
-  /* tablet-small */
-  @media all and (min-width: 600px) and (orientation: portrait) { }
-  /* tablet-large */
-  @media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }
-  /* desktop-x-small-landscape */
-  @media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
-  /* desktop-x-small */
-  @media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }
-  /* desktop-small-landscape */
-  @media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }
-  /* desktop-small */
-  @media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }
-  /* desktop-medium-landscape */
-  @media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }
-  /* desktop-medium */
-  @media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }
-  /* desktop-large */
-  @media all and (min-width: 1281px) and (max-width: 1600px) {
-    .large-image {
-      width: 60%;
-    }
-    .medium-image {
-      width: 40%;
-      max-height: none;
-    }
-  }
-  /* desktop-xlarge */
-  @media all and (min-width: 1601px) and (max-width: 1920px) {
-    .large-image {
-      width: 50%;
-    }
-    .medium-image {
-      width: 40%;
-      max-height: none;
     }
   }
 </style>
