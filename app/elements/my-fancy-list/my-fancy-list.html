@@ -47,7 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-image class="my-fancy-list-image" sizing="cover" src="[[image]]"></iron-image>
 
         <div hidden$="[[!header]]">
-          <a href="[[link]]" target="_blank">
+          <a href="[[link]]">
             <h5>[[header]]</h5>
           </a>
         </div>
@@ -83,7 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         /**
          * The url the header will link to.
          */
-        image: {
+        link: {
           type: String,
           value: ''
         },
