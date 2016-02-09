@@ -24,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       box-sizing: border-box;
       background-color: var(--paper-card-background-color, --primary-background-color, #fff);
       border-radius: 2px;
-      @apply(--paper-card);
+      @apply(--my-left-image-paper-card);
     }
     /* IE 10 support for HTML5 hidden attr */
     [hidden] {
@@ -35,36 +35,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-top-left-radius: inherit;
       border-top-right-radius: inherit;
       overflow: hidden;
-      @apply(--paper-card-header);
+      @apply(--my-left-image-paper-card-header);
     }
-    .header iron-image {
-      width: 100%;
-      --iron-image-width: 100%;
-      pointer-events: none;
-      @apply(--paper-card-header-image);
-    }
+
     .header .title-text {
       padding: 16px;
       font-size: 24px;
       font-weight: 400;
       color: var(--paper-card-header-color, #000);
-      @apply(--paper-card-header-text);
-    }
-    .header .title-text.over-image {
-      position: absolute;
-      bottom: 0px;
-      @apply(--paper-card-header-image-text);
+      @apply(--my-left-image-paper-card-header-text);
     }
     :host ::content .card-content {
       padding: 16px;
       position:relative;
-      @apply(--paper-card-content);
     }
     :host ::content .card-actions {
       border-top: 1px solid #e8e8e8;
       padding: 5px 16px;
       position:relative;
-      @apply(--paper-card-actions);
+      @apply(--my-left-image-paper-card-actions);
     }
 
       iron-image {
@@ -72,6 +61,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         box-sizing: border-box;
         background-color: #B2DFDB;
         width: calc(25%);
+        pointer-events: none;
+        @apply(--my-left-image-paper-card-image);
       }
       .mdl-card {
         display: -webkit-box;
@@ -92,6 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background: rgb(255,255,255);
         border-radius: 2px;
         box-sizing: border-box;
+        @apply(--my-left-image-paper-card-content);
       }
       section {
         display: -webkit-box;
@@ -111,6 +103,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .mdl-card__supporting-text {
           padding: 0 16px;
           width: 95%;
+      }
+
+      /* Smaller than the standard span */
+      @media (max-width: 533px) {
+        iron-image {
+          width: calc(100%);
+        }
+        .mdl-card {
+          width: calc(100%);
+        }
       }
 
     </style>

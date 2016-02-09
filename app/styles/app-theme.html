@@ -59,7 +59,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: var(--paper-grey-200, #eee);
         /* background for toolbar when it is at its full size */
         --paper-scroll-header-panel-full-header: {
-          background-image: url(../images/tempheader.jpg);
+          background-color: var(--paper-blue-500);
+          background-image: url(../images/header100.jpg);
         };
         /* background for toolbar when it is condensed */
         --paper-scroll-header-panel-condensed-header: {
@@ -69,11 +70,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* General styles */
 
-   ul.flame-list {
+  ul.flame-list {
     list-style-image: url('../images/postbullets.png');
   }
   ul.nothing-list {
-   list-style-type: none;
+    list-style-type: none;
  }
 
   #drawerToolbar {
@@ -86,8 +87,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background-color: #ff4081;
   }
   paper-tabs {
-    width: calc(100% - 330px);
-    max-width: 900px;
+    width: calc(100% - 300px);
+    max-width: 1200px;
   }
   paper-tab {
   }
@@ -151,7 +152,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   #mainToolbar .middle-container  {
     height: 100%;
-    margin-left: 48px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #mainToolbar:not(.tall) .middle {
@@ -169,7 +171,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   .tab-menu-container {
      max-width: 1406px;
      width:100%;
-     background-color: red;
   }
 
   /* Height of the scroll area */
@@ -243,6 +244,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     margin: 10px;
   }
 
+  .tabs-right-spacing{
+    width: calc(100% - 1470px);
+  }
+
   /* Breakpoints */
 
   /* Extra small devices (phones, less than 768px) */
@@ -264,6 +269,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .card-stack {
       margin: 0 auto 0 0;
       width: calc(100% - 16px);
+    }
+    #mainToolbar .middle-container  {
+      margin-left: 48px;
+      margin-right: 0;
     }
   }
 

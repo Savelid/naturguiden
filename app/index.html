@@ -219,35 +219,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header noReveal>
 
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
+        <paper-toolbar id="mainToolbar" class="tall" >
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-
+          <div class="top top-container center horizontal layout">
+            <div class="app-name">Naturguiden</div>
+          </div>
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Naturguiden</div>
+            <div class="app-logo" style="padding:0px; padding-bottom: 0px;"><iron-image src="images/logo.png" style="height:120px; width:188px;"><iron-image></div>
           </div>
 
           <!-- Application sub title -->
-          <div class="bottom horizontal layout tab-menu-container">
-          <div class="bottom bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">Ice-skating in Sweden</div>
-          </div>
-          <div class="bottom flex"></div>
-          <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route">
-            <paper-tab data-route="home" link><a href$="{{baseUrl}}" class="link">Home</a></paper-tab>
-            <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
-            <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">More information</a></paper-tab>
-            <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Booking</a></paper-tab>
-            <paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>
-            <!--
-            <paper-tab data-route="contact" link><a href$="{{baseUrl}}contact" class="link">Contact</a></paper-tab>
-            <paper-tab data-route="about" link><a href$="{{baseUrl}}about" class="link">About</a></paper-tab>
-            -->
-          </paper-tabs>
-        </div>
+
+            <div class="bottom flex"></div>
+            <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route">
+              <paper-tab data-route="home" link><a href$="{{baseUrl}}" class="link">Home</a></paper-tab>
+              <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
+              <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">More information</a></paper-tab>
+              <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Booking</a></paper-tab>
+              <paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>
+              <!--
+              <paper-tab data-route="contact" link><a href$="{{baseUrl}}contact" class="link">Contact</a></paper-tab>
+              <paper-tab data-route="about" link><a href$="{{baseUrl}}about" class="link">About</a></paper-tab>
+              -->
+            </paper-tabs>
+            <div class="bottom tabs-right-spacing"></div>
+
 
         </paper-toolbar>
 
@@ -255,43 +255,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <div class="row">
             <div class="col-md-3 content-left hidden-sm hidden-xs">
-              <paper-card>
-                <div class="card-content">
-                  <h2 class="page-title text-center">Info</h2>
-                  <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-
-                    <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        About our tours
-                    </a>
-                    <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        How to get here
-                    </a>
-                    <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        Accommodation
-                    </a>
-                    <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        About Naturguiden
-                    </a>
-                    <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        About Sweden
-                    </a>
-                    <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        Weather in Sweden
-                    </a>
-                    <a href$="{{baseUrl}}info/contact" data-route="contact">
-                        <iron-icon icon="chevron-right"></iron-icon>
-                        Contact us
-                    </a>
-
-                  </paper-menu>
-                </div>
-              </paper-card>
               <paper-card>
                 <div class="card-content">
                   <div id="c_4f35ac8c1bf26cce11e38baa669db901" class="completo">
@@ -320,7 +283,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!-- #Home @home find-next-page -->
                 <section data-route="home">
 
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/dust_clears.jpg">
+                  <my-left-image-paper-card image="images/500/clean_bandit001.jpg">
                       <div class="card-content">
                         <h2 class="page-title">Longing for outdoor adventures?!</h2>
                         <p>Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</p>
@@ -332,7 +295,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </div>
                   </my-left-image-paper-card>
 
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
+                  <my-left-image-paper-card image="images/500/happy_w001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Adventure Tours in Sweden</h2>
                       <p>Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours. We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.</p>
@@ -351,26 +314,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <p>There are several articles about skating in Sweden. The most recent articles you found here.</p>
 
                       <my-fancy-list  header="The guardian 25 Oct 2013"
-                                      image="http://naturguiden.com/images/stories/guardian.jpg"
+                                      image="images/100/guardian003.jpg"
                                       link="http://www.theguardian.com/travel/2013/oct/25/skating-on-sea-ice-in-sweden?INTCMP=SRCH">
                         <p>John Savelid is waiting for me at Stockholm airport holding a strange bag that looks like a rucksack with too many straps. "It's a day sack for skating," he tells me, "but also a life jacket in case you go through."</p>
                       </my-fancy-list>
 
                       <my-fancy-list  header="The Independent 24 Nov 2013"
-                                      image="http://static.independent.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2013/11/23/17/p63iceskatingHELENAWAHLMAN.jpg"
+                                      image="images/100/independent001.jpg"
                                       link="http://www.independent.co.uk/travel/europe/sweden-go-with-the-floe-this-winter-8959544.html">
                                       <p>It was the question on all of our minds, but I asked it: "How do you know when the ice isn't safe to skate on?" Niklas, our imperturbable guide, rubbed his chin, looked thoughtful for a moment, then offered up the distilled wisdom of a lifetime spent playing around on frozen water. "When it breaks," he said with a broad smile.</p>
                       </my-fancy-list>
 
                       <my-fancy-list  header="Sunday Times 10 Nov 2013"
-                                      image="http://www.thesundaytimes.co.uk/sto/multimedia/archive/00383/Skating_on_the_Balt_383111a.jpg"
+                                      image="images/100/sundaytimes001.jpg"
                                       link="http://www.thesundaytimes.co.uk/sto/travel/Holidays/Active/article1337371.ece">
                                       <p>We had skated just over six miles when we reached the edge. The ice just stopped, and the liquid version of the Baltic Sea stretched out to the horizon. I hadn’t expected this sudden, ­unnerving divide. I hadn’t expected to be so far from land. And I hadn’t ­expected to be told that the solid surface I was standing on was only 3in thick.</p>
                                       <p>Full article <a href="http://www.naturguiden.com/component/content/article/28-news/news/69-sunday-times-10-nov-2013">SundayTimes.jpg</a></p>
                       </my-fancy-list>
 
                       <my-fancy-list  header="4-seasons (German)"
-                                      image="http://4-seasons.de/sites/default/files/styles/Artikelbild_240_x/public/bilder/_mg_9884_0.jpg?itok=7rwaeRF-"
+                                      image="images/100/4seasons001.jpg"
                                       link="http://4-seasons.de/magazinartikel/tour-skaten-auf-kufen-durch-die-schwedische-eislandschaft-0#gefuehrt">
                                       <p>Glückliches Schweden: Wenn Seen, Flüsse und Küsten gefrieren, entsteht das schönste Schlittschuh-Revier der Welt. Beim Tour-Skaten gleitet man mit Rucksack und Proviant durch die nordische Einsamkeit, 50 Kilometer täglich sind kein Problem.</p>
                       </my-fancy-list>
@@ -382,20 +345,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-fancy-list>
 
                       <my-fancy-list  header="The Guardian Nov 2009"
-                                      image="https://static-secure.guim.co.uk/sys-images/Travel/Pix/pictures/2012/11/8/1352395236012/Ice-climbing-Rjukan-Norwa-008.jpg"
+                                      image="images/100/guardian001.jpg"
                                       link="http://www.theguardian.com/travel/2012/nov/09/european-winter-breaks-with-twist">
                                       <p>Escape the circle-skating crowds at Somerset House and ice-skate with a sense of purpose on a four-day trek through south-eastern Sweden's vast network of frozen lakes, with Nature Travels. The trip involves ice-fishing and, if conditions allow, moon-skating.</p>
                       </my-fancy-list>
 
                       <my-fancy-list  header="The Guardian Oct 2012"
-                                      image="https://static-secure.guim.co.uk/sys-images/Observer/Pix/pictures/2012/10/17/1350471586177/wild-skating-in-Sweden-008.jpg"
+                                      image="images/100/guardian002.jpg"
                                       link="http://www.guardian.co.uk/travel/2012/oct/21/holiday-tips-skating-sweden-christmas-cottages-deals">
                                       <p>The skating season is almost upon us, but if the thought of jostling for elbow room with kamikaze teens and boozed-up office workers on a synthetic rink leaves you cold, check out the new wild-skating trip from Swedish tour operator Nature Travels.</p>
                       </my-fancy-list>
 
                       <my-fancy-list  header="The Southern Star"
-                                      image="http://naturguiden.com/images/stories/tours/2012/glottern.jpg"
-                                      link="http://www.http://naturguiden.com/pdf/southern_star_2012.pdf">
+                                      image="images/100/southernstar001.jpg"
+                                      link="http://www.naturguiden.com/pdf/southern_star_2012.pdf">
                                       <p>I AM in the middle of a Swedish lake watching winter melt away. The snow has gone and birch trees which cover surrounding islands are starting to bud. I should be worried, given that I am standing on ice, about three kilometres from land, and cracks are literally forming all around me, creating a thudding noise which reverberates across the bay, and through my body.</p>
                       </my-fancy-list>
 
@@ -415,7 +378,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </section>
 <!-- #Adventures @adventures find-next-page -->
                 <section data-route="adventures">
-                  <my-left-image-paper-card image="images/thumb/skating100.jpg">
+                  <my-left-image-paper-card image="images/500/skating002.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Nordic skating</h2>
                       <p>Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
@@ -428,7 +391,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/thumb/skiing100.jpg">
+                  <my-left-image-paper-card image="images/500/skiing001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Cross country skiing</h2>
                       <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
@@ -442,7 +405,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak2.jpg">
+                  <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Kayak & canoe</h2>
                       <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
@@ -453,7 +416,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/sweden_mountain.jpg">
+                  <my-left-image-paper-card image="images/500/tent001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Hiking</h2>
                       <p>Leave the civilisation for a couple of days. Join our hiking tours in the beautiful nature of Sweden. Time for recovery and recreation, the most beautiful trails, what to eat and where to sleep - everything is arranged for you. Leave the control and just enjoy.</p>
@@ -752,7 +715,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </section>
 <!-- #Info #Information @info @information find-next-page -->
                 <section data-route="info">
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/tours/2012/glottern.jpg">
+                  <my-left-image-paper-card image="images/500/skating001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">About our tours</h2>
                       <p>Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
@@ -764,7 +727,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/country_road.jpg">
+                  <my-left-image-paper-card image="images/500/boat001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">How to get here</h2>
                       <p>We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
@@ -775,7 +738,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg">
+                  <my-left-image-paper-card image="images/500/cabin_w001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Accommodation</h2>
                       <p>We offer several  different levels of accommodatio, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
@@ -786,7 +749,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/guardian.jpg">
+                  <my-left-image-paper-card image="images/500/forest001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">About Naturguiden</h2>
                       <p>Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
@@ -798,7 +761,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/sweden-map.gif">
+                  <my-left-image-paper-card image="images/500/lake001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">About Sweden</h2>
                       <p>Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
@@ -810,7 +773,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg">
+                  <my-left-image-paper-card image="images/500/lake002.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Weather in Sweden</h2>
                       <p>What about the weather, what can we expect when coming to Sweden?</p>
@@ -822,7 +785,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </a>
                     </div>
                   </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/sweden-map.gif">
+                  <my-left-image-paper-card image="images/500/guides001.jpg">
                     <div class="card-content">
                       <h2 class="page-title">Contact us</h2>
                       <p>Contact us </p>
@@ -1321,7 +1284,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!-- #Pictures #Photos @pictures @photos find-next-page -->
                 <section data-route="pictures">
                   <paper-card>
-                    <iron-image class="image-width-full image-height-md" sizing="cover" src="https://lh3.googleusercontent.com/1Ik-bU64QG8j5YPWYjp9ApG-JtyJOX5Hmj9asmr0ETldYIjDxeQhosf2C8gHQzXNGWp15ed6DVu6lBOhQ2AxZ0vXL--k4tyjEUcjzJbJpOMSTaEDGVJwaF0mEIJ33Ds9azRw4IbD0zMZrKMqEbURsCmufvf63-qUSe9_uqtZnXH_S9Yt83BZbVAgRLHhaHh5UlvIWg_CG4A6rpuiWi_RRlCiP3EXVU6xq8QJPkoXgfWkZMyWuWeQnhx4g3-0a6N_hx4_Y08gY0NqFSGunf30Tj-6Hn3ryeqdw-J_RCMi_huOqPCGiGn1khvIFYP6vDGgRIFAiuhbwCNtTHYD2FVWE0gGP5wCnTZ7QKDozmQBlUoCU85YfQ91rsF-bOsP4eNHlRoUdBiS0rnXn-eOzGzQRrvr4Bdq46dXhDEjUohIncNU8cUNo8S5-hxO-ejPROib-lLrHEnYZSUh7IpGRL7rW9peEmLrSoQUggsKVGqYMDJVIoaTLdGujLfsHEXmQae6quYmNezeI7A2lV0PY4YfVrkSCpTnFrHgkyfYgMY_r2hdcsXSgcJMSFslGX_ws2XPC_J5cw=w1920-h488-no"></iron-image>
+                    <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
                     <div class="card-content">
                       <h2 class="page-title">A winter album from Gothenburg</h2>
                       <p class="lead">Some photos from a snowy Gothenburg</p>
@@ -1333,7 +1296,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </div>
                   </paper-card>
                   <paper-card>
-                    <iron-image class="image-width-full image-height-md" sizing="cover" src="https://lh3.googleusercontent.com/qVSd2Lo9n9FWF20n4i-orQGXOeC1oLPXNQ41X1BnlF-pajauiYXyo_GEikzjrrbTAmHv3r9DuTDwRhU4KcTHxHQQdHGx8NvlIu-cvIykWFtkiZ1LgN1F5X3Up5T3WWh_XOa-4bRcEYrjb0_UF2f64HDMmSdKwzDA2KhwXrd43B456XAk1QbHw4VJYzkX14IWlDMGrngVC90vGsl4tpCPr5rJHzXTPyP-CGoaKeUHMzOzmzxptzkqvqOh6f85TPR6RnEBo5v7ZOwXaYp7Js5FEOdsxzAIzNDyOBW76JCjgnv94p0RZRqbVgLy2kDCGl6PIEikHj1WhtmDZXHXU1ifU5SZUM4Ahd6-rE0CfcUSA_dwTCthW0IxsmWIzWIyLoQTnKBn7VBTGNuIscSfxyPPJ3ZvU96v0fB9anqH7A30oGR1PrhPb43lymlO6Yz6SAXDrv36M3qEBxeLVBA0J0G9P3kk0ABU5u5j3nyrAlqjU7o3IcQzfWrx4eVjrsv3MrKJvsU-cwuP3QIEcyXwRbLzXH77pqsh9QbiocbK-0bWHjdnMq0rP9EOBoQMb1vNmRGASrizNA=w1274-h955-no"></iron-image>
+                    <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
                     <div class="card-content">
                       <h2 class="page-title">Ice-skating 2011</h2>
                       <p class="lead">A fantastic trip in on lake Vättern</p>
