@@ -118,17 +118,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <section>
-      <iron-image src="[[image]]" sizing="cover">
-      <div class="header">
-      </div>
-      </iron-image>
+      <iron-image src="[[image]]" sizing="cover" preload></iron-image>
       <div class="mdl-card">
-        <div hidden$="[[!heading]]" class="mdl-card__supporting-text">
-          <h2 class="my-card-title">[[heading]]</h2>
-        </div>
-        <div class="mdl-card__supporting-text">
           <content></content>
-        </div>
       </div>
     </section>
 

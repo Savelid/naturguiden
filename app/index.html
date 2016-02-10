@@ -9,7 +9,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<html lang="">
+<html lang="sv">
 
 <head>
   <meta charset="utf-8">
@@ -70,7 +70,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-drawer-panel force-narrow id="paperDrawerPanel">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
-
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
           <span class="paper-font-title">Menu</span>
@@ -215,7 +214,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
 
         </paper-menu>
-
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
@@ -251,1161 +249,1179 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         </paper-toolbar>
 
-        <!-- Main Content -->
-        <div class="content">
-          <div class="row">
-            <div class="col-md-3 content-left hidden-sm hidden-xs">
-              <paper-card>
-                <div class="card-content">
-                  <div id="c_4f35ac8c1bf26cce11e38baa669db901" class="completo">
-                    <h2 class="text-center">Weather in Linköping</h2>
-                  </div>
-                  <script type="text/javascript" src="http://www.klart.se/widget/widget_loader/4f35ac8c1bf26cce11e38baa669db901"></script>
+          <!-- Main Content -->
+          <div class="content">
+            <div class="row">
+              <div class="col-md-3 content-left hidden-sm hidden-xs">
+                <paper-card>
+                  hej
+                  <!-- <div class="card-content">
+                    <div id="c_4f35ac8c1bf26cce11e38baa669db901" class="completo">
+                      <h2 class="text-center">Weather in Linköping</h2>
+                    </div>
+                    <script type="text/javascript" src="http://www.klart.se/widget/widget_loader/4f35ac8c1bf26cce11e38baa669db901"></script>
+                  </div> -->
+                </paper-card>
+
+              </div>
+              <div class="col-md-9 content-right">
+                <div class="card-stack">
+                 <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+                    <!--
+                    #
+                    #
+                    #
+                    #
+                    #       All pages are below here
+                    #
+                    #
+                    #
+                    #
+                    -->
+    <!-- #Home @home find-next-page -->
+                    <section data-route="home">
+
+                      <my-left-image-paper-card image="images/500/clean_bandit001.jpg">
+                          <div class="card-content">
+                            <h2 class="page-title">Longing for outdoor adventures?!</h2>
+                            <p>Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</p>
+                          </div>
+                          <div class="card-actions">
+                            <a href="http://youtu.be/SdfL2nY-Xs8?t=1m">
+                              <paper-button>Watch video</paper-button>
+                            </a>
+                          </div>
+                      </my-left-image-paper-card>
+
+                      <my-left-image-paper-card image="images/500/happy_w001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Adventure Tours in Sweden</h2>
+                          <p>Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours. We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.</p>
+                        </div>
+                        <div class="card-actions">
+                          <paper-button>Read more</paper-button>
+                        </div>
+                        <div class="card-actions">
+                          <paper-button>Some action</paper-button>
+                        </div>
+                      </my-left-image-paper-card>
+
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">They write about our skating trips:</h2>
+                          <p>There are several articles about skating in Sweden. The most recent articles you found here.</p>
+
+                          <my-fancy-list  header="The guardian 25 Oct 2013"
+                                          image="images/100/guardian003.jpg"
+                                          link="http://www.theguardian.com/travel/2013/oct/25/skating-on-sea-ice-in-sweden?INTCMP=SRCH">
+                            <p>John Savelid is waiting for me at Stockholm airport holding a strange bag that looks like a rucksack with too many straps. "It's a day sack for skating," he tells me, "but also a life jacket in case you go through."</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="The Independent 24 Nov 2013"
+                                          image="images/100/independent001.jpg"
+                                          link="http://www.independent.co.uk/travel/europe/sweden-go-with-the-floe-this-winter-8959544.html">
+                                          <p>It was the question on all of our minds, but I asked it: "How do you know when the ice isn't safe to skate on?" Niklas, our imperturbable guide, rubbed his chin, looked thoughtful for a moment, then offered up the distilled wisdom of a lifetime spent playing around on frozen water. "When it breaks," he said with a broad smile.</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="Sunday Times 10 Nov 2013"
+                                          image="images/100/sundaytimes001.jpg"
+                                          link="http://www.thesundaytimes.co.uk/sto/travel/Holidays/Active/article1337371.ece">
+                                          <p>We had skated just over six miles when we reached the edge. The ice just stopped, and the liquid version of the Baltic Sea stretched out to the horizon. I hadn’t expected this sudden, ­unnerving divide. I hadn’t expected to be so far from land. And I hadn’t ­expected to be told that the solid surface I was standing on was only 3in thick.</p>
+                                          <p>Full article <a href="http://www.naturguiden.com/component/content/article/28-news/news/69-sunday-times-10-nov-2013">SundayTimes.jpg</a></p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="4-seasons (German)"
+                                          image="images/100/4seasons001.jpg"
+                                          link="http://4-seasons.de/magazinartikel/tour-skaten-auf-kufen-durch-die-schwedische-eislandschaft-0#gefuehrt">
+                                          <p>Glückliches Schweden: Wenn Seen, Flüsse und Küsten gefrieren, entsteht das schönste Schlittschuh-Revier der Welt. Beim Tour-Skaten gleitet man mit Rucksack und Proviant durch die nordische Einsamkeit, 50 Kilometer täglich sind kein Problem.</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="Irish Times"
+                                          image="images/100/skating001.jpg"
+                                          link="http://www.irishtimes.com/newspaper/travel/2012/1110/1224326201570.html">
+                                          <p>I take my first steps out on to the frozen waters of the Baltic and my legs lock with fear. All that practice on the Christmas rink feels like a futile flirtation as my Swedish guide gently urges me to put my trust in the long metal “tour skating” blades and slide.</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="The Guardian Nov 2009"
+                                          image="images/100/guardian001.jpg"
+                                          link="http://www.theguardian.com/travel/2012/nov/09/european-winter-breaks-with-twist">
+                                          <p>Escape the circle-skating crowds at Somerset House and ice-skate with a sense of purpose on a four-day trek through south-eastern Sweden's vast network of frozen lakes, with Nature Travels. The trip involves ice-fishing and, if conditions allow, moon-skating.</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="The Guardian Oct 2012"
+                                          image="images/100/guardian002.jpg"
+                                          link="http://www.guardian.co.uk/travel/2012/oct/21/holiday-tips-skating-sweden-christmas-cottages-deals">
+                                          <p>The skating season is almost upon us, but if the thought of jostling for elbow room with kamikaze teens and boozed-up office workers on a synthetic rink leaves you cold, check out the new wild-skating trip from Swedish tour operator Nature Travels.</p>
+                          </my-fancy-list>
+
+                          <my-fancy-list  header="The Southern Star"
+                                          image="images/100/southernstar001.jpg"
+                                          link="http://www.naturguiden.com/pdf/southern_star_2012.pdf">
+                                          <p>I AM in the middle of a Swedish lake watching winter melt away. The snow has gone and birch trees which cover surrounding islands are starting to bud. I should be worried, given that I am standing on ice, about three kilometres from land, and cracks are literally forming all around me, creating a thudding noise which reverberates across the bay, and through my body.</p>
+                          </my-fancy-list>
+
+                        </div>
+                      </paper-card>
+
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Inspiration</h2>
+                          <p>A nice video from one of our guest. Coming here for Nordic skating 2015</p>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                        </div>
+                      </paper-card>
+
+                    </section>
+    <!-- #Adventures @adventures find-next-page -->
+                    <section data-route="adventures">
+                      <my-left-image-paper-card image="images/500/skating002.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Nordic skating</h2>
+                          <p>Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/skating">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                          <paper-button><iron-icon icon="language"></iron-icon> Nederlands</paper-button>
+                          <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/skiing001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Cross country skiing</h2>
+                          <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
+
+                          <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/skiing">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                          <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Kayak & canoe</h2>
+                          <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/canoe">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/tent001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Hiking</h2>
+                          <p>Leave the civilisation for a couple of days. Join our hiking tours in the beautiful nature of Sweden. Time for recovery and recreation, the most beautiful trails, what to eat and where to sleep - everything is arranged for you. Leave the control and just enjoy.</p>
+                            Choose between:
+                            <ul>
+                              <li>Hiking in oak landscapes and leafy woods in the area south of Stockholm.</li>
+                              <li>Hiking in the remote mountains of Sweden. Far away from the civilisation.</li>
+                            </ul>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/hiking">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/mtb_forest.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Mountain bike</h2>
+                          <p>Enjoy MTB in the Swedish woodland. With a guide you get the best tracks, the most beautiful scenery and more fun. Dirt roads, narrow tracks, up and down.</p>
+
+                          <p>Stop at a small lake and take a swim, make a camp fire in some remote area at lunch and make a hot dog. Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/mtb">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Multi activity</h2>
+                          <p>Experience a lot of Sweden wilderness and enjoy both hiking, biking and canoeing.</p>
+                          <p>Three active days, one day with biking on narrow roads, one day hiking trough oak landscapes and leafy woods and one day with canoe or kayak on narrow rivers or open sea.</p>
+                          <p>Choose preferred level, it is not a competition it should be a recreation tour but the distance differs between the different packages.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/multi">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                    </section>
+    <!-- #Skating @skating find-next-page -->
+                    <section data-route="skating">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Skating</h2>
+                          <p class="lead">Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
+                          <p>All-included guided tours where we skate on the best ice possible, often far out in the wilderness.</p>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-content">
+                          <p class="lead">Get inspired by watching this move from one of our guests that visited us last winter</p>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SdfL2nY-Xs8?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-content">
+                          <p class="lead">Clean Bandits fantastic music video from lake Vättern</p>
+                          <p>Their next hit <a href="http://www.youtube.com/watch?v=m-M1AtrxztU"><em>Rather Be</em></a> are more known and you have probably heard it</p>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">The guided tour for you</h2>
+                          <p class="lead">Gliding easily with the wind in your back over perfect ice, scenic shorelines on your left. The guide in front of you keeps his concentration on the ice and any change in the quality. We adapt the speed and the distance to the group. Taking a rest at some island for a lunch break. In small groups we travel with minibus to the best skating areas and stay in nearby hotels or hostels.</p>
+                          <h3>Dates</h3>
+                          <h4>Groups</h4>
+                          <p>Chose the date you prefere during the season</p>
+                          <h4>Individuals</h4>
+                          <p>Prices for 2016. Accomodation <strong>B2</strong> Price = 625EUR</p>
+                          <ul class="nothing-list">
+                            <li>4 - 7 February; Acc C1 (For you who can manage skates or Rollerblades**)</li>
+                            <li>11 - 14 February; (For less experienced skaters**)</li>
+                            <li>18 - 21 February; (For less experienced skaters**)</li>
+                            <li>25 - 28 February; (For all,we devide in one fast and one slower group**)</li>
+                          </ul>
+                          <p>	If there is an interest for other weekends do not hesitate to contact us. We do have groups comming every weekend, it might be possible to join a group with less than eight participants.</p>
+                          <p class="bg-warning">** As the tempo and the distance we like to skate differs depending on our previous skating experiences we have some weekends for those with more experiences and other weekends for those with less. You don't need to be an champion to join the tour for more experienced skaters but you should be able to skate on ice skates or Rollerblades without difficulties. Feel free to contact us if you have any questions.</p>
+                          <h3>Information</h3>
+                          <p>Nordic skating in Sweden, an all inclusive guided tour. You travell in small groups of maximum eight persons. The guide pick you up at the airport/train station. All needed equipment are provided.</p>
+                          <p>Where we skate depends on the ice situation, we always choose the area that provides the best skating conditions. The accommodations are located in the area but could change from day to day depending on where we choose to go skating.</p>
+                          <h4>Time for arrival and departure</h4>
+                          <p>Departure last day, not before 17:00</p>
+                          <h4>Arrival</h4>
+                          <p>Choose your time (but confirm with us before booking the ticket) If you arrive mid day we find a place close to the airport where we went for skating. If other guests arrives later we then went back to the airport and pick them up. Late afternoon we head of for the the place to stay the first night.</p>
+                          <h4>Season</h4>
+                          <p>January - March</p>
+                          <h4>Gradient</h4>
+                          <p>Middle</p>
+                          <h4>Pick up</h4>
+                          <p>At Skavsta airport (RyanAir - Stockholm South) or Stockholm/Arlanda. Other locations possible after agreement.</p>
+                          <h4>Get here</h4>
+                          <p>By air or train to Stockholm</p>
+                          <h4>Transport</h4>
+                          <p>We travel in a mini van.</p>
+                          <h4>Personal equipment</h4>
+                          <p>Clothing suitable for skating, a complete set of clothes to bring in provided pakpack, if you by accident fall in the wather.</p>
+                          <h4>Equipment included</h4>
+                          <p>Skates, boots, backpack and needed saftey equipment, thermos and lunch box.</p>
+                          <h4>Lodging</h4>
+                          <p>Hostel or Hotel, B1, B2, B3, C1 and C2 More information under <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">accomodation</a></p>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Basic 1:</td>
+                                  <td>590 EUR</td>
+                                  <td>single room + 45 Euro</td>
+                                </tr>
+                                <tr>
+                                  <td>Basic 2:</td>
+                                  <td>625 EUR</td>
+                                  <td>single room + 45 Euro</td>
+                                </tr>
+                                <tr>
+                                  <td>Basic 3:</td>
+                                  <td>840 EUR</td>
+                                  <td>single room + 45 Euro</td>
+                                </tr>
+                                <tr>
+                                  <td>Comfort 1:</td>
+                                  <td>910 EUR</td>
+                                  <td>single room + 130 Euro</td>
+                                </tr>
+                                <tr>
+                                  <td>Comfort 2:</td>
+                                  <td>1050 EUR</td>
+                                  <td>single room + 130 Euro</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="bg-warning">Price depending on Lodging</p>
+                          <h3>Included in the price:</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Day I </td>
+                                  <td>Transfer, dinner, guide, rent of equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day II </td>
+                                  <td>Breakfast, lunch, dinner, guide, rent of equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day III </td>
+                                  <td>Breakfast, lunch, dinner, guide, rent of equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day IV </td>
+                                  <td>Breakfast, lunch, guide,rent of equipment, transfer</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="bg-warning">Alcoholic drinks are not included in the price</p>
+                          <h3>Choices of extras</h3>
+                          <h4>Extra days</h4>
+                          <p>It is possible to extend the tour with one or several days.</p>
+                          <p>Price for each extra day:</p>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Basic 1</td>
+                                  <td>120 EUR</td>
+                                </tr>
+                                <tr>
+                                  <td>Basic 2</td>
+                                  <td>130 EUR</td>
+                                </tr>
+                                <tr>
+                                  <td>Basic 3</td>
+                                  <td>190 EUR</td>
+                                </tr>
+                                <tr>
+                                  <td>Comfort 1</td>
+                                  <td>170 EUR</td>
+                                </tr>
+                                <tr>
+                                  <td>Comfort 2</td>
+                                  <td>220 EUR</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <h4>Arrive earlier / Depart later</h4>
+                          <p>Guests that want to see more of Sweden can of course come earlier or depart later than what is stated in our program. Spend some more days out in the archipelago or take a tour to Stockholm, one hour away.</p>
+                          <p>Price of extras: Guests undertake all extra costs themselves</p>
+                          <h3>Program Guided skating tour</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Day I</td>
+                                  <td>Arrival, transfer, skating</td>
+                                </tr>
+                                <tr>
+                                  <td>Day II</td>
+                                  <td>Skating</td>
+                                </tr>
+                                <tr>
+                                  <td>Day III</td>
+                                  <td>Skating</td>
+                                </tr>
+                                <tr>
+                                  <td>DayIV</td>
+                                  <td>Skating, transfer, departure</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="bg-info">Exempel of a 3 nights trip</p>
+                          <h4>Day I</h4>
+                          <p>Arrival at the airport. The guide will meet you and takes you directly towards the chosen skating area. Arriving to the hostel/hotel you check in and then depending on the time of arrival we might be able to do some skating. We start with a safety and security briefing and then hand out all equipment. In the evening we have dinner at the hostel/hotel.</p>
+                          <h4>Day II – III</h4>
+                          <p>We have breakfast and also time to prepare the lunch packages. Depending on the weather forecast and the ice situation on the lakes, we take off in the minibus towards the best possible skating area. At the lake we start by examining the ice before we get the gear on and step out on the ice. We skate in a row, the guide always first, checking the ice and looking out for weak spots. The speed and distance is adjusted to the group and the ice situation. Now and then we make short stops, to admire the beauty, chat for a while or just rest. During the day we make several stops when we go ashore to take something to eat or walk to another lake nearby. At the end of the day we return to the minibus and head back to the hotel/hostel. A nice sauna before the dinner is a pleasant experience. If the conditions are right we might go for another skating trip in moonlight late in the evening.</p>
+                          <h4>Day IV</h4>
+                          <p>After breakfast we head off for another day on ice, skating as long as possible depending on the scheduled departure times. On our way back to the airport we stop for a shower and change clothes and maybe for something to eat. The guide then drives you back to the airport.</p>
+
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Skiing @skiing find-next-page -->
+                    <section data-route="skiing">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Cross country skiing</h2>
+                          <p class="lead">Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
+                          <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Cross country skiing in the Swedish mountains</h2>
+                        </div>
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#skiing-standard" aria-controls="skiing-standard" role="tab" data-toggle="tab">Standard</a></li>
+                            <li role="presentation"><a href="#skiing-adventure" aria-controls="skiing-adventure" role="tab" data-toggle="tab">Adventure</a></li>
+                            <li role="presentation"><a href="#skiing-midnight" aria-controls="skiing-midnight" role="tab" data-toggle="tab">Midnight sun</a></li>
+                          </ul>
+                        <div class="card-content">
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="skiing-standard">standard</div>
+                            <div role="tabpanel" class="tab-pane" id="skiing-adventure">adventure</div>
+                            <div role="tabpanel" class="tab-pane" id="skiing-midnight">midnight sun</div>
+                          </div>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Canoe #Kayak @canoe @kayak find-next-page -->
+                    <section data-route="canoe">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Kayak & canoe</h2>
+                          <p>This is the canoe section</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Hiking @hiking find-next-page -->
+                    <section data-route="hiking">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Hiking</h2>
+                          <p>This is the hiking section</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Mtb @mtb find-next-page -->
+                    <section data-route="mtb">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">MTB</h2>
+                          <p>This is the MTB section</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Multi activity @multi activity find-next-page -->
+                    <section data-route="multi">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Multi activity</h2>
+                          <p>This is the multi activity section</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Info #Information @info @information find-next-page -->
+                    <section data-route="info">
+                      <my-left-image-paper-card image="images/500/skating001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">About our tours</h2>
+                          <p>Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
+                          <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/boat001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">How to get here</h2>
+                          <p>We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/cabin_w001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Accommodation</h2>
+                          <p>We offer several  different levels of accommodatio, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/forest001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">About Naturguiden</h2>
+                          <p>Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
+                          <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/lake001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">About Sweden</h2>
+                          <p>Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
+                          <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/lake002.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Weather in Sweden</h2>
+                          <p>What about the weather, what can we expect when coming to Sweden?</p>
+                          <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                      <my-left-image-paper-card image="images/500/guides001.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Contact us</h2>
+                          <p>Contact us </p>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}info/contact" data-route="contact">
+                            <paper-button>Read more</paper-button>
+                          </a>
+                        </div>
+                      </my-left-image-paper-card>
+                    </section>
+    <!-- #About our tours @about our tours find-next-page -->
+                    <section data-route="about-tours">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">About our tours</h2>
+                          <p class="lead">Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
+                          <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
+                          The packages Naturguiden has to offer:
+                          <ul class="flame-list">
+                            <li>Hiking</li>
+                            <li>Mountain-biking</li>
+                            <li>Multi activities</li>
+                            <li>Cross-country-skiing</li>
+                            <li>Ice-skating</li>
+                            <li>Kayak paddling</li>
+                          </ul>
+                          <p>The activities always take place outdoors where you can relax, enjoy nature and life as well as giving your body and soul healthy experiences. The price level differs, mainly due to the level of accommodation (and whether baggage transport is included or not).</p>
+                          All our packages always include
+                          <ul class="flame-list">
+                            <li>An experienced guide available 24 hours a day.</li>
+                            <li>Full board service</li>
+                            <li>Pick up at the Airport or train station and all necessary transports</li>
+                            <li>Needed equipment</li>
+                          </ul>
+                          <h3>Get here</h3>
+                          <p>All packages are made in such a way that it should be cheap and easy for you to get to us with train or plain. Pick up at the airport or train station is included and when possible the activity starts immediately at the airport / train station. Our activities taking place in different places of Sweden, for each package you see where we pick you up.</p>
+                          <p>More information in "How to get here"</p>
+                          <p>If you are a group of your own and whould prefere another starting point, tell us and we will see what we can do.</p>
+                          <h3>Accommodation</h3>
+                          <p>We choose the best possible accommodation for each package depending on location and availability. In our packages the accommodation is already chosen in advance. However for some of the packages it is possible to choose between several types of accommodations, although all participants need to make the same choice.</p>
+                          We offer these types of accommodation:
+                          <ul class="nothing-list">
+                            <li><b>Hotel</b>, twin or double rooms with toilet and shower in each room.</li>
+                            <li><b>Hostel</b>, two or four beds dormitory rooms with shared toilets and shower.</li>
+                            <li><b>Tent</b>, two persons in each tent, sleeping pad is provided, sleeping bag for rent if the guest don’t bring their own (comfort temp at least 0 degrees Celsius)</li>
+                          </ul>
+                          <p>More information in accommodation</p>
+                          <h3>Food</h3>
+                          <p>We offer full board meals to all our packages, in some of the packages meals are served in restaurants, in others they are prepared by the guide and in other packages preparing the food is a part of the experience. We often eat some of the meals outside during the tours – food always tastes very good out in nature!</p>
+                          <p>Information about, for example, vegetarians/vegans in the party, or about persons with allergies, needs to be provided well in advance.</p>
+                          <h3>Groups</h3>
+                          <p>All our guided adventures are for smaller groups, normally between  6-10 persons. There are fixed dates for all packages. We claim the right to  cancel a trip if there are less than 3 persons.</p>
+                          <p>We can also help individuals with booking of extra nights, tickets  or activities if they would like to arrive earlier or leave later.</p>
+                          <p>For an entire group (at least 6 persons) you choose any date that suites you.  Naturguiden has a high flexibility and can adjust any of the packages to meet  the wishes of an entire group.</p>
+                          <p>If there is a group of less than 6 persons who would like to experience one  of our packages without other participants that is possible with an agreed  fee.</p>
+                          <h3>Gradient</h3>
+                          <p>The gradient on the packages is based on the needed condition  rather than the technical skills.</p>
+                          <ul class="nothing-list">
+                            <li><strong>Easy</strong>:  for everyone with “normal”  physique.</li>
+                            <li><strong>Middle</strong>:  active people, but not necessary exercise  regularly</li>
+                            <li><strong>Tough</strong>: nothing extreme, but recommended for  people that exercise regularly.</li>
+                          </ul>
+                          <p>The difficulty level of the activities and the tempo will of  course be suited to match the group.</p>
+                          <h3>Environment</h3>
+                          <p>All of Naturguiden activities take place in our wonderful  outdoors. To be able to continue doing this it is important to reduce the impact  on our countryside as much as possible. Naturguiden is a member of the Swedish  Ecotourism Society and we have products that are certified according to Natures  Best, <a href="http://www.naturesbestsweden.com/">www.naturesbestsweden.com</a></p>
+                          <p>None of our packages contains activities that have a negative  impact on the environment (like rib boats, snowmobiles, etc). We try to minimize  the transports and use public transport as much as possible. Our goal is to  leave no trace.</p>
+                          <h3>Price:</h3>
+                          <p>All prices are given in Euro. We claim the right to change the  price due to changes in exchange rates.</p>
+                          <p>Full payment must take place at the latest two weeks prior the arrival date.</p>
+                          <p>Naturguiden Swedish Adventures AB (Ltd)</p>
+                          <p>Phone no: 0046 (0)13-141136</p>
+                          <p>e-mail: info@naturguiden.se</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #How to get here @how to get here find-next-page -->
+                    <section data-route="how-get-here">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">How to get here</h2>
+                          <p class="lead">We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
+                          <p>If you have any questions do not hesitate to contact us.</p>
+
+                          <h2>Information about all our destinations.</h2>
+                          <p>If you are a group of your own we can pick you up on other places as well, contact us.</p>
+                          <h3>Nyköping – Skavsta – Stockholm south</h3>
+                          <p>Normally we pick you up at the airport called Skavsta or Stockholm south. You get here by Ryan Air from a lot of destinations around Europe.</p>
+                          <p>From the airport there is only 5 minutes with local bus to the city of Nyköping. You arrive at the bus central, not the same place as the Railway station.</p>
+                          <p>If you arrive at Stocckholm/Arlanda you can take the bus direct from Stockholm City Terminal, close to the Central station, to Skavsta. <a href="http://www.flygbussarna.se/">http://www.flygbussarna.se/</a>.</p>
+                          <p>Or you take the train from Stockholm Central station to Nyköping station <a href="http://www.sj.se/">http://www.sj.se</a></p>
+                          <p>If we should pick you up in Nyköping instead of at Skavsta put that as remark in the booking form.</p>
+                          <h3>Linköping</h3>
+                          <p>Normally we pick you up at the airport. You get here with KLM from Amsterdam or from Copenhagen with NextJet.</p>
+                          <p>The Airport is only 2,5 km from the city centre of Linköping and the Railway station.</p>
+                          <p>If you use the train, there is a direct train from Copenhagen to Linköping, travel time approximately 3.5 hours</p>
+
+                          <h3>Stockholm / Arlanda</h3>
+                          <p>We have no normal tours from Arlanda, but if you are a group of your own we can pick you up at Arlanda.</p>
+
+                          <h3>Östersund – Ljungdalen – Vålådalen</h3>
+                          <p>For our mountain tours Östersund is the closest city. To Östersund you get with train or by plain from Stockholm/Arlanda with SAS or from Trondheim in Norway with NextJet.</p>
+                          <p>From Östersund you need to continue with bus to the mountains. From the airport to the bus central in Östersund there is 7,5 km. You get there by local bus or with taxi. Detailed information about how to travel will be provided.</p>
+                          <p>Of course it is also possible to get a rented car at the airport to get to the mountains.</p>
+
+                          <h3>Travel with car to Sweden.</h3>
+                          <p>There are several ferries up to Sweden. You have them all represented at <a href="http://www.directferries.co.uk/">http://www.directferries.co.uk/</a> where you will find time schedules etc.</p>
+                          <p>From Germany you have</p>
+                          <ul class="flame-list">
+                          <li>Travemunde – Malmö</li>
+                          <li>Rostock – Trelleborg</li>
+                          <li>Sassnitz – Trelleborg</li>
+                          <li>Travemunde – Trelleborg</li>
+                          <li>Kiel – Göteborg (Gotenburg)</li>
+                          </ul>
+                          <p>From Denmark you have</p>
+                          <ul class="flame-list">
+                          <li>Helsingborg – Helsingör</li>
+                          <li>Frederikhavn – Göteborg (Gotenburg)</li>
+                          </ul>
+
+                          <p>If you choose to travel trough Denmark there are several options, two of them are.</p>
+                          <p><strong>No ferries:</strong> Drive trough Denmark, passing Flensburg and Odense until Copenhagen. Take the bridge over to Malmö and Sweden.</p>
+                          <p><strong>With ferries:</strong> Puttgarden - Rödby and Helsingör – Helsingborg</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Accommodation @accommodation find-next-page -->
+                    <section data-route="accommodation">
+                      <paper-card>
+                        <iron-image src="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg" alt="Tenting in mountains" class="left-image image-with-margin image-width-md image-height-md img-rounded" sizing="cover"></iron-image>
+                        <div class="card-content">
+                          <h2 class="page-title">Accommodation</h2>
+                          <p class="lead">We offer several  different levels of accommodations, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
+                          <h3>Shelter:  Our most basic accomodation</h3>
+                          <p>Sleeping outdoor  on the ground, only with a simple shelter as a roof, protecting you from rain.  Sleeping matrees is included but not the sleeping bag.</p>
+
+                          <h3>Tent:  Small tents, normally for two persons</h3>
+                          <p>High quality  expedition tents from Hilleberg. Normally we use three persons tents for two  persons. But there are also possible to get a single room tent. Sleeping matrees  is included but not the sleeping bag.</p>
+
+                          <h3>Military  tent: 20 persons tent with stove</h3>
+                          <p>Our military tents  has space for maximum 20 persons. In the middle there are a stove and it is  possible to use it all year arround.</p>
+
+                          <h3>Youth Hostel:</h3>
+                          <p>Living at youth hostels in two or four beds dormitory room with shared shower and toilet (normaly two persons in each room)</p>
+                          <p>Sheets and towels are included.</p>
+                          <p>Breakfast (included), prepared together with the guide in the morning.</p>
+
+                          <h3>Mountains Lodges:</h3>
+                          <p>On our mountain tours we stay in Mountain Lodges. Normally in  four beds dormitory room. Toilet in separate building. Showers at some, but not at all locations. Sheets and towels NOT included. Bring sleeping bag (important in winter) or sheets.</p>
+
+                          <h2>Ice Skating</h2>
+                          <p class="bg-info lead">For our Ice Skating weekends we have five different price levels depending on accommodation.</p>
+                          <h3>Basic I: (B1)  Youth Hostel, Self Catering - Half board<br /></h3>
+                          <p>Living  at youth hostels in two or four beds dormitory room with shared shower and  toilet (normaly two persons in each room)</p>
+                          <p>Sheets  and towels are included.</p>
+                          <p>Breakfast and lunch included, prepared together with the guide in the morning.</p>
+                          <p>Dinner not included, the group decide where to eat, prepare them self at the Youth Hostel or at a restaurant.</p>
+
+                          <h3>Basic II: (B2)  Youth Hostel, Self Catering</h3>
+                          <p>Living  at youth hostels in two or four beds dormitory room with shared shower and  toilet (normaly two persons in each room)</p>
+                          <p>Sheets  and towels are included.</p>
+                          <p>The  guests prepare their own meal togheter with the guide. All food is provided and  included in the price.</p>
+
+                          <h3>Basic III: (B3)  Youth Hostel, Full Board </h3>
+                          <p>Living  at youth hostels in two or four beds dormitory rooms with shared shower and  toilet (normally two persons in each room)</p>
+                          <p>Sheets  and towels are included.</p>
+                          <p>A second guide take care of all cooking, can assist as a extra Skating guide if the group like to divide in one faster and one slower group.</p>
+                          <p>Breakfast  and dinner will be served at the accommodation.</p>
+                          <p>The  guests makes their own lunch box at breakfast.</p>
+
+                          <h3>Comfort I: (C1) Hotel  standard. Twin or double rooms, Half board</h3>
+                          <p>Accommodation  in twin or double rooms, with shower and toilet on each room.</p>
+                          <p>Breakfast and lunch box prepared at breakfast are included</p>
+                          <p>Dinner is not included, we make a choose every evening where to eat, you pay yourself.</p>
+
+                          <h3>Comfort II: (C2) Hotel  standard. Twin or double rooms, Full board </h3>
+                          <p>Accommodation  in twin or double rooms, with shower and toilet on each room.</p>
+                          <p>Breakfast and dinner is included.</p>
+                          <p>The  guests makes their own lunch box at breakfast.</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #About Naturguiden @about naturguiden find-next-page -->
+                    <section data-route="about-naturguiden">
+                      <paper-card>
+                        <iron-image src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
+                        <div class="card-content dont-wrap-image">
+                          <h2 class="page-title">About Naturguiden</h2>
+                          <p class="lead">Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
+                          <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
+                          <p>Events, team building and conferences for business  groups. The focus is always on giving the participants a great time but also bring  the team closer together. More information on <a href="http://www.naturguiden.se/"><span style="text-decoration: underline;">www.naturguiden.se</span></a> (only in  Swedish)</p>
+                          <p>All inclusive adventure package for tourist  groups. All information is found on this site www.naturguiden.com</p>
+                          <p>We are located in Linköping, 200 km south of  Stockholm, in the county of Östergötland. But our activities take place all over  Sweden. We always try to find the best possible places for our different  outdoor activities.</p>
+                          <br />
+                          <p>Welcome to join us on our tours</p>
+                          <br />
+                          <p>/John Savelid</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Abour Sweden @about sweden find-next-page -->
+                    <section data-route="about-sweden">
+                      <paper-card>
+                        <iron-image src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
+                        <div class="card-content">
+                          <h2 class="page-title">About Sweden</h2>
+                          <p class="lead">Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
+                          <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
+                          <p>Then we have the mountains, high areas without trees. Down hill skies is almost a national sport . Cross country skies something all kids learn. Hiking on skies in the mountain is popular in wintertime and hiking in summertime of course. Visit the mountains in April the fifth season. Still cold and snow but long lasting sunny days.</p>
+                          <p>Sweden is a long country 1.570 km and the climate change a lot from north to south. In winter the average temperature is around 0 degree in south and about minus 20 - 30 degrees in north. In summer  the temperature is around 20 - 25 degrees in south and around 10 degrees in north. Midnight sun in summer and   no sun at all during a couple of week around Christmas in north. To tell what´s normal in Sweden is not possible, it´s all about were you are.</p>
+                          <p>It is all about space, we have 20 persons/km2 in Sweden. 8,8 million on 450.000 km2. Compare with Netherlands that have 375 persons/km2. Together with the ”allemansrätt” that gives us the  right to travel and camp anywhere (except in someone garden) Sweden is a perfect if you looking for freedom and peacefulness.</p>
+                          <p>Our currency is still Kronor (SEK), we have not change to Euro. The exchange rate is around 9.2 SEK for 1 EUR. (If you divide the Swedish price with 10 you got the price in Euro approximately)</p>
+                          <p>On all our tours everything you need is included (there is one exception). On some tours you not event get the opportunity to spend any money.</p>
+                          <p>But if you want some money to be able to by a beer or something else, you can always redraw money on the airport. You can also use credit card almost everywhere.</p>
+                          <p>You manage good with English in Sweden, most people will understand you. With other language there is more difficult even though there are people knowing German, French, Spanish....</p>
+                          <p>More information about Sweden is found on the web page of Visit Sweden <a href="http://www.visitsweden.se/sweden">www.visitsweden.com/sweden</a></p>
+                          <p>More information about what to bring and what to ware you find connected to each product category.</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Weather in Sweden @weather in sweden find-next-page -->
+                    <section data-route="weather-sweden">
+                      <paper-card>
+                        <iron-image src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
+                        <div class="card-content">
+                          <h2 class="page-title">Weather in Sweden</h2>
+                          <p class="lead">What about the weather, what can we expect when coming to Sweden?</p>
+                          <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
+                          <p>The weather depends of course on time of year and where in Sweden the tour take place. We will here try to give you a ruff  idea so you know what to expect.</p>
+                          <p>Below we present two tables with average temperature during night and during daytime for each month. You also see the amount of rain or snow for each month (it is measured in millimetre water, when it comes as snow you will get approximately ten times more in thickness.)</p>
+                          <h3>Summertime</h3>
+                          <p>The temperature is an average value and measured in the shadow.  In the mountain you might have down to four degrees and rain and windy even in the middle of the summer and it can be 25 degrees and clear blue sky a couple of days later. Here we are completely exposed to the weather, there is no shelter. We always recommend to bring both gloves, a cap and a swim suite when going to the mountains.</p>
+                          <p>When hiking in the south of Sweden there is not that extremes, the forest give us shelter. A sunny day in July we can have around 25 – 30 degrees, and cold and rainy day it might be around 18 degrees.</p>
+                          <p>When come to kayak tours you are more dependent to the weather and specially to the wind. But as there are thousands of small islands along the cost you can always get some shelter. The temperature relates to the temperature of the water. The spring is more cold than the autumn. Therefore late summer is the best choice for a kayak tour and even late autumn is fantastic in the archipelago. During summertime it is important to have a long arm jumper, sunglasses and a hat otherwise you might get burn being out on the water the whole day.</p>
+                          <h3>Wintertime</h3>
+                          <p>On our winter activities you can expect temperatures betweens zero and minus twenty degrees. It could be snowfall and windy. On our skating tours we might even have around zero and rain. And on our ski tours in the mountain during April or May there could such warm and sunny days that you can ski with only a T-shirt. The best recommendation is to have several layers of clothes to be able to adapt to the actual temperature.</p>
+                          <h3>Temperature and rain / snowfall in south of Sweden</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <thead>
+                                <tr>
+                                  <th>Month</th>
+                                  <th>Temp Night</th>
+                                  <th>Temp Day</th>
+                                  <th>Rain/Snow (mm)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Jan</td>
+                                  <td>-6</td>
+                                  <td>-4</td>
+                                  <td>45</td>
+                                </tr>
+                                <tr>
+                                  <td>Febr</td>
+                                  <td>-6</td>
+                                  <td>-3</td>
+                                  <td>25</td>
+                                </tr>
+                                <tr>
+                                  <td>Marz</td>
+                                  <td>-4</td>
+                                  <td>2</td>
+                                  <td>25</td>
+                                </tr>
+                                <tr>
+                                  <td>April</td>
+                                  <td>0</td>
+                                  <td>9</td>
+                                  <td>30</td>
+                                </tr>
+                                <tr>
+                                  <td>May</td>
+                                  <td>5</td>
+                                  <td>15</td>
+                                  <td>40</td>
+                                </tr>
+                                <tr>
+                                  <td>June</td>
+                                  <td>10</td>
+                                  <td>20</td>
+                                  <td>40</td>
+                                </tr>
+                                <tr>
+                                  <td>July</td>
+                                  <td>12</td>
+                                  <td>21</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>Aug</td>
+                                  <td>11</td>
+                                  <td>20</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>Sept</td>
+                                  <td>7</td>
+                                  <td>15</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>Oct</td>
+                                  <td>4</td>
+                                  <td>10</td>
+                                  <td>50</td>
+                                </tr>
+                                <tr>
+                                  <td>Nov</td>
+                                  <td>-1</td>
+                                  <td>5</td>
+                                  <td>50</td>
+                                </tr>
+                                <tr>
+                                  <td>Dec</td>
+                                  <td>-4</td>
+                                  <td>1</td>
+                                  <td>40</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <p>Days with at least 1 mm rain/snow: 100 days a year<br />
+                          Days with at least 10 mm rain/snow: 10 days a year</p>
+                          <h3>Temperature and rain / snowfall in the mountains</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <thead>
+                                <tr>
+                                  <th>Month</th>
+                                  <th>Temp Night</th>
+                                  <th>Temp Day</th>
+                                  <th>Rain/Snow (mm)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Jan</td>
+                                  <td>-12</td>
+                                  <td>-10</td>
+                                  <td>80</td>
+                                </tr>
+                                <tr>
+                                  <td>Febr</td>
+                                  <td>-12</td>
+                                  <td>-9</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>Marz</td>
+                                  <td>-10</td>
+                                  <td>-5</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>April</td>
+                                  <td>-6</td>
+                                  <td>0</td>
+                                  <td>50</td>
+                                </tr>
+                                <tr>
+                                  <td>May</td>
+                                  <td>0</td>
+                                  <td>8</td>
+                                  <td>40</td>
+                                </tr>
+                                <tr>
+                                  <td>June</td>
+                                  <td>4</td>
+                                  <td>12</td>
+                                  <td>70</td>
+                                </tr>
+                                <tr>
+                                  <td>July</td>
+                                  <td>6</td>
+                                  <td>16</td>
+                                  <td>90</td>
+                                </tr>
+                                <tr>
+                                  <td>Aug</td>
+                                  <td>6</td>
+                                  <td>14</td>
+                                  <td>80</td>
+                                </tr>
+                                <tr>
+                                  <td>Sept</td>
+                                  <td>1</td>
+                                  <td>8</td>
+                                  <td>80</td>
+                                </tr>
+                                <tr>
+                                  <td>Oct</td>
+                                  <td>-2</td>
+                                  <td>2</td>
+                                  <td>70</td>
+                                </tr>
+                                <tr>
+                                  <td>Nov</td>
+                                  <td>-9</td>
+                                  <td>-2</td>
+                                  <td>60</td>
+                                </tr>
+                                <tr>
+                                  <td>Dec</td>
+                                  <td>-13</td>
+                                  <td>-8</td>
+                                  <td>70</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p>Days with at least 1 mm rain/snow: 150 days a year<br />
+                          Days with at least 10 mm rain/snow: 20 days a year</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Contact us @contact us find-next-page -->
+                    <section data-route="contact">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Contact information</h2>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h3>Naturguiden</h3>
+                              <h4>Postal adress</h4>
+                              <ul class="nothing-list">
+                                <li>Naturguiden</li>
+                                <li>Munkhagsgatan 120B</li>
+                                <li>58725 LINKÖPING</li>
+                                <li>SWEDEN</li>
+                              </ul>
+                              <h4>Phone</h4>
+                              <ul class="nothing-list">
+                                <li>+46 70 53 53 630</li>
+                              </ul>
+                              <h4>Email</h4>
+                              <ul class="nothing-list">
+                                <li>info@naturguiden.se</li>
+                              </ul>
+                              <h4>Web</h4>
+                              <ul class="nothing-list">
+                                <li>
+                                  <a href="http://www.naturguiden.com">http://www.naturguiden.com</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-6">
+                              <h3>Agents</h3>
+                              <p>You can also contact our agent in your country and make the complete booking there.</p>
+                              <p class="bg-warning">Note: They don't sell all our tours presented on the web</p>
+                              <h4>Nederland</h4>
+                              <ul class="nothing-list">
+                                <li><h4>Almgrens Travel</h4></li>
+                                <li>Skating tours</li>
+                                <li>
+                                  <ul class="nothing-list">
+                                    <li>
+                                      <a href="http://www.almgrens.nl">http://www.almgrens.nl</a>
+                                    </li>
+                                    <li>+31 562 850 970</li>
+                                    <li>info@almgrens.nl</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <h4>England</h4>
+                              <ul class="nothing-list">
+                                <li><h4>Nature Travels</h4></li>
+                                <li>Skating, MTB and Kayak tours</li>
+                                <li>
+                                  <ul class="nothing-list">
+                                    <li>
+                                      <a href="http://www.naturetravels.co.uk">http://www.naturetravels.co.uk</a>
+                                    </li>
+                                    <li>+44 1929 463 774</li>
+                                    <li>admin@naturetravels.co.uk</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Booking @booking find-next-page -->
+                    <section data-route="booking">
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Booking</h2>
+                          <p>This is the booking section</p>
+                        </div>
+                      </paper-card>
+                    </section>
+    <!-- #Pictures #Photos @pictures @photos find-next-page -->
+                    <section data-route="pictures">
+                      <paper-card>
+                        <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
+                        <div class="card-content">
+                          <h2 class="page-title">A winter album from Gothenburg</h2>
+                          <p class="lead">Some photos from a snowy Gothenburg</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href="https://goo.gl/photos/aWQYfey3MYAEcGFr5">
+                            <paper-button>See album or add your own photos</paper-button>
+                          </a>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
+                        <div class="card-content">
+                          <h2 class="page-title">Ice-skating 2011</h2>
+                          <p class="lead">A fantastic trip in on lake Vättern</p>
+                        </div>
+                        <div class="card-actions">
+                          <a href="https://goo.gl/photos/UcMGMAk8WpW8fvBe8">
+                            <paper-button>See album or add your own photos</paper-button>
+                          </a>
+                        </div>
+                      </paper-card>
+                    </section>
+
+                    <!--
+                    #
+                    #
+                    #
+                    #
+                    #       All pages are above here
+                    #
+                    #
+                    #
+                    #
+                    -->
+
+                  </iron-pages>
                 </div>
-              </paper-card>
-
-            </div>
-            <div class="col-md-9 content-right">
-              <div class="card-stack">
-              <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
-        <!--
-        #
-        #
-        #
-        #
-        #       All pages are below here
-        #
-        #
-        #
-        #
-        -->
-<!-- #Home @home find-next-page -->
-                <section data-route="home">
-
-                  <my-left-image-paper-card image="images/500/clean_bandit001.jpg">
-                      <div class="card-content">
-                        <h2 class="page-title">Longing for outdoor adventures?!</h2>
-                        <p>Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</p>
-                      </div>
-                      <div class="card-actions">
-                        <a href="http://youtu.be/SdfL2nY-Xs8?t=1m">
-                          <paper-button>Watch video</paper-button>
-                        </a>
-                      </div>
-                  </my-left-image-paper-card>
-
-                  <my-left-image-paper-card image="images/500/happy_w001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Adventure Tours in Sweden</h2>
-                      <p>Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours. We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.</p>
-                    </div>
-                    <div class="card-actions">
-                      <paper-button>Read more</paper-button>
-                    </div>
-                    <div class="card-actions">
-                      <paper-button>Some action</paper-button>
-                    </div>
-                  </my-left-image-paper-card>
-
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">They write about our skating trips:</h2>
-                      <p>There are several articles about skating in Sweden. The most recent articles you found here.</p>
-
-                      <my-fancy-list  header="The guardian 25 Oct 2013"
-                                      image="images/100/guardian003.jpg"
-                                      link="http://www.theguardian.com/travel/2013/oct/25/skating-on-sea-ice-in-sweden?INTCMP=SRCH">
-                        <p>John Savelid is waiting for me at Stockholm airport holding a strange bag that looks like a rucksack with too many straps. "It's a day sack for skating," he tells me, "but also a life jacket in case you go through."</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="The Independent 24 Nov 2013"
-                                      image="images/100/independent001.jpg"
-                                      link="http://www.independent.co.uk/travel/europe/sweden-go-with-the-floe-this-winter-8959544.html">
-                                      <p>It was the question on all of our minds, but I asked it: "How do you know when the ice isn't safe to skate on?" Niklas, our imperturbable guide, rubbed his chin, looked thoughtful for a moment, then offered up the distilled wisdom of a lifetime spent playing around on frozen water. "When it breaks," he said with a broad smile.</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="Sunday Times 10 Nov 2013"
-                                      image="images/100/sundaytimes001.jpg"
-                                      link="http://www.thesundaytimes.co.uk/sto/travel/Holidays/Active/article1337371.ece">
-                                      <p>We had skated just over six miles when we reached the edge. The ice just stopped, and the liquid version of the Baltic Sea stretched out to the horizon. I hadn’t expected this sudden, ­unnerving divide. I hadn’t expected to be so far from land. And I hadn’t ­expected to be told that the solid surface I was standing on was only 3in thick.</p>
-                                      <p>Full article <a href="http://www.naturguiden.com/component/content/article/28-news/news/69-sunday-times-10-nov-2013">SundayTimes.jpg</a></p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="4-seasons (German)"
-                                      image="images/100/4seasons001.jpg"
-                                      link="http://4-seasons.de/magazinartikel/tour-skaten-auf-kufen-durch-die-schwedische-eislandschaft-0#gefuehrt">
-                                      <p>Glückliches Schweden: Wenn Seen, Flüsse und Küsten gefrieren, entsteht das schönste Schlittschuh-Revier der Welt. Beim Tour-Skaten gleitet man mit Rucksack und Proviant durch die nordische Einsamkeit, 50 Kilometer täglich sind kein Problem.</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="Irish Times"
-                                      image="images/100/skating001.jpg"
-                                      link="http://www.irishtimes.com/newspaper/travel/2012/1110/1224326201570.html">
-                                      <p>I take my first steps out on to the frozen waters of the Baltic and my legs lock with fear. All that practice on the Christmas rink feels like a futile flirtation as my Swedish guide gently urges me to put my trust in the long metal “tour skating” blades and slide.</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="The Guardian Nov 2009"
-                                      image="images/100/guardian001.jpg"
-                                      link="http://www.theguardian.com/travel/2012/nov/09/european-winter-breaks-with-twist">
-                                      <p>Escape the circle-skating crowds at Somerset House and ice-skate with a sense of purpose on a four-day trek through south-eastern Sweden's vast network of frozen lakes, with Nature Travels. The trip involves ice-fishing and, if conditions allow, moon-skating.</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="The Guardian Oct 2012"
-                                      image="images/100/guardian002.jpg"
-                                      link="http://www.guardian.co.uk/travel/2012/oct/21/holiday-tips-skating-sweden-christmas-cottages-deals">
-                                      <p>The skating season is almost upon us, but if the thought of jostling for elbow room with kamikaze teens and boozed-up office workers on a synthetic rink leaves you cold, check out the new wild-skating trip from Swedish tour operator Nature Travels.</p>
-                      </my-fancy-list>
-
-                      <my-fancy-list  header="The Southern Star"
-                                      image="images/100/southernstar001.jpg"
-                                      link="http://www.naturguiden.com/pdf/southern_star_2012.pdf">
-                                      <p>I AM in the middle of a Swedish lake watching winter melt away. The snow has gone and birch trees which cover surrounding islands are starting to bud. I should be worried, given that I am standing on ice, about three kilometres from land, and cracks are literally forming all around me, creating a thudding noise which reverberates across the bay, and through my body.</p>
-                      </my-fancy-list>
-
-                    </div>
-                  </paper-card>
-
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Inspiration</h2>
-                      <p>A nice video from one of our guest. Coming here for Nordic skating 2015</p>
-                    </div>
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                    </div>
-                  </paper-card>
-
-                </section>
-<!-- #Adventures @adventures find-next-page -->
-                <section data-route="adventures">
-                  <my-left-image-paper-card image="images/500/skating002.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Nordic skating</h2>
-                      <p>Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/skating">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                      <paper-button><iron-icon icon="language"></iron-icon> Nederlands</paper-button>
-                      <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/skiing001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Cross country skiing</h2>
-                      <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
-
-                      <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/skiing">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                      <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Kayak & canoe</h2>
-                      <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/canoe">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/tent001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Hiking</h2>
-                      <p>Leave the civilisation for a couple of days. Join our hiking tours in the beautiful nature of Sweden. Time for recovery and recreation, the most beautiful trails, what to eat and where to sleep - everything is arranged for you. Leave the control and just enjoy.</p>
-                        Choose between:
-                        <ul>
-                          <li>Hiking in oak landscapes and leafy woods in the area south of Stockholm.</li>
-                          <li>Hiking in the remote mountains of Sweden. Far away from the civilisation.</li>
-                        </ul>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/hiking">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/mtb_forest.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Mountain bike</h2>
-                      <p>Enjoy MTB in the Swedish woodland. With a guide you get the best tracks, the most beautiful scenery and more fun. Dirt roads, narrow tracks, up and down.</p>
-
-                      <p>Stop at a small lake and take a swim, make a camp fire in some remote area at lunch and make a hot dog. Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/mtb">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Multi activity</h2>
-                      <p>Experience a lot of Sweden wilderness and enjoy both hiking, biking and canoeing.</p>
-                      <p>Three active days, one day with biking on narrow roads, one day hiking trough oak landscapes and leafy woods and one day with canoe or kayak on narrow rivers or open sea.</p>
-                      <p>Choose preferred level, it is not a competition it should be a recreation tour but the distance differs between the different packages.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}adventures/multi">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                </section>
-<!-- #Skating @skating find-next-page -->
-                <section data-route="skating">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Skating</h2>
-                      <p class="lead">Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
-                      <p>All-included guided tours where we skate on the best ice possible, often far out in the wilderness.</p>
-                    </div>
-                  </paper-card>
-                  <paper-card>
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-content">
-                      <p class="lead">Get inspired by watching this move from one of our guests that visited us last winter</p>
-                    </div>
-                  </paper-card>
-                  <paper-card>
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SdfL2nY-Xs8?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-content">
-                      <p class="lead">Clean Bandits fantastic music video from lake Vättern</p>
-                      <p>Their next hit <a href="http://www.youtube.com/watch?v=m-M1AtrxztU"><em>Rather Be</em></a> are more known and you have probably heard it</p>
-                    </div>
-                  </paper-card>
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">The guided tour for you</h2>
-                      <p class="lead">Gliding easily with the wind in your back over perfect ice, scenic shorelines on your left. The guide in front of you keeps his concentration on the ice and any change in the quality. We adapt the speed and the distance to the group. Taking a rest at some island for a lunch break. In small groups we travel with minibus to the best skating areas and stay in nearby hotels or hostels.</p>
-                      <h3>Dates</h3>
-                      <h4>Groups</h4>
-                      <p>Chose the date you prefere during the season</p>
-                      <h4>Individuals</h4>
-                      <p>Prices for 2016. Accomodation <strong>B2</strong> Price = 625EUR</p>
-                      <ul class="nothing-list">
-                        <li>4 - 7 February; Acc C1 (For you who can manage skates or Rollerblades**)</li>
-                        <li>11 - 14 February; (For less experienced skaters**)</li>
-                        <li>18 - 21 February; (For less experienced skaters**)</li>
-                        <li>25 - 28 February; (For all,we devide in one fast and one slower group**)</li>
-                      </ul>
-                      <p>	If there is an interest for other weekends do not hesitate to contact us. We do have groups comming every weekend, it might be possible to join a group with less than eight participants.</p>
-                      <p class="bg-warning">** As the tempo and the distance we like to skate differs depending on our previous skating experiences we have some weekends for those with more experiences and other weekends for those with less. You don't need to be an champion to join the tour for more experienced skaters but you should be able to skate on ice skates or Rollerblades without difficulties. Feel free to contact us if you have any questions.</p>
-                      <h3>Information</h3>
-                      <p>Nordic skating in Sweden, an all inclusive guided tour. You travell in small groups of maximum eight persons. The guide pick you up at the airport/train station. All needed equipment are provided.</p>
-                      <p>Where we skate depends on the ice situation, we always choose the area that provides the best skating conditions. The accommodations are located in the area but could change from day to day depending on where we choose to go skating.</p>
-                      <h4>Time for arrival and departure</h4>
-                      <p>Departure last day, not before 17:00</p>
-                      <h4>Arrival</h4>
-                      <p>Choose your time (but confirm with us before booking the ticket) If you arrive mid day we find a place close to the airport where we went for skating. If other guests arrives later we then went back to the airport and pick them up. Late afternoon we head of for the the place to stay the first night.</p>
-                      <h4>Season</h4>
-                      <p>January - March</p>
-                      <h4>Gradient</h4>
-                      <p>Middle</p>
-                      <h4>Pick up</h4>
-                      <p>At Skavsta airport (RyanAir - Stockholm South) or Stockholm/Arlanda. Other locations possible after agreement.</p>
-                      <h4>Get here</h4>
-                      <p>By air or train to Stockholm</p>
-                      <h4>Transport</h4>
-                      <p>We travel in a mini van.</p>
-                      <h4>Personal equipment</h4>
-                      <p>Clothing suitable for skating, a complete set of clothes to bring in provided pakpack, if you by accident fall in the wather.</p>
-                      <h4>Equipment included</h4>
-                      <p>Skates, boots, backpack and needed saftey equipment, thermos and lunch box.</p>
-                      <h4>Lodging</h4>
-                      <p>Hostel or Hotel, B1, B2, B3, C1 and C2 More information under <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">accomodation</a></p>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <tbody>
-                            <tr>
-                              <td>Basic 1:</td>
-                              <td>590 EUR</td>
-                              <td>single room + 45 Euro</td>
-                            </tr>
-                            <tr>
-                              <td>Basic 2:</td>
-                              <td>625 EUR</td>
-                              <td>single room + 45 Euro</td>
-                            </tr>
-                            <tr>
-                              <td>Basic 3:</td>
-                              <td>840 EUR</td>
-                              <td>single room + 45 Euro</td>
-                            </tr>
-                            <tr>
-                              <td>Comfort 1:</td>
-                              <td>910 EUR</td>
-                              <td>single room + 130 Euro</td>
-                            </tr>
-                            <tr>
-                              <td>Comfort 2:</td>
-                              <td>1050 EUR</td>
-                              <td>single room + 130 Euro</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <p class="bg-warning">Price depending on Lodging</p>
-                      <h3>Included in the price:</h3>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <tbody>
-                            <tr>
-                              <td>Day I </td>
-                              <td>Transfer, dinner, guide, rent of equipment, share in double room</td>
-                            </tr>
-                            <tr>
-                              <td>Day II </td>
-                              <td>Breakfast, lunch, dinner, guide, rent of equipment, share in double room</td>
-                            </tr>
-                            <tr>
-                              <td>Day III </td>
-                              <td>Breakfast, lunch, dinner, guide, rent of equipment, share in double room</td>
-                            </tr>
-                            <tr>
-                              <td>Day IV </td>
-                              <td>Breakfast, lunch, guide,rent of equipment, transfer</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <p class="bg-warning">Alcoholic drinks are not included in the price</p>
-                      <h3>Choices of extras</h3>
-                      <h4>Extra days</h4>
-                      <p>It is possible to extend the tour with one or several days.</p>
-                      <p>Price for each extra day:</p>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <tbody>
-                            <tr>
-                              <td>Basic 1</td>
-                              <td>120 EUR</td>
-                            </tr>
-                            <tr>
-                              <td>Basic 2</td>
-                              <td>130 EUR</td>
-                            </tr>
-                            <tr>
-                              <td>Basic 3</td>
-                              <td>190 EUR</td>
-                            </tr>
-                            <tr>
-                              <td>Comfort 1</td>
-                              <td>170 EUR</td>
-                            </tr>
-                            <tr>
-                              <td>Comfort 2</td>
-                              <td>220 EUR</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <h4>Arrive earlier / Depart later</h4>
-                      <p>Guests that want to see more of Sweden can of course come earlier or depart later than what is stated in our program. Spend some more days out in the archipelago or take a tour to Stockholm, one hour away.</p>
-                      <p>Price of extras: Guests undertake all extra costs themselves</p>
-                      <h3>Program Guided skating tour</h3>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <tbody>
-                            <tr>
-                              <td>Day I</td>
-                              <td>Arrival, transfer, skating</td>
-                            </tr>
-                            <tr>
-                              <td>Day II</td>
-                              <td>Skating</td>
-                            </tr>
-                            <tr>
-                              <td>Day III</td>
-                              <td>Skating</td>
-                            </tr>
-                            <tr>
-                              <td>DayIV</td>
-                              <td>Skating, transfer, departure</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <p class="bg-info">Exempel of a 3 nights trip</p>
-                      <h4>Day I</h4>
-                      <p>Arrival at the airport. The guide will meet you and takes you directly towards the chosen skating area. Arriving to the hostel/hotel you check in and then depending on the time of arrival we might be able to do some skating. We start with a safety and security briefing and then hand out all equipment. In the evening we have dinner at the hostel/hotel.</p>
-                      <h4>Day II – III</h4>
-                      <p>We have breakfast and also time to prepare the lunch packages. Depending on the weather forecast and the ice situation on the lakes, we take off in the minibus towards the best possible skating area. At the lake we start by examining the ice before we get the gear on and step out on the ice. We skate in a row, the guide always first, checking the ice and looking out for weak spots. The speed and distance is adjusted to the group and the ice situation. Now and then we make short stops, to admire the beauty, chat for a while or just rest. During the day we make several stops when we go ashore to take something to eat or walk to another lake nearby. At the end of the day we return to the minibus and head back to the hotel/hostel. A nice sauna before the dinner is a pleasant experience. If the conditions are right we might go for another skating trip in moonlight late in the evening.</p>
-                      <h4>Day IV</h4>
-                      <p>After breakfast we head off for another day on ice, skating as long as possible depending on the scheduled departure times. On our way back to the airport we stop for a shower and change clothes and maybe for something to eat. The guide then drives you back to the airport.</p>
-
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Skiing @skiing find-next-page -->
-                <section data-route="skiing">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Cross country skiing</h2>
-                      <p class="lead">Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
-                      <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
-                    </div>
-                  </paper-card>
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Cross country skiing in the Swedish mountains</h2>
-                    </div>
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#skiing-standard" aria-controls="skiing-standard" role="tab" data-toggle="tab">Standard</a></li>
-                        <li role="presentation"><a href="#skiing-adventure" aria-controls="skiing-adventure" role="tab" data-toggle="tab">Adventure</a></li>
-                        <li role="presentation"><a href="#skiing-midnight" aria-controls="skiing-midnight" role="tab" data-toggle="tab">Midnight sun</a></li>
-                      </ul>
-                    <div class="card-content">
-                      <!-- Tab panes -->
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="skiing-standard">standard</div>
-                        <div role="tabpanel" class="tab-pane" id="skiing-adventure">adventure</div>
-                        <div role="tabpanel" class="tab-pane" id="skiing-midnight">midnight sun</div>
-                      </div>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Canoe #Kayak @canoe @kayak find-next-page -->
-                <section data-route="canoe">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Kayak & canoe</h2>
-                      <p>This is the canoe section</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Hiking @hiking find-next-page -->
-                <section data-route="hiking">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Hiking</h2>
-                      <p>This is the hiking section</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Mtb @mtb find-next-page -->
-                <section data-route="mtb">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">MTB</h2>
-                      <p>This is the MTB section</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Multi activity @multi activity find-next-page -->
-                <section data-route="multi">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Multi activity</h2>
-                      <p>This is the multi activity section</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Info #Information @info @information find-next-page -->
-                <section data-route="info">
-                  <my-left-image-paper-card image="images/500/skating001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">About our tours</h2>
-                      <p>Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
-                      <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/boat001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">How to get here</h2>
-                      <p>We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/cabin_w001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Accommodation</h2>
-                      <p>We offer several  different levels of accommodatio, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/forest001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">About Naturguiden</h2>
-                      <p>Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
-                      <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/lake001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">About Sweden</h2>
-                      <p>Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
-                      <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/lake002.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Weather in Sweden</h2>
-                      <p>What about the weather, what can we expect when coming to Sweden?</p>
-                      <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                  <my-left-image-paper-card image="images/500/guides001.jpg">
-                    <div class="card-content">
-                      <h2 class="page-title">Contact us</h2>
-                      <p>Contact us </p>
-                    </div>
-                    <div class="card-actions">
-                      <a href$="{{baseUrl}}info/contact" data-route="contact">
-                        <paper-button>Read more</paper-button>
-                      </a>
-                    </div>
-                  </my-left-image-paper-card>
-                </section>
-<!-- #About our tours @about our tours find-next-page -->
-                <section data-route="about-tours">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">About our tours</h2>
-                      <p class="lead">Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
-                      <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
-                      The packages Naturguiden has to offer:
-                      <ul class="flame-list">
-                        <li>Hiking</li>
-                        <li>Mountain-biking</li>
-                        <li>Multi activities</li>
-                        <li>Cross-country-skiing</li>
-                        <li>Ice-skating</li>
-                        <li>Kayak paddling</li>
-                      </ul>
-                      <p>The activities always take place outdoors where you can relax, enjoy nature and life as well as giving your body and soul healthy experiences. The price level differs, mainly due to the level of accommodation (and whether baggage transport is included or not).</p>
-                      All our packages always include
-                      <ul class="flame-list">
-                        <li>An experienced guide available 24 hours a day.</li>
-                        <li>Full board service</li>
-                        <li>Pick up at the Airport or train station and all necessary transports</li>
-                        <li>Needed equipment</li>
-                      </ul>
-                      <h3>Get here</h3>
-                      <p>All packages are made in such a way that it should be cheap and easy for you to get to us with train or plain. Pick up at the airport or train station is included and when possible the activity starts immediately at the airport / train station. Our activities taking place in different places of Sweden, for each package you see where we pick you up.</p>
-                      <p>More information in "How to get here"</p>
-                      <p>If you are a group of your own and whould prefere another starting point, tell us and we will see what we can do.</p>
-                      <h3>Accommodation</h3>
-                      <p>We choose the best possible accommodation for each package depending on location and availability. In our packages the accommodation is already chosen in advance. However for some of the packages it is possible to choose between several types of accommodations, although all participants need to make the same choice.</p>
-                      We offer these types of accommodation:
-                      <ul class="nothing-list">
-                        <li><b>Hotel</b>, twin or double rooms with toilet and shower in each room.</li>
-                        <li><b>Hostel</b>, two or four beds dormitory rooms with shared toilets and shower.</li>
-                        <li><b>Tent</b>, two persons in each tent, sleeping pad is provided, sleeping bag for rent if the guest don’t bring their own (comfort temp at least 0 degrees Celsius)</li>
-                      </ul>
-                      <p>More information in accommodation</p>
-                      <h3>Food</h3>
-                      <p>We offer full board meals to all our packages, in some of the packages meals are served in restaurants, in others they are prepared by the guide and in other packages preparing the food is a part of the experience. We often eat some of the meals outside during the tours – food always tastes very good out in nature!</p>
-                      <p>Information about, for example, vegetarians/vegans in the party, or about persons with allergies, needs to be provided well in advance.</p>
-                      <h3>Groups</h3>
-                      <p>All our guided adventures are for smaller groups, normally between  6-10 persons. There are fixed dates for all packages. We claim the right to  cancel a trip if there are less than 3 persons.</p>
-                      <p>We can also help individuals with booking of extra nights, tickets  or activities if they would like to arrive earlier or leave later.</p>
-                      <p>For an entire group (at least 6 persons) you choose any date that suites you.  Naturguiden has a high flexibility and can adjust any of the packages to meet  the wishes of an entire group.</p>
-                      <p>If there is a group of less than 6 persons who would like to experience one  of our packages without other participants that is possible with an agreed  fee.</p>
-                      <h3>Gradient</h3>
-                      <p>The gradient on the packages is based on the needed condition  rather than the technical skills.</p>
-                      <ul class="nothing-list">
-                        <li><strong>Easy</strong>:  for everyone with “normal”  physique.</li>
-                        <li><strong>Middle</strong>:  active people, but not necessary exercise  regularly</li>
-                        <li><strong>Tough</strong>: nothing extreme, but recommended for  people that exercise regularly.</li>
-                      </ul>
-                      <p>The difficulty level of the activities and the tempo will of  course be suited to match the group.</p>
-                      <h3>Environment</h3>
-                      <p>All of Naturguiden activities take place in our wonderful  outdoors. To be able to continue doing this it is important to reduce the impact  on our countryside as much as possible. Naturguiden is a member of the Swedish  Ecotourism Society and we have products that are certified according to Natures  Best, <a href="http://www.naturesbestsweden.com/">www.naturesbestsweden.com</a></p>
-                      <p>None of our packages contains activities that have a negative  impact on the environment (like rib boats, snowmobiles, etc). We try to minimize  the transports and use public transport as much as possible. Our goal is to  leave no trace.</p>
-                      <h3>Price:</h3>
-                      <p>All prices are given in Euro. We claim the right to change the  price due to changes in exchange rates.</p>
-                      <p>Full payment must take place at the latest two weeks prior the arrival date.</p>
-                      <p>Naturguiden Swedish Adventures AB (Ltd)</p>
-                      <p>Phone no: 0046 (0)13-141136</p>
-                      <p>e-mail: info@naturguiden.se</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #How to get here @how to get here find-next-page -->
-                <section data-route="how-get-here">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">How to get here</h2>
-                      <p class="lead">We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
-                      <p>If you have any questions do not hesitate to contact us.</p>
-
-                      <h2>Information about all our destinations.</h2>
-                      <p>If you are a group of your own we can pick you up on other places as well, contact us.</p>
-                      <h3>Nyköping – Skavsta – Stockholm south</h3>
-                      <p>Normally we pick you up at the airport called Skavsta or Stockholm south. You get here by Ryan Air from a lot of destinations around Europe.</p>
-                      <p>From the airport there is only 5 minutes with local bus to the city of Nyköping. You arrive at the bus central, not the same place as the Railway station.</p>
-                      <p>If you arrive at Stocckholm/Arlanda you can take the bus direct from Stockholm City Terminal, close to the Central station, to Skavsta. <a href="http://www.flygbussarna.se/">http://www.flygbussarna.se/</a>.</p>
-                      <p>Or you take the train from Stockholm Central station to Nyköping station <a href="http://www.sj.se/">http://www.sj.se</a></p>
-                      <p>If we should pick you up in Nyköping instead of at Skavsta put that as remark in the booking form.</p>
-                      <h3>Linköping</h3>
-                      <p>Normally we pick you up at the airport. You get here with KLM from Amsterdam or from Copenhagen with NextJet.</p>
-                      <p>The Airport is only 2,5 km from the city centre of Linköping and the Railway station.</p>
-                      <p>If you use the train, there is a direct train from Copenhagen to Linköping, travel time approximately 3.5 hours</p>
-
-                      <h3>Stockholm / Arlanda</h3>
-                      <p>We have no normal tours from Arlanda, but if you are a group of your own we can pick you up at Arlanda.</p>
-
-                      <h3>Östersund – Ljungdalen – Vålådalen</h3>
-                      <p>For our mountain tours Östersund is the closest city. To Östersund you get with train or by plain from Stockholm/Arlanda with SAS or from Trondheim in Norway with NextJet.</p>
-                      <p>From Östersund you need to continue with bus to the mountains. From the airport to the bus central in Östersund there is 7,5 km. You get there by local bus or with taxi. Detailed information about how to travel will be provided.</p>
-                      <p>Of course it is also possible to get a rented car at the airport to get to the mountains.</p>
-
-                      <h3>Travel with car to Sweden.</h3>
-                      <p>There are several ferries up to Sweden. You have them all represented at <a href="http://www.directferries.co.uk/">http://www.directferries.co.uk/</a> where you will find time schedules etc.</p>
-                      <p>From Germany you have</p>
-                      <ul class="flame-list">
-                      <li>Travemunde – Malmö</li>
-                      <li>Rostock – Trelleborg</li>
-                      <li>Sassnitz – Trelleborg</li>
-                      <li>Travemunde – Trelleborg</li>
-                      <li>Kiel – Göteborg (Gotenburg)</li>
-                      </ul>
-                      <p>From Denmark you have</p>
-                      <ul class="flame-list">
-                      <li>Helsingborg – Helsingör</li>
-                      <li>Frederikhavn – Göteborg (Gotenburg)</li>
-                      </ul>
-
-                      <p>If you choose to travel trough Denmark there are several options, two of them are.</p>
-                      <p><strong>No ferries:</strong> Drive trough Denmark, passing Flensburg and Odense until Copenhagen. Take the bridge over to Malmö and Sweden.</p>
-                      <p><strong>With ferries:</strong> Puttgarden - Rödby and Helsingör – Helsingborg</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Accommodation @accommodation find-next-page -->
-                <section data-route="accommodation">
-                  <paper-card>
-                    <iron-image src="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg" alt="Tenting in mountains" class="left-image image-with-margin image-width-md image-height-md img-rounded" sizing="cover"></iron-image>
-                    <div class="card-content">
-                      <h2 class="page-title">Accommodation</h2>
-                      <p class="lead">We offer several  different levels of accommodations, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
-                      <h3>Shelter:  Our most basic accomodation</h3>
-                      <p>Sleeping outdoor  on the ground, only with a simple shelter as a roof, protecting you from rain.  Sleeping matrees is included but not the sleeping bag.</p>
-
-                      <h3>Tent:  Small tents, normally for two persons</h3>
-                      <p>High quality  expedition tents from Hilleberg. Normally we use three persons tents for two  persons. But there are also possible to get a single room tent. Sleeping matrees  is included but not the sleeping bag.</p>
-
-                      <h3>Military  tent: 20 persons tent with stove</h3>
-                      <p>Our military tents  has space for maximum 20 persons. In the middle there are a stove and it is  possible to use it all year arround.</p>
-
-                      <h3>Youth Hostel:</h3>
-                      <p>Living at youth hostels in two or four beds dormitory room with shared shower and toilet (normaly two persons in each room)</p>
-                      <p>Sheets and towels are included.</p>
-                      <p>Breakfast (included), prepared together with the guide in the morning.</p>
-
-                      <h3>Mountains Lodges:</h3>
-                      <p>On our mountain tours we stay in Mountain Lodges. Normally in  four beds dormitory room. Toilet in separate building. Showers at some, but not at all locations. Sheets and towels NOT included. Bring sleeping bag (important in winter) or sheets.</p>
-
-                      <h2>Ice Skating</h2>
-                      <p class="bg-info lead">For our Ice Skating weekends we have five different price levels depending on accommodation.</p>
-                      <h3>Basic I: (B1)  Youth Hostel, Self Catering - Half board<br /></h3>
-                      <p>Living  at youth hostels in two or four beds dormitory room with shared shower and  toilet (normaly two persons in each room)</p>
-                      <p>Sheets  and towels are included.</p>
-                      <p>Breakfast and lunch included, prepared together with the guide in the morning.</p>
-                      <p>Dinner not included, the group decide where to eat, prepare them self at the Youth Hostel or at a restaurant.</p>
-
-                      <h3>Basic II: (B2)  Youth Hostel, Self Catering</h3>
-                      <p>Living  at youth hostels in two or four beds dormitory room with shared shower and  toilet (normaly two persons in each room)</p>
-                      <p>Sheets  and towels are included.</p>
-                      <p>The  guests prepare their own meal togheter with the guide. All food is provided and  included in the price.</p>
-
-                      <h3>Basic III: (B3)  Youth Hostel, Full Board </h3>
-                      <p>Living  at youth hostels in two or four beds dormitory rooms with shared shower and  toilet (normally two persons in each room)</p>
-                      <p>Sheets  and towels are included.</p>
-                      <p>A second guide take care of all cooking, can assist as a extra Skating guide if the group like to divide in one faster and one slower group.</p>
-                      <p>Breakfast  and dinner will be served at the accommodation.</p>
-                      <p>The  guests makes their own lunch box at breakfast.</p>
-
-                      <h3>Comfort I: (C1) Hotel  standard. Twin or double rooms, Half board</h3>
-                      <p>Accommodation  in twin or double rooms, with shower and toilet on each room.</p>
-                      <p>Breakfast and lunch box prepared at breakfast are included</p>
-                      <p>Dinner is not included, we make a choose every evening where to eat, you pay yourself.</p>
-
-                      <h3>Comfort II: (C2) Hotel  standard. Twin or double rooms, Full board </h3>
-                      <p>Accommodation  in twin or double rooms, with shower and toilet on each room.</p>
-                      <p>Breakfast and dinner is included.</p>
-                      <p>The  guests makes their own lunch box at breakfast.</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #About Naturguiden @about naturguiden find-next-page -->
-                <section data-route="about-naturguiden">
-                  <paper-card>
-                    <iron-image src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
-                    <div class="card-content dont-wrap-image">
-                      <h2 class="page-title">About Naturguiden</h2>
-                      <p class="lead">Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
-                      <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
-                      <p>Events, team building and conferences for business  groups. The focus is always on giving the participants a great time but also bring  the team closer together. More information on <a href="http://www.naturguiden.se/"><span style="text-decoration: underline;">www.naturguiden.se</span></a> (only in  Swedish)</p>
-                      <p>All inclusive adventure package for tourist  groups. All information is found on this site www.naturguiden.com</p>
-                      <p>We are located in Linköping, 200 km south of  Stockholm, in the county of Östergötland. But our activities take place all over  Sweden. We always try to find the best possible places for our different  outdoor activities.</p>
-                      <br />
-                      <p>Welcome to join us on our tours</p>
-                      <br />
-                      <p>/John Savelid</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Abour Sweden @about sweden find-next-page -->
-                <section data-route="about-sweden">
-                  <paper-card>
-                    <iron-image src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
-                    <div class="card-content">
-                      <h2 class="page-title">About Sweden</h2>
-                      <p class="lead">Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
-                      <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
-                      <p>Then we have the mountains, high areas without trees. Down hill skies is almost a national sport . Cross country skies something all kids learn. Hiking on skies in the mountain is popular in wintertime and hiking in summertime of course. Visit the mountains in April the fifth season. Still cold and snow but long lasting sunny days.</p>
-                      <p>Sweden is a long country 1.570 km and the climate change a lot from north to south. In winter the average temperature is around 0 degree in south and about minus 20 - 30 degrees in north. In summer  the temperature is around 20 - 25 degrees in south and around 10 degrees in north. Midnight sun in summer and   no sun at all during a couple of week around Christmas in north. To tell what´s normal in Sweden is not possible, it´s all about were you are.</p>
-                      <p>It is all about space, we have 20 persons/km2 in Sweden. 8,8 million on 450.000 km2. Compare with Netherlands that have 375 persons/km2. Together with the ”allemansrätt” that gives us the  right to travel and camp anywhere (except in someone garden) Sweden is a perfect if you looking for freedom and peacefulness.</p>
-                      <p>Our currency is still Kronor (SEK), we have not change to Euro. The exchange rate is around 9.2 SEK for 1 EUR. (If you divide the Swedish price with 10 you got the price in Euro approximately)</p>
-                      <p>On all our tours everything you need is included (there is one exception). On some tours you not event get the opportunity to spend any money.</p>
-                      <p>But if you want some money to be able to by a beer or something else, you can always redraw money on the airport. You can also use credit card almost everywhere.</p>
-                      <p>You manage good with English in Sweden, most people will understand you. With other language there is more difficult even though there are people knowing German, French, Spanish....</p>
-                      <p>More information about Sweden is found on the web page of Visit Sweden <a href="http://www.visitsweden.se/sweden">www.visitsweden.com/sweden</a></p>
-                      <p>More information about what to bring and what to ware you find connected to each product category.</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Weather in Sweden @weather in sweden find-next-page -->
-                <section data-route="weather-sweden">
-                  <paper-card>
-                    <iron-image src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
-                    <div class="card-content">
-                      <h2 class="page-title">Weather in Sweden</h2>
-                      <p class="lead">What about the weather, what can we expect when coming to Sweden?</p>
-                      <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
-                      <p>The weather depends of course on time of year and where in Sweden the tour take place. We will here try to give you a ruff  idea so you know what to expect.</p>
-                      <p>Below we present two tables with average temperature during night and during daytime for each month. You also see the amount of rain or snow for each month (it is measured in millimetre water, when it comes as snow you will get approximately ten times more in thickness.)</p>
-                      <h3>Summertime</h3>
-                      <p>The temperature is an average value and measured in the shadow.  In the mountain you might have down to four degrees and rain and windy even in the middle of the summer and it can be 25 degrees and clear blue sky a couple of days later. Here we are completely exposed to the weather, there is no shelter. We always recommend to bring both gloves, a cap and a swim suite when going to the mountains.</p>
-                      <p>When hiking in the south of Sweden there is not that extremes, the forest give us shelter. A sunny day in July we can have around 25 – 30 degrees, and cold and rainy day it might be around 18 degrees.</p>
-                      <p>When come to kayak tours you are more dependent to the weather and specially to the wind. But as there are thousands of small islands along the cost you can always get some shelter. The temperature relates to the temperature of the water. The spring is more cold than the autumn. Therefore late summer is the best choice for a kayak tour and even late autumn is fantastic in the archipelago. During summertime it is important to have a long arm jumper, sunglasses and a hat otherwise you might get burn being out on the water the whole day.</p>
-                      <h3>Wintertime</h3>
-                      <p>On our winter activities you can expect temperatures betweens zero and minus twenty degrees. It could be snowfall and windy. On our skating tours we might even have around zero and rain. And on our ski tours in the mountain during April or May there could such warm and sunny days that you can ski with only a T-shirt. The best recommendation is to have several layers of clothes to be able to adapt to the actual temperature.</p>
-                      <h3>Temperature and rain / snowfall in south of Sweden</h3>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <thead>
-                            <tr>
-                              <th>Month</th>
-                              <th>Temp Night</th>
-                              <th>Temp Day</th>
-                              <th>Rain/Snow (mm)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Jan</td>
-                              <td>-6</td>
-                              <td>-4</td>
-                              <td>45</td>
-                            </tr>
-                            <tr>
-                              <td>Febr</td>
-                              <td>-6</td>
-                              <td>-3</td>
-                              <td>25</td>
-                            </tr>
-                            <tr>
-                              <td>Marz</td>
-                              <td>-4</td>
-                              <td>2</td>
-                              <td>25</td>
-                            </tr>
-                            <tr>
-                              <td>April</td>
-                              <td>0</td>
-                              <td>9</td>
-                              <td>30</td>
-                            </tr>
-                            <tr>
-                              <td>May</td>
-                              <td>5</td>
-                              <td>15</td>
-                              <td>40</td>
-                            </tr>
-                            <tr>
-                              <td>June</td>
-                              <td>10</td>
-                              <td>20</td>
-                              <td>40</td>
-                            </tr>
-                            <tr>
-                              <td>July</td>
-                              <td>12</td>
-                              <td>21</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>Aug</td>
-                              <td>11</td>
-                              <td>20</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>Sept</td>
-                              <td>7</td>
-                              <td>15</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>Oct</td>
-                              <td>4</td>
-                              <td>10</td>
-                              <td>50</td>
-                            </tr>
-                            <tr>
-                              <td>Nov</td>
-                              <td>-1</td>
-                              <td>5</td>
-                              <td>50</td>
-                            </tr>
-                            <tr>
-                              <td>Dec</td>
-                              <td>-4</td>
-                              <td>1</td>
-                              <td>40</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <p>Days with at least 1 mm rain/snow: 100 days a year<br />
-                      Days with at least 10 mm rain/snow: 10 days a year</p>
-                      <h3>Temperature and rain / snowfall in the mountains</h3>
-                      <div class="table-responsive">
-                        <table class="table table-hover table-condensed">
-                          <thead>
-                            <tr>
-                              <th>Month</th>
-                              <th>Temp Night</th>
-                              <th>Temp Day</th>
-                              <th>Rain/Snow (mm)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Jan</td>
-                              <td>-12</td>
-                              <td>-10</td>
-                              <td>80</td>
-                            </tr>
-                            <tr>
-                              <td>Febr</td>
-                              <td>-12</td>
-                              <td>-9</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>Marz</td>
-                              <td>-10</td>
-                              <td>-5</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>April</td>
-                              <td>-6</td>
-                              <td>0</td>
-                              <td>50</td>
-                            </tr>
-                            <tr>
-                              <td>May</td>
-                              <td>0</td>
-                              <td>8</td>
-                              <td>40</td>
-                            </tr>
-                            <tr>
-                              <td>June</td>
-                              <td>4</td>
-                              <td>12</td>
-                              <td>70</td>
-                            </tr>
-                            <tr>
-                              <td>July</td>
-                              <td>6</td>
-                              <td>16</td>
-                              <td>90</td>
-                            </tr>
-                            <tr>
-                              <td>Aug</td>
-                              <td>6</td>
-                              <td>14</td>
-                              <td>80</td>
-                            </tr>
-                            <tr>
-                              <td>Sept</td>
-                              <td>1</td>
-                              <td>8</td>
-                              <td>80</td>
-                            </tr>
-                            <tr>
-                              <td>Oct</td>
-                              <td>-2</td>
-                              <td>2</td>
-                              <td>70</td>
-                            </tr>
-                            <tr>
-                              <td>Nov</td>
-                              <td>-9</td>
-                              <td>-2</td>
-                              <td>60</td>
-                            </tr>
-                            <tr>
-                              <td>Dec</td>
-                              <td>-13</td>
-                              <td>-8</td>
-                              <td>70</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <p>Days with at least 1 mm rain/snow: 150 days a year<br />
-                      Days with at least 10 mm rain/snow: 20 days a year</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Contact us @contact us find-next-page -->
-                <section data-route="contact">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Contact information</h2>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <h3>Naturguiden</h3>
-                          <h4>Postal adress</h4>
-                          <ul class="nothing-list">
-                            <li>Naturguiden</li>
-                            <li>Munkhagsgatan 120B</li>
-                            <li>58725 LINKÖPING</li>
-                            <li>SWEDEN</li>
-                          </ul>
-                          <h4>Phone</h4>
-                          <ul class="nothing-list">
-                            <li>+46 70 53 53 630</li>
-                          </ul>
-                          <h4>Email</h4>
-                          <ul class="nothing-list">
-                            <li>info@naturguiden.se</li>
-                          </ul>
-                          <h4>Web</h4>
-                          <ul class="nothing-list">
-                            <li>
-                              <a href="http://www.naturguiden.com">http://www.naturguiden.com</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-sm-6">
-                          <h3>Agents</h3>
-                          <p>You can also contact our agent in your country and make the complete booking there.</p>
-                          <p class="bg-warning">Note: They don't sell all our tours presented on the web</p>
-                          <h4>Nederland</h4>
-                          <ul class="nothing-list">
-                            <li><h4>Almgrens Travel</h4></li>
-                            <li>Skating tours</li>
-                            <li>
-                              <ul class="nothing-list">
-                                <li>
-                                  <a href="http://www.almgrens.nl">http://www.almgrens.nl</a>
-                                </li>
-                                <li>+31 562 850 970</li>
-                                <li>info@almgrens.nl</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <h4>England</h4>
-                          <ul class="nothing-list">
-                            <li><h4>Nature Travels</h4></li>
-                            <li>Skating, MTB and Kayak tours</li>
-                            <li>
-                              <ul class="nothing-list">
-                                <li>
-                                  <a href="http://www.naturetravels.co.uk">http://www.naturetravels.co.uk</a>
-                                </li>
-                                <li>+44 1929 463 774</li>
-                                <li>admin@naturetravels.co.uk</li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Booking @booking find-next-page -->
-                <section data-route="booking">
-                  <paper-card>
-                    <div class="card-content">
-                      <h2 class="page-title">Booking</h2>
-                      <p>This is the booking section</p>
-                    </div>
-                  </paper-card>
-                </section>
-<!-- #Pictures #Photos @pictures @photos find-next-page -->
-                <section data-route="pictures">
-                  <paper-card>
-                    <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
-                    <div class="card-content">
-                      <h2 class="page-title">A winter album from Gothenburg</h2>
-                      <p class="lead">Some photos from a snowy Gothenburg</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href="https://goo.gl/photos/aWQYfey3MYAEcGFr5">
-                        <paper-button>See album or add your own photos</paper-button>
-                      </a>
-                    </div>
-                  </paper-card>
-                  <paper-card>
-                    <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
-                    <div class="card-content">
-                      <h2 class="page-title">Ice-skating 2011</h2>
-                      <p class="lead">A fantastic trip in on lake Vättern</p>
-                    </div>
-                    <div class="card-actions">
-                      <a href="https://goo.gl/photos/UcMGMAk8WpW8fvBe8">
-                        <paper-button>See album or add your own photos</paper-button>
-                      </a>
-                    </div>
-                  </paper-card>
-                </section>
-
-              </iron-pages>
+              </div>
             </div>
           </div>
-        </div>
-          <footer>
-            <div class="mdl-mega-footer--middle-section">
-              <div class="mdl-mega-footer--drop-down-section">
-                <input class="footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="footer--heading">
-                  <a href$="{{baseUrl}}adventures" data-route="adventures">Our adventures</a>
-                </h1>
-                <ul class="footer--link-list">
-                  <li>
-                    <a href$="{{baseUrl}}adventures/skating" data-route="skating">Skating </a>
-                    <a href$="{{baseUrl}}adventures/skating/dutch" data-route="skating-dutch">- Dutch </a>
-                    <a href$="{{baseUrl}}adventures/skating/french" data-route="skating-french">- French </a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">Skiing </a>
-                    <a href$="{{baseUrl}}adventures/skiing/french" data-route="skiing-french">- French </a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">Kayak & canoe</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">Hiking</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">Mountain bike</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}adventures/multi" data-route="multi">Multi activity</a>
-                  </li>
-                </ul>
+          <div class="row">
+            <footer>
+              <div class="row">
+                <div class="col-sm-4">
+                  <input class="footer-checkbox" type="checkbox" checked>
+                  <h3 class="footer-heading">Our adventures</h3>
+                  <ul class="list-unstyled footer-list">
+                    <li><a href$="{{baseUrl}}adventures" data-route="adventures">Overview</a></li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/skating" data-route="skating">Skating </a>
+                      <a href$="{{baseUrl}}adventures/skating/dutch" data-route="skating-dutch">- Dutch </a>
+                      <a href$="{{baseUrl}}adventures/skating/french" data-route="skating-french">- French </a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">Skiing </a>
+                      <a href$="{{baseUrl}}adventures/skiing/french" data-route="skiing-french">- French </a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">Kayak & canoe</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">Hiking</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">Mountain bike</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}adventures/multi" data-route="multi">Multi activity</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <input class="footer-checkbox" type="checkbox" checked>
+                  <h3 class="footer-heading">Information</h3>
+                  <ul class="list-unstyled footer-list">
+                    <li><a href$="{{baseUrl}}info/about-tours" data-route="about-tours">Overview</a></li>
+                    <li>
+                      <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">About our tours</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">How to get here</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">About Naturguiden</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">About Sweden</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">Weather in Sweden</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}info/contact" data-route="contact">Contact us</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <input class="footer-checkbox" type="checkbox" checked>
+                  <h3 class="footer-heading">Other categories</h3>
+                  <ul class="list-unstyled footer-list">
+                    <li>
+                      <a href="{{baseUrl}}booking" data-route="booking">Booking</a>
+                    </li>
+                    <li>
+                      <a href="{{baseUrl}}pictures" data-route="pictures">Photos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div> <!-- row -->
+              <div class="row">
+                <div class="col-xs-12">
+                  <h3>Contact information</h3>
+                </div>
               </div>
-              <div class="mdl-mega-footer--drop-down-section">
-                <input class="footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="footer--heading">
-                  <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">More info</a>
-                </h1>
-                <ul class="footer--link-list">
-                  <li>
-                    <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">About our tours</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">How to get here</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">About Naturguiden</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">About Sweden</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">Weather in Sweden</a>
-                  </li>
-                  <li>
-                    <a href$="{{baseUrl}}info/contact" data-route="contact">Contact us</a>
-                  </li>
-                </ul>
+              <div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <address>
+                    <strong>Naturguiden</strong><br>
+                    Munkhagsgatan 120B<br>
+                    587 25 LINKÖPING<br>
+                    SWEDEN
+                  </address>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <address>
+                    <strong>John Savelid</strong><br>
+                    <a href="mailto:#">info@naturguiden.se</a><br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                  </address>
+                </div>
               </div>
-              <div class="mdl-mega-footer--drop-down-section">
-                <input class="footer--heading-checkbox" type="checkbox" checked>
-                <h1 class="footer--heading">Other</h1>
-                <ul class="footer--link-list">
-                  <li>
-                    <a href="{{baseUrl}}booking" data-route="booking">Booking</a>
-                  </li>
-                  <li>
-                    <a href="{{baseUrl}}pictures" data-route="pictures">Photos</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="mdl-mega-footer--bottom-section">
-              <div class="mdl-logo">
-                Contact information
-              </div>
-              <ul class="footer--link-list">
-                <li>
-                  Naturguiden<br />
-                  Munkhagsgatan 120B<br />
- 	                587 25 LINKÖPING<br />
- 	                SWEDEN
-                </li>
-                <li>
-                  +46 70 53 53 630<br />
-                  info@naturguiden.se<br />
-                  <a href="https://www.naturguiden.com">naturguiden.com</a>
-                </li>
-              </ul>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
+
       </paper-scroll-header-panel>
     </paper-drawer-panel>
 
@@ -1415,7 +1431,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
 
-    <paper-toast id="caching-complete"
+    <!-- <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
     </paper-toast>
@@ -1427,27 +1443,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <platinum-sw-cache default-cache-strategy="fastest"
                          cache-config-file="cache-config.json">
       </platinum-sw-cache>
-    </platinum-sw-register>
+    </platinum-sw-register> -->
 
 
   </template>
-
-<!--  <script>
-  toggle: function() {
-    this.$.collapse.toggle();
-  }
-  toggleapa: function() {
-    this.$.collapseapa.toggle();
-  }
-  </script>
-  <script>
-  function toggle(selector) {
-    document.querySelector(selector).toggle();
-  }
-  document.querySelector('template[is=dom-bind]').isExpanded = function(opened) {
-    return String(opened);
-  };
-</script> -->
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>

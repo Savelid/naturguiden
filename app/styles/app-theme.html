@@ -175,7 +175,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* Height of the scroll area */
   .content {
-    height: 900px;
+    min-height: 900px;
   }
 
   .card-stack {
@@ -240,6 +240,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     color: rgb(158,158,158);
     background-color: rgb(66,66,66);
   }
+  .footer-checkbox:checked + .footer-heading:after{
+    content: '';
+  }
+  .footer-checkbox + .footer-heading:after{
+    content: '';
+  }
+  .footer-checkbox {
+    position: absolute;
+    width: 100%;
+    height: 55.8px;
+    padding: 32px;
+    margin: 0;
+    margin-top: -16px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.0;
+  }
+  .footer-heading {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .footer-heading:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 23.8px;
+    height: 23.8px;
+    background-size: cover;
+  }
+  .footer-checkbox:checked ~ .footer-list,
+  .footer-checkbox:checked + .footer-heading + .footer-list{
+    display: none; }
 
   #toast .toast-hide-button {
     color: #eeff41;
@@ -257,7 +292,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* Small devices (tablets, 768px and up) */
   @media (min-width: 768px) {
-
+    .footer-checkbox {
+      display: none;
+    }
+    .footer-checkbox + .mdl-mega-footer--heading:after {
+      background-image: none;
+    }
+    .footer-checkbox:checked ~ .footer-list,
+    .footer-checkbox:checked + .footer-heading + .footer-list {
+      display: block;
+    }
+    .footer-checkbox:checked + .footer-heading:after {
+      content: ''; }
   }
 
   /* Medium devices (desktops, 992px and up) */

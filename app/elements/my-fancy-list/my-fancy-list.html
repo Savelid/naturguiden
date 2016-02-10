@@ -41,10 +41,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .my-fancy-list-content {
        margin-left: 120px;
     }
+    iron-image {
+      background-color: lightgray;
+    }
     </style>
 
     <div class="my-fancy-list-container">
-        <iron-image class="my-fancy-list-image" sizing="cover" src="[[image]]"></iron-image>
+        <iron-image class="my-fancy-list-image" sizing="cover" src="[[image]]" preload></iron-image>
 
         <div hidden$="[[!header]]">
           <a href="[[link]]">
