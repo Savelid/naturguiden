@@ -739,32 +739,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <div class="card-content">
                           <h2 class="page-title">Cross country skiing <small>in the Swedish mountains!</small></h2>
                           <p class="lead">We have three packages to choose between:</p>
+                        </div>
                           <div class="row">
                             <div class="col-sm-4">
-                              <my-fancy-list  header="Standard"
-                                              image="images/100/skiing001.jpg"
-                                              aria-expanded$="[[isExpanded(opened-skiing-standard)]]" aria-controls="skiing-standard" onclick="show_skiing('#skiing-standard')"
-                                              class="pointer">
-                                <p>Our standard package is including everything for a fantastic skiing experience!</p>
-                              </my-fancy-list>
+                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-standard)]]" aria-controls="skiing-standard" onclick="show_skiing('#skiing-standard')">
+                                <my-fancy-list  header="Standard"
+                                                image="images/100/skiing001.jpg">
+                                  <p>Our standard package is including everything for a fantastic skiing experience!</p>
+                                </my-fancy-list>
+                              </paper-button>
                             </div>
                             <div class="col-sm-4">
-                              <my-fancy-list  header="Adventure"
-                                              image="images/100/skiing002.jpg"
-                                              aria-expanded$="[[isExpanded(opened-skiing-adventure)]]" aria-controls="skiing-adventure" onclick="show_skiing('#skiing-adventure')"
-                                              class="pointer">
-                                <p>This package focuses more on giving you an adventure to remember.</p>
-                              </my-fancy-list>
+                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-adventure)]]" aria-controls="skiing-adventure" onclick="show_skiing('#skiing-adventure')">
+                                <my-fancy-list  header="Adventure"
+                                                image="images/100/skiing002.jpg">
+                                  <p>This package focuses more on giving you an adventure to remember.</p>
+                                </my-fancy-list>
+                              </paper-button>
                             </div>
                             <div class="col-sm-4">
-                              <my-fancy-list  header="Midnight-Sun"
-                                              image="images/100/skiing003.jpg"
-                                              aria-expanded$="[[isExpanded(opened-skiing-midnight)]]" aria-controls="skiing-midnight" onclick="show_skiing('#skiing-midnight')"
-                                              class="pointer">
-                                <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
-                              </my-fancy-list>
+                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-midnight)]]" aria-controls="skiing-midnight" onclick="show_skiing('#skiing-midnight')">
+                                <my-fancy-list  header="Midnight-Sun"
+                                                image="images/100/skiing003.jpg">
+                                  <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
+                                </my-fancy-list>
+                              </paper-button>
                             </div>
                           </div>
+                          <div class="card-content">
+
 
                           <iron-collapse id="skiing-standard" tabindex="0" opened="{{opened-skiing-standard}}">
                               <p class="lead">Cross country skiing over the mountains. Experience the space and the meditative in crossing the mountains on skies. Enjoy the breaks with beautiful views sitting in our dug couches eating our lunch.</p>
