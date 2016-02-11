@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: inline-block;
       box-sizing: border-box;
+      width: 100%;
       @apply(--my-fancy-list);
     }
     /* IE 10 support for HTML5 hidden attr */
@@ -32,14 +33,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-bottom: 8px;
       @apply(--my-fancy-list-image);
     }
-
+    .my-fancy-list-header:empty {
+      display: none;
+    }
     .my-fancy-list-container {
        width:100%;
        margin-top: 15px;
        @apply(--my-fancy-list-container);
     }
     .my-fancy-list-content {
-       margin-left: 120px;
+
     }
     iron-image {
       background-color: lightgray;
@@ -47,17 +50,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <div class="my-fancy-list-container">
-        <iron-image class="my-fancy-list-image" sizing="cover" src="[[image]]" preload></iron-image>
+      <iron-image class="my-fancy-list-image" sizing="cover" src="[[image]]" preload></iron-image>
 
-        <div hidden$="[[!header]]">
-          <a href="[[link]]">
-            <h5>[[header]]</h5>
-          </a>
-        </div>
-        <div class="my-fancy-list-content"><section><content></content></section></div>
+      <div hidden$="{{_haslink(link)}}">
+          <h4 class="my-fancy-list-header">[[header]]</h4>
+      </div>
+
+      <div hidden$="{{!_haslink(link)}}">
+        <a href="[[link]]">
+          <h4 class="my-fancy-list-header">[[header]]</h4>
+        </a>
+      </div>
+
+      <div class="my-fancy-list-content">
+        <section>
+          <content></content>
+        </section>
+      </div>
     </div>
-
-
 
   </template>
 
@@ -91,6 +101,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: ''
         },
 
+        /**
+         * The url the header will link to.
+         */
+        ishidden: {
+          type: Boolean,
+          value: false
+        }
+      },
+      _haslink: function(link) {
+        if(!link) return false;
+        else return true;
       }
     });
   </script>

@@ -70,12 +70,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   /* General styles */
 
-  ul.flame-list {
-    list-style-image: url('../images/postbullets.png');
-  }
-  ul.nothing-list {
-    list-style-type: none;
- }
+ul.flame-list {
+  list-style-image: url('../images/postbullets.png');
+}
+ul.nothing-list {
+  list-style-type: none;
+}
+.pointer {
+  cursor: pointer;
+}
 
   #drawerToolbar {
     color: var(--secondary-text-color);
@@ -240,11 +243,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     color: rgb(158,158,158);
     background-color: rgb(66,66,66);
   }
+  footer h3 {
+    font-size: 16px;
+    color: #DDD;
+  }
   .footer-checkbox:checked + .footer-heading:after{
-    content: '';
+    content: '\02C7';
+    font-size: 24px;
   }
   .footer-checkbox + .footer-heading:after{
-    content: '';
+    content: '\02C6';
+    font-size: 24px;
   }
   .footer-checkbox {
     position: absolute;
