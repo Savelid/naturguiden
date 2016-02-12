@@ -10,70 +10,101 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <style is="custom-style">
 
-  /*
-   Polymer includes a shim for CSS Custom Properties that we can use for application theming.
-   Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to play
-   with changing the colors used or generate your own palette of colours at MaterialPalette.com.
+/*
+Polymer includes a shim for CSS Custom Properties that we can use for application theming.
+Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to play
+with changing the colors used or generate your own palette of colours at MaterialPalette.com.
 
-   See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details
-   for further information on custom CSS properties.
-   */
+See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details
+for further information on custom CSS properties.
+*/
 
-  /* Application theme */
+/* Application theme */
 
-  :root {
-    --dark-primary-color: #303F9F;
-    --default-primary-color: #FFC107;
-    --light-primary-color: #C5CAE9;
-    --text-primary-color: #ffffff; /*text/icons*/
-    --accent-color: #FF4081;
-    --primary-background-color: #c5cae9;
-    --primary-text-color: --paper-gray-800, #212121;
-    --secondary-text-color: #727272;
-    --disabled-text-color: #bdbdbd;
-    --divider-color: #B6B6B6;
+:root {
+  /*--dark-primary-color: #303F9F;
+  --default-primary-color: #FFC107;
+  --light-primary-color: #C5CAE9;
+  --text-primary-color: #ffffff;
+  --accent-color: #FF4081;
+  --primary-background-color: #c5cae9;
+  --primary-text-color: --paper-gray-800, #212121;
+  --secondary-text-color: #727272;
+  --disabled-text-color: #bdbdbd;
+  --divider-color: #B6B6B6;*/
 
-    /* Components */
+  /* Components */
 
-    /* paper-drawer-panel */
-    --drawer-menu-color: #ffffff;
-    --drawer-border-color: 1px solid #ccc;
-    --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
+  /* paper-drawer-panel */
+  /*--drawer-menu-color: #ffffff;
+  --drawer-border-color: 1px solid #ccc;
+  --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);*/
 
-    /* paper-menu */
-    --paper-menu-background-color: #fff;
-    --menu-link-color: #111111;
+  /* paper-menu */
+  /*--paper-menu-background-color: #fff;
+  --menu-link-color: #111111;
 
-    --image-replacement-color: --paper-teal-100, rgb(178,223,219);
+  --image-replacement-color: --paper-teal-100, rgb(178,223,219);
 
-    --paper-card-background-color: #FFF;
+  --paper-card-background-color: #FFF;*/
+  /* Font colors */
 
-  }
+  --color-menu-link: var(--paper-grey-900);
+  --color-menu-selected: var(--paper-blue-500);
 
-  paper-scroll-header-panel {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: var(--paper-grey-200, #eee);
-        /* background for toolbar when it is at its full size */
-        --paper-scroll-header-panel-full-header: {
-          background-color: var(--paper-blue-500);
-          background-image: url(../images/header100.jpg);
-        };
-        /* background for toolbar when it is condensed */
-        --paper-scroll-header-panel-condensed-header: {
-          background-color: var(--paper-blue-500);
-        };
-  }
-  paper-drawer-panel {
-    --paper-drawer-panel-drawer-container: {
-      z-index: 100;
-    };
-  }
+  /* Backgrounds */
+  --color-image-background: var(--paper-teal-100);
+  --color-header-background: var(--paper-blue-500);
+  --color-page-background: var(--paper-grey-200);
+  --color-drawer-background: var(--paper-white);
+  --primary-color: var(--paper-red-500); /* drawer-header-background */
 
-  /* General styles */
+    --color-test: var(--paper-pink-300);
+
+}
+
+paper-scroll-header-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background for toolbar when it is at its full size */
+  --paper-scroll-header-panel-full-header: {
+    background-color: var(--color-header-background);
+    background-image: url(../images/header100.jpg);
+  };
+  /* background for toolbar when it is condensed */
+  --paper-scroll-header-panel-condensed-header: {
+    background-color: var(--color-header-background);
+  };
+}
+paper-drawer-panel {
+  --paper-drawer-panel-drawer-container: {
+    z-index: 100;
+    background-color: var(--color-drawer-background);
+  };
+  --paper-drawer-panel-main-container: {
+    background-color: var(--color-page-background);
+  };
+}
+my-fancy-list {
+  --my-fancy-list-image: {
+    background-color: var(--color-image-background);
+  };
+}
+my-left-image-paper-card {
+  --my-left-image-paper-card-image: {
+    background-color: var(--color-image-background);
+  };
+}
+iron-image {
+  --iron-image-placeholder: {
+    background-color: var(--color-image-background);
+  };
+}
+
+/* General styles */
 
 ul.flame-list {
   list-style-image: url('../images/postbullets.png');
@@ -95,213 +126,215 @@ ul.nothing-list {
   margin: 0;
 }
 .full-width {
-   width: 100%;
+  width: 100%;
 }
 
-  #drawerToolbar {
-    color: var(--secondary-text-color);
-    background-color: var(--drawer-menu-color);
-    border-bottom: var(--drawer-toolbar-border-color);
-  }
+.card-actions a,
+footer a {
+  color: inherit;
+}
 
-  paper-tabs.pink::shadow #selectionBar {
-    background-color: #ff4081;
-  }
-  paper-tabs {
-    width: calc(100% - 300px);
-    max-width: 1200px;
-  }
-  paper-tab {
-  }
+#drawerToolbar {
 
-  paper-scroll-header-panel {
-    height: 100%;
-  }
+}
+iron-collapse {
+  border:0;
+  box-decoration-break: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+paper-tabs {
+  width: calc(100% - 300px);
+  max-width: 1200px;
+}
+paper-scroll-header-panel {
+  height: 100%;
+}
+paper-card {
+  border-radius: 2px;
+  height: 100%;
+  width: 100%;
+  margin: 16px 0 16px 0;
+  background: white;
+}
+my-left-image-paper-card {
+  border-radius: 2px;
+  padding: 0;
+  width: 100%;
+  margin: 16px 0 16px 0;
+}
+paper-menu iron-icon {
+  margin-right: 33px;
+  opacity: 0.54;
+}
 
-  paper-card {
-    border-radius: 2px;
-    height: 100%;
-    width: 100%;
-    margin: 16px 0 16px 0;
-    background: white;
+paper-menu a{
+  @apply(--layout-horizontal);
+  @apply(--layout-center);
+  color: inherit;;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+}
+paper-menu {
+  --paper-menu-selected-item: {
+    color: var(--color-menu-selected);
+  };
+}
+paper-menu paper-item {
+  cursor: pointer;
+  --paper-item-selected: {
+    color: var(--color-menu-selected);
+    text-decoration: inherit;
   }
+}
+paper-toolbar.tall .app-name {
+  font-size: 40px;
+  font-weight: 300;
+  /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  background-color: transparent;
 
-  my-left-image-paper-card {
-    border-radius: 2px;
-    padding: 0;
-    width: 100%;
-    margin: 16px 0 16px 0;
-  }
+}
+paper-toolbar.tall {
+  background-color: transparent;
+}
 
+#mainToolbar .middle-container  {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  paper-menu iron-icon {
-    margin-right: 33px;
-    opacity: 0.54;
-  }
+#mainToolbar:not(.tall) .middle {
+  font-size: 18px;
+  padding-bottom: 0;
+}
 
-  .paper-menu > .iron-selected {
-    color: var(--default-primary-color);
-  }
+#mainToolbar .tab-menu-container {
+  margin-left: 48px;
+  /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
 
-  paper-menu a {
-    @apply(--layout-horizontal);
-    @apply(--layout-center);
-    text-decoration: none;
-    color: var(--menu-link-color);
-    font-family: 'Roboto', 'Noto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    min-height: 48px;
-    padding: 0 16px;
-  }
+.tab-menu-container {
+  max-width: 1406px;
+  width:100%;
+}
 
-  paper-toolbar.tall .app-name {
-    font-size: 40px;
-    font-weight: 300;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-    background-color: transparent;
+/* Height of the scroll area */
+.content {
+  min-height: 900px;
+}
 
-  }
-  paper-toolbar.tall {
-      background-color: transparent;
-    }
+.card-stack {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: calc(100% - 16px);
+}
 
-  #mainToolbar .middle-container  {
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+paper-tabs .link {
+  @apply(--layout-horizontal);
+  @apply(--layout-center-center);
+  text-decoration: inherit;
+  color: inherit;
+  height: 100%;
+}
 
-  #mainToolbar:not(.tall) .middle {
-    font-size: 18px;
-    padding-bottom: 0;
-  }
+.left-image {
+  float: left;
+  margin: 0;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+.right-image {
+  float: right;
+  margin: 0;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+.image-width-md {
+  width: 30%;
+  max-width: 100%;
+}
+.image-height-md {
+  height: 300px;
+  max-width: 100%;
+}
+.image-width-lg{
+  width: 50%;
+  max-width: 100%;
+}
+.image-width-full{
+  width: 100%;
+  max-width: 100%;
+}
+.image-height-auto {
+  --iron-image-width: 100%;
+}
+.image-with-margin.left-image{
+  margin-top: 36px;
+  margin-left:16px;
+  border-radius: 4px;
+}
+.image-with-margin.right-image{
+  margin-top: 36px;
+  margin-right:16px;
+  border-radius: 4px;
+}
+.dont-wrap-image {
+  display: block;
+  overflow: hidden;
+}
 
-  #mainToolbar .tab-menu-container {
-    margin-left: 48px;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-
-  .tab-menu-container {
-     max-width: 1406px;
-     width:100%;
-  }
-
-  /* Height of the scroll area */
-  .content {
-    min-height: 900px;
-  }
-
-  .card-stack {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: calc(100% - 16px);
-  }
-
-  .link {
-    @apply(--layout-horizontal);
-    @apply(--layout-center-center);
-  }
-
-  .left-image {
-    float: left;
-    margin: 0;
-    margin-right: 16px;
-    margin-bottom: 8px;
-  }
-  .right-image {
-    float: right;
-    margin: 0;
-    margin-left: 16px;
-    margin-bottom: 8px;
-  }
-  .image-width-md {
-    width: 30%;
-    max-width: 100%;
-  }
-  .image-height-md {
-    height: 300px;
-    max-width: 100%;
-  }
-  .image-width-lg{
-    width: 50%;
-    max-width: 100%;
-  }
-  .image-width-full{
-    width: 100%;
-    max-width: 100%;
-  }
-  .image-height-auto {
-    --iron-image-width: 100%;
-  }
-  .image-with-margin.left-image{
-     margin-top: 36px;
-     margin-left:16px;
-     border-radius: 4px;
-  }
-  .image-with-margin.right-image{
-     margin-top: 36px;
-     margin-right:16px;
-     border-radius: 4px;
-  }
-  .dont-wrap-image {
-     display: block;
-     overflow: hidden;
-  }
-
-  footer{
-    padding: 16px 40px;
-    color: rgb(158,158,158);
-    background-color: rgb(66,66,66);
-  }
-  footer h3 {
-    font-size: 16px;
-    color: #DDD;
-  }
-  .footer-checkbox:checked + .footer-heading:after{
-    content: '\02C7';
-    font-size: 24px;
-  }
-  .footer-checkbox + .footer-heading:after{
-    content: '\02C6';
-    font-size: 24px;
-  }
-  .footer-checkbox {
-    position: absolute;
-    width: 100%;
-    height: 55.8px;
-    padding: 32px;
-    margin: 0;
-    margin-top: -16px;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0.0;
-  }
-  .footer-heading {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .footer-heading:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 23.8px;
-    height: 23.8px;
-    background-size: cover;
-  }
-  .footer-checkbox:checked ~ .footer-list,
-  .footer-checkbox:checked + .footer-heading + .footer-list{
-    display: none; }
+footer{
+  padding: 16px 40px;
+  color: rgb(158,158,158);
+  background-color: rgb(66,66,66);
+}
+footer h3 {
+  font-size: 16px;
+  color: #DDD;
+}
+.footer-checkbox:checked + .footer-heading:after{
+  content: '\02C7';
+  font-size: 24px;
+}
+.footer-checkbox + .footer-heading:after{
+  content: '\02C6';
+  font-size: 24px;
+}
+.footer-checkbox {
+  position: absolute;
+  width: 100%;
+  height: 55.8px;
+  padding: 32px;
+  margin: 0;
+  margin-top: -16px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.0;
+}
+.footer-heading {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.footer-heading:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 23.8px;
+  height: 23.8px;
+  background-size: cover;
+}
+.footer-checkbox:checked ~ .footer-list,
+.footer-checkbox:checked + .footer-heading + .footer-list{
+  display: none; }
 
   #toast .toast-hide-button {
     color: #eeff41;
@@ -331,60 +364,60 @@ ul.nothing-list {
     }
     .footer-checkbox:checked + .footer-heading:after {
       content: ''; }
-  }
-
-  /* Medium devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-    .content-left {
-      width: 270px;
-    }
-    .content-right {
-      max-width: calc(100% - 270px);
-    }
-    .card-stack {
-      margin: 0 auto 0 0;
-      width: calc(100% - 16px);
-    }
-    #mainToolbar .middle-container  {
-      margin-left: 48px;
-      margin-right: 0;
-    }
-  }
-
-  /* Large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {
-
-  }
-
-  /* None bootstrap standards */
-  /* Smaller than the standard span */
-  @media (max-width: 720px) {
-
-  }
-  /* larger than the standard span */
-  @media (min-width: 1325px) {
-
-  }
-
-  @media (max-width: 550px) {
-    .image-width-md,
-    .image-width-lg{
-      width: 100%
-    }
-    .image-with-margin.right-image,
-    .image-with-margin.left-image {
-       margin-top: 0;
-       margin-right: 0;
-       margin-left: 0;
-       border-radius: 0;
-    }
-    .image-height-md {
-      height: 200px;
     }
 
-    paper-toolbar.tall .app-name {
-      font-size: 24px;
-      font-weight: 400;
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      .content-left {
+        width: 270px;
+      }
+      .content-right {
+        max-width: calc(100% - 270px);
+      }
+      .card-stack {
+        margin: 0 auto 0 0;
+        width: calc(100% - 16px);
+      }
+      #mainToolbar .middle-container  {
+        margin-left: 48px;
+        margin-right: 0;
+      }
     }
-  }
-</style>
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+
+    }
+
+    /* None bootstrap standards */
+    /* Smaller than the standard span */
+    @media (max-width: 720px) {
+
+    }
+    /* larger than the standard span */
+    @media (min-width: 1325px) {
+
+    }
+
+    @media (max-width: 550px) {
+      .image-width-md,
+      .image-width-lg{
+        width: 100%
+      }
+      .image-with-margin.right-image,
+      .image-with-margin.left-image {
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 0;
+      }
+      .image-height-md {
+        height: 200px;
+      }
+
+      paper-toolbar.tall .app-name {
+        font-size: 24px;
+        font-weight: 400;
+      }
+    }
+    </style>

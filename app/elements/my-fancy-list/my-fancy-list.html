@@ -31,6 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: 0;
       margin-right: 16px;
       margin-bottom: 8px;
+      background-color: lightgray;
       @apply(--my-fancy-list-image);
     }
     .my-fancy-list-header:empty {
@@ -42,11 +43,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        @apply(--my-fancy-list-container);
     }
     .my-fancy-list-content {
+
+    }
+    .separated {
       display: block;
       overflow: hidden;
     }
     iron-image {
-      background-color: lightgray;
+
     }
     </style>
 
@@ -63,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </a>
       </div>
 
-      <div class="my-fancy-list-content">
+      <div class$="[[_computeseparated(separated)]]">
         <section>
           <content></content>
         </section>
@@ -108,7 +112,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ishidden: {
           type: Boolean,
           value: false
-        }
+        },
+
+        /**
+         * If true the text does not wrap the image
+         */
+        separated: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true
+        },
       },
       _haslink: function(link) {
         if (!link) {
@@ -116,6 +129,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         } else {
           return true;
         }
+      },
+      _computeseparated: function(separated) {
+        var cls = 'my-fancy-list-content';
+        if (separated) {
+          cls += ' separated';
+        }
+        return cls;
       }
     });
   </script>

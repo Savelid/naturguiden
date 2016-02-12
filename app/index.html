@@ -81,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
           <a href="{{baseUrl}}" data-route="home">
-            <paper-item class="top-layer-link">
+            <paper-item>
               <iron-icon icon="home"></iron-icon>
               Home
             </paper-item>
@@ -203,20 +203,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-submenu>
 
           <a href="{{baseUrl}}booking" data-route="booking">
-            <paper-item class="top-layer-link">
+            <paper-item>
               <iron-icon icon="event"></iron-icon>
               Booking
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}pictures" data-route="pictures">
-            <paper-item class="top-layer-link">
+            <paper-item>
               <iron-icon icon="image:collections"></iron-icon>
               Photos
             </paper-item>
           </a>
 
         </paper-menu>
+
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
@@ -231,7 +232,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-logo" style="padding:0px; padding-bottom: 0px;"><iron-image src="images/logo.png" style="height:120px; width:188px;"><iron-image></div>
+            <div class="app-logo" style="padding:0px; padding-bottom: 0px;"><iron-image alt="Naturguiden logo" src="images/logo.png" style="height:120px; width:188px;"></iron-image></div>
           </div>
 
           <!-- Application sub title -->
@@ -296,6 +297,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <paper-button>Watch video</paper-button>
                             </a>
                           </div>
+                          <div class="card-actions">
+                            <a href$="{{baseUrl}}adventures/skating">
+                              <paper-button>To our Ice-skating page</paper-button>
+                            </a>
+                          </div>
                       </my-left-image-paper-card>
 
                       <my-left-image-paper-card image="images/500/happy_w001.jpg">
@@ -304,17 +310,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p>Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours. We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.</p>
                         </div>
                         <div class="card-actions">
-                          <paper-button>Read more</paper-button>
+                          <a href$="{{baseUrl}}adventures">
+                            <paper-button>Read more about our activities</paper-button>
+                          </a>
                         </div>
                         <div class="card-actions">
-                          <paper-button>Some action</paper-button>
+                          <a href$="{{baseUrl}}info">
+                            <paper-button>Read more about Sweden</paper-button>
+                          </a>
                         </div>
                       </my-left-image-paper-card>
 
                       <paper-card>
                         <div class="card-content">
                           <h2 class="page-title">They write about our skating trips:</h2>
-                          <p>There are several articles about skating in Sweden. The most recent articles you found here.</p>
+                          <p class="lead">There are several articles about skating in Sweden. The most recent articles you found here.</p>
 
                           <my-fancy-list  header="The guardian 25 Oct 2013"
                                           image="images/100/guardian003.jpg"
@@ -362,7 +372,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <my-fancy-list  header="The Southern Star"
                                           image="images/100/southernstar001.jpg"
                                           link="http://www.naturguiden.com/pdf/southern_star_2012.pdf">
-                                          <p>I AM in the middle of a Swedish lake watching winter melt away. The snow has gone and birch trees which cover surrounding islands are starting to bud. I should be worried, given that I am standing on ice, about three kilometres from land, and cracks are literally forming all around me, creating a thudding noise which reverberates across the bay, and through my body.</p>
+                                          <p>I am in the middle of a Swedish lake watching winter melt away. The snow has gone and birch trees which cover surrounding islands are starting to bud. I should be worried, given that I am standing on ice, about three kilometres from land, and cracks are literally forming all around me, creating a thudding noise which reverberates across the bay, and through my body.</p>
                           </my-fancy-list>
 
                         </div>
@@ -371,7 +381,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <div class="card-content">
                           <h2 class="page-title">Inspiration</h2>
-                          <p>A nice video from one of our guest. Coming here for Nordic skating 2015</p>
+                          <p class="lead">A nice video from one of our guest. Coming here for Nordic skating 2015</p>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
@@ -707,6 +717,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p>The currency is approx 10 SEK = 1 EUR.</p>
                         </div>
                       </paper-card>
+                      <paper-card>
+                        <div class="card-actions">
+                          This page in other Languages:
+                          <a href$="{{baseUrl}}adventures/skating/nl">
+                            <paper-button><iron-icon icon="language"></iron-icon> Nederlands</paper-button>
+                          </a>
+                          <a href$="{{baseUrl}}adventures/skating/fr">
+                            <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
+                          </a>
+                        </div>
+                      </paper-card>
                     </section>
     <!-- #Skating-nl @skating-nl find-next-page -->
                     <section data-route="skating-nl">
@@ -737,39 +758,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Cross country skiing <small>in the Swedish mountains!</small></h2>
+                          <h2 class="page-title">Cross country skiing <small class="hidden-xs">in the Swedish mountains!</small></h2>
                           <p class="lead">We have three packages to choose between:</p>
                         </div>
-                          <div class="row">
-                            <div class="col-sm-4">
-                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-standard)]]" aria-controls="skiing-standard" onclick="show_skiing('#skiing-standard')">
-                                <my-fancy-list  header="Standard"
-                                                image="images/100/skiing001.jpg">
-                                  <p>Our standard package is including everything for a fantastic skiing experience!</p>
-                                </my-fancy-list>
-                              </paper-button>
-                            </div>
-                            <div class="col-sm-4">
-                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-adventure)]]" aria-controls="skiing-adventure" onclick="show_skiing('#skiing-adventure')">
-                                <my-fancy-list  header="Adventure"
-                                                image="images/100/skiing002.jpg">
-                                  <p>This package focuses more on giving you an adventure to remember.</p>
-                                </my-fancy-list>
-                              </paper-button>
-                            </div>
-                            <div class="col-sm-4">
-                              <paper-button class="no-text-formating full-width" aria-expanded$="[[isExpanded(opened-skiing-midnight)]]" aria-controls="skiing-midnight" onclick="show_skiing('#skiing-midnight')">
-                                <my-fancy-list  header="Midnight-Sun"
-                                                image="images/100/skiing003.jpg">
-                                  <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
-                                </my-fancy-list>
-                              </paper-button>
-                            </div>
-                          </div>
-                          <div class="card-content">
+                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
+                            <my-fancy-list separated header="Standard"
+                            image="images/100/skiing001.jpg"
+                            aria-expanded$="[[isExpanded(opened-skiing-standard)]]" aria-controls="skiing-standard" onclick="show_collapsed_package('#skiing-standard')"
+                            class="col-sm-4 pointer">
+                              <p>Our standard package is including everything for a fantastic skiing experience!</p>
+                            </my-fancy-list>
 
+                            <my-fancy-list separated header="Adventure"
+                            image="images/100/skiing002.jpg"
+                            aria-expanded$="[[isExpanded(opened-skiing-adventure)]]" aria-controls="skiing-adventure" onclick="show_collapsed_package('#skiing-adventure')"
+                            class="col-sm-4 pointer">
+                              <p>This package focuses more on giving you an adventure to remember.</p>
+                            </my-fancy-list>
 
+                            <my-fancy-list separated header="Midnight-Sun"
+                            image="images/100/skiing003.jpg"
+                            aria-expanded$="[[isExpanded(opened-skiing-midnight)]]" aria-controls="skiing-midnight" onclick="show_collapsed_package('#skiing-midnight')"
+                            class="col-sm-4 pointer">
+                              <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
+                            </my-fancy-list>
+                        </paper-menu>
+                        <div class="card-content">
                           <iron-collapse id="skiing-standard" tabindex="0" opened="{{opened-skiing-standard}}">
+                            <div>
                               <p class="lead">Cross country skiing over the mountains. Experience the space and the meditative in crossing the mountains on skies. Enjoy the breaks with beautiful views sitting in our dug couches eating our lunch.</p>
                               <p>We spend the nights in mountains lodges enjoy the time together during the evening.</p>
                               <p>First day we start training downhill skiing with cross country skies. Good to have knowledge when we get up on the mountains. You carry your own backpack with personal equipment during the tour.</p>
@@ -862,6 +878,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <p>Back to the skies and time for a short break in our cosy couch Then we continue towards Helags mountain lodge, our next stop. Downhill almost the whole way. Before we leave to our lodge we will have time to relax. After skiing the whole day it is now time to prepare the dinner together and end up the day in the warming and relaxing sauna and a nice shower.</p>
                               <h4>Day IV</h4>
                               <p>This day we follow the marked tracks towards Ljungdalen. If we have met no people in earlier days, we will probably meet some today. It goes up and down over some minor mountains and after 13 km, you get the last part downhill from the mountain through the forest down to the village Ljungdalen. In the afternoon we are back. A welcome shower or maybe a visit to the small indoor swimming pool is waiting. A good dinner ends a fantastic tour before it is time for the bus back to Östersund.</p>
+                            </div>
                           </iron-collapse>
                           <iron-collapse id="skiing-adventure" tabindex="1" opened="{{opened-skiing-adventure}}">
                               <p class="lead">A tour with more adventures. First night we spend in a snow cave. We heading for the highest summit and most of the tour is made of track. But there is also some luxury, one night at Helgas with sauna and time to relax.</p>
@@ -1060,7 +1077,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p>On our skiing tours we cross the mountains on cross country skies. It is almost as hiking but on skies. No prepared tracks if we don´t find some one else tracks. If the snow is deep we better stay in a row, let first person making the tracks for the rest of us. But most often the snow is hard and we can skies on top.</p>
                           <p>The weather and temperature can change very much, even from day to day. In April we could have nice sunny days were we can ski only in our T-shirt. Or we might have strong wind, snow and ten degrees below zero, all clothes and goggles are needed.</p>
-                          <iron-image class="right-image image-with-margin" alt="glove_wool" src="http://www.naturguiden.com/images/stories/ourpackage/equipment/glove_wool.jpeg"></iron-image>
+                          <iron-image preload class="right-image image-with-margin" alt="woolen gloves" src="http://www.naturguiden.com/images/stories/ourpackage/equipment/glove_wool.jpeg"></iron-image>
                           <h3>Clothes and equipment</h3>
                           <p>Layer on layer is the best, then you can adjust according to the temperature, and several thin layers is warmer than one thick layer. On top you have a shell or winter jacket and “tex-” (goretex or similar) or thermo trousers.</p>
                           <p>Warm gloves – two layers is a good choice, first a thin pair made of wool for example.</p>
@@ -1068,7 +1085,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p>Warm socks – made of wool or simular. Still warm even if they get humid.</p>
                           <br>
                           <p>A sunny day the light becomes very strong because of the white snow that reflex the sunlight. Without sun glasses you might even hurt your eyes. To bring sun glasses is essential.</p>
-                          <iron-image class="right-image image-with-margin" alt="glove_wool" src="http://www.naturguiden.com/images/stories/ourpackage/equipment/Rottefella.jpeg"></iron-image>
+                          <iron-image preload class="right-image image-with-margin" alt="ski binding" src="http://www.naturguiden.com/images/stories/ourpackage/equipment/Rottefella.jpeg"></iron-image>
                           <h3>Boots</h3>
                           <p>Ski boots is included in the package. It is very important that you give us a correct shoe size when doing the booking. It should be the size you need with socks on.</p>
                           <p>If you have your own ski boots you can of course use them if they fits on our binding. We use Rottefella BC binding on our skies.</p>
@@ -1113,37 +1130,1139 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </section>
     <!-- #Canoe #Kayak @canoe @kayak find-next-page -->
                     <section data-route="canoe">
-                      <paper-card>
+                      <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
                           <h2 class="page-title">Kayak & canoe</h2>
-                          <p>This is the canoe section</p>
+                          <p class="lead">Kayak among thousands of islands on the Baltic Sea</p>
+                          <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
+                        </div>
+                      </my-left-image-paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Kayak & canoe adventures</h2>
+                          <p class="lead">We have two packages to choose between:</p>
+                        </div>
+                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
+
+                            <my-fancy-list separated header="Canoe, south Stockholm"
+                            image="images/100/canoe001.jpg"
+                            aria-expanded$="[[isExpanded(opened-canoe-cano)]]" aria-controls="canoe-canoe" onclick="show_collapsed_package('#canoe-canoe')"
+                            class="col-sm-6 pointer">
+                              <p>Canoe south of Stockholm for two days</p>
+                            </my-fancy-list>
+
+                            <my-fancy-list separated header="Kayaking in the archipelago"
+                            image="images/100/kayak001.jpg"
+                            aria-expanded$="[[isExpanded(opened-canoe-kayak)]]" aria-controls="canoe-kayak" onclick="show_collapsed_package('#canoe-kayak')"
+                            class="col-sm-6 pointer">
+                              <p>Kayaking in the archipelago of the Baltic sea</p>
+                            </my-fancy-list>
+                        </paper-menu>
+                        <div class="card-content">
+                          <iron-collapse id="canoe-canoe" tabindex="0" opened="{{opened-canoe-canoe}}">
+                            <div>
+                              <p class="lead">Two days in canoe on long narrow lakes and on calm rivers. Close to Stockholm but away from the civilisation.</p>
+                              <p>A journey on water through Swedish woodlands. Sleeping in tent , cooking over open fire, washing yourself in the lake. Enjoy the nature and the feeling of being alone at the camp site, sitting around the fire looking at the stars. No experiences of canoe needed, we adjust the journey after the group.</p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p>Two days where we travel in Canoe on narrow lakes and rivers about 50 km south Stockholm. One night in tent at a nice place along the way. We prepare dinner together over open fire, make a real meal at lunchtime on gas stoves. Take time for a bath in the lake. Watching the wildlife, maybe try to catch a fish for dinner.</p>
+                              <p>The tour starts in Åkers Styckebruk. Train from Stockholm and bus the last 10 minutes. We end two days later in Gnesta from where you take the local train back to Stockholm.</p>
+                              <h4>Season</h4>
+                              <p>April – October</p>
+                              <h4>Gradient</h4>
+                              <p>Middle</p>
+                              <h4>Lodging</h4>
+                              <p>Tent</p>
+                              <h4>Get here</h4>
+                              <ul>
+                                <li>Train from Stockholm to Läggesta (Train towards Eskilstuna). Bus 5 km to Åkers styckebruk.</li>
+                                <li>Back to Stockholm local train from Gnesta to Stockholm.</li>
+                                <li>Traveltime approx 1 hour</li>
+                              </ul>
+                              <h4>Pick up</h4>
+                              <p>At Läggesta train station. Time not set.</p>
+                              <h4>Transport</h4>
+                              <p>No transport needed except what is described in "get here"</p>
+                              <h4>Personal equipment</h4>
+                              <p>Suitable footwear, durable outdoor- and rain clothes, bathing gear.</p>
+                              <h4>Equipment included</h4>
+                              <p>Canoe, tents, cooking stove.</p>
+                              <h4>Equipment available for rent</h4>
+                              <p>Sleeping bag 150 SEK (ca 18 EUR)</p>
+                              <h4>Price: 244 EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td>Lunch, 2-course dinner, share in tent, guide, rent of canoe.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td>Breakfast, lunch, guide, rent of canoe.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks & Transfer</p>
+                              <h3>Programme Canoe, south Stockholm - 2 days</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td>Arrival, Canoe</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td>Canoe, departure</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A 1 night trip</p>
+                              <h4>Day I</h4>
+                              <p>Arrival, train from Stockholm to Läggesta. The guide meet the group at Läggesta station and help them get the right bus to Åkers Styckebruk (10 minutes with bus). Everyone get dry bags for the cloth, sleeping bag etc. We load the canoes, safety instructions and a short course, how to do the paddling best way. Start our tour along the shore with the sun in our face. Slow in the beginning make sure everyone get the right technique. After some hours it feels great to stop at some nice place and stretch our legs. Take something to eat and maybe a bath in the lake. Later we stop for lunch, a real meal made on the gas stove.</p>
+                              <p>In the evening we find us a nice place for night camp. Put up our tents, making the fire and start making dinner together. Ending the day sitting around the fire locking at the stars.</p>
+                              <h4>Day II</h4>
+                              <p>Waking up close to the lake. Maybe start the day with a bath before breakfast. We pack all our stuff back in the canoes, leave no trace, and continue our journey. Today everyone is used to the canoe and can put more focus to the surroundings when following the shore line south. Once we need to stop and pull the canoe from one lake to the next. A small canoe wagon is very handy, we don’t need to carry. After several breaks and a nice lunch we reach Gnesta, our goal. An ice cream as reward before unload the canoes, arrange with the baggage and walk the 100 meters to the railway station and the train back towards Stockholm.</p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="canoe-kayak" tabindex="1" opened="{{opened-canoe-kayak}}">
+                            <div>
+                              <p class="lead">During three days we paddle kayaks in the beautiful archipelago of Nyköping. Between islands and skerries, out in the open sea and in seduced caves.</p>
+                              <p>We sleep in tents on the islands along the way, prepare the food over open fire and wash ourselves in rock pools of the Baltic Sea.</p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p>With kayak out on the Baltic sea. Out among thousands of islands, most of them unsettled. The Swedish “allemansrätt” gives us the opportunity to stay on any one of them. There is no fix tour, the wind and waves affect our plans and you never now where to spend the night. During the day we make several stops, for a meal or just to stretch our legs. In the evening, after a swim we make a fire and start making dinner. Maybe we manage to catch some fish that we can fry in the pan.</p>
+                              <h4>Season</h4>
+                              <p>May - October</p>
+                              <h4>Gradient</h4>
+                              <p>Middle to tough, we stay outdoors for three days</p>
+                              <h4>Lodging</h4>
+                              <p>Tent</p>
+                              <h4>Get here</h4>
+                              <p>Plane to Skavsta or train to Nyköping</p>
+                              <h4>Pick up</h4>
+                              <p>At Skavsta airport.</p>
+                              <h4>Transport</h4>
+                              <p>Transfer from and back to Skavsta airport.</p>
+                              <h4>Personal equipment</h4>
+                              <p>Suitable shoes, outdoor- and rain clothes, sunglasses and maybe a hat, bathing gear, sleeping bag</p>
+                              <h4>Equipment included</h4>
+                              <p>Kayak with all necessary safety equipment, tent, outdoor kitchen kit.</p>
+                              <h4>Equipment available for rent</h4>
+                              <p>Sleeping bag 19 EUR</p>
+                              <h4>Price: 587 EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td>Transfer, dinner (made outdoor), guide, rent of kayak and tent, safety equipment</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td>Food, guide, rent of kayak and tent, safety equipment</td>
+                                    </tr>
+                                    <td>Day I11 </td>
+                                    <td>Food, guide, rent of kayak and tent, safety equipment</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Day IV </td>
+                                    <td>Food, guide, rent of kayak and tent, transfer, safety equipment</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>Choices of extras</h3>
+                              <h4>Extra days</h4>
+                              <p>It is possible to extend the tour by one or several days.</p>
+                              <p>Price for each extra day: 99 EUR</p>
+                              <h4>Arrive earlier / departure later</h4>
+                              <p>For guests who want to experience more of Sweden there is of course the possibility to arrive earlier or depart later than stated in our programme. Spend some more days out in the archipelago or take a tour to Stockholm, one hour away.</p>
+                              <p>Price of extras: Guests undertake for all extra cost themselves</p>
+                              <h3>Program Kayaking in the archipelago of Östergötland</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td>Arrival, transfer, kayaking</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td>Kayaking</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day III </td>
+                                      <td>Kayaking</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day IV </td>
+                                      <td>Kayaking, transfer, departure</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A 3 nights trip</p>
+                              <h4>Day I</h4>
+                              <p>Arrival to Skavsta Airport, transfer out to the Baltic Sea where the kayaks are waiting. We start with packing the belongings into dry bags and then into the kayak. Belongings not needed during the trip can be left behind. After a short introduction we head off out onto the water. We start slow to get comfortable with the kayak. Later on we reach a nice island where we go ashore, put up our tents and start making dinner over the open fire. Hopefully, the water is warm to swim.The night we spend in our tents, two persons each.</p>
+                              <h4>Day II & III</h4>
+                              <p>In the morning when the sun makes it warm we sit on the rocks with feet in the water eating our breakfast. When everything is back in the kayak we head out towards the open sea, leaving no trace that shows where we have spent the night.</p>
+                              <p>The wind, weather and the fitness of the group decides how we plan our trip. We paddle between islets and skerrys, out into open sea and calm secluded bays. You learn about paddling technique and safety, reading coastal maps and about birds and animals of the archipelago. We stop at and visit historical and cultural places too. During the day, we will have several breaks to eat and to relax. In the evening we make our camp on another island.</p>
+                              <h4>Day IV</h4>
+                              <p>After breakfast we head back towards the starting point. We adjust our time schedule according to the departure of the aircraft. Back ashore we take something to eat and prepare ourselves for the trip home again. Transfer back to Stockholm Skavsta Airport.</p>
+                            </div>
+                          </iron-collapse>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Before the trip</h2>
+                          <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
+                          <p>You don´t need to have a lot of experience in kayak to be able to join this tour. Actually you can join even if you never done this before.</p>
+                          <p>On our Kayak tours we will be out among the islands in the archipelago during the whole tour. We sleep in tents and doing all cocking outdoor.</p>
+                          <iron-image preload class="right-image image-with-margin" alt="sprayskirt" src="http://naturguiden.com/images/stories/ourpackage/equipment/sprayskirt.jpeg"></iron-image>
+                          <h3>About equipment you need</h3>
+                          <p>While paddling you sitting in the kayak with a sprayskirt covering your legs. If we get bad weather you only need a waterproof jacket. Of course it could be nice with rain trousers if we have rain in the evening but it is not necessary.</p>
+                          <p>More necessary is cloth that covers hour upper body. Long arm shirts, a hat or scarf and sun glasses. During a sunny day sitting in the kayak the whole day that close to the water that also reflects the sun you will easily get burned.</p>
+                          <h3>About shoes</h3>
+                          <p>When stepping in and out of the kayak you might need standing in the water. Barefooted or sandals is then recommended. While paddling you can use what ever, even barefooted (not late autumn when it is cold outside). But in the evening when put up a camp in some island you need some kind of shoes, it could be sandals or jogging shoes or hiking boots, depends if you like to walk around on the island or not.</p>
+                          <h3>Equipment that you need to bring <small>(available for rent, pre booking needed)</small></h3>
+                          <ul class="flame-list">
+                            <li>Sleeping bag</li>
+                          </ul>
+                          <p class="bg-info">We provide you with everything you need except your personal equipment including sleeping bag.</p>
+                          <h3>Clothes</h3>
+                          <ul class="flame-list">
+                            <li>Shoes or sandal</li>
+                            <li>Rain ware (at least a jacket)</li>
+                            <li>Swim suits</li>
+                            <li>Towel</li>
+                            <li>Toothbrush, soap etc.</li>
+                            <li>Warm sweater</li>
+                            <li>Extra socks</li>
+                          </ul>
+                          <h3>We will provide you with the following equipment</h3>
+                          <ul class="flame-list">
+                            <li>All equipment needed going with the kayak</li>
+                            <li>Dry bags for your luggage</li>
+                            <li>Tent</li>
+                            <li>All equipment needed, cocking and eating outdoor</li>
+                          </ul>
+                          <h3>About money</h3>
+                          <p>We still don't use Euro in Sweden. But you can use credit card almost everywhere. Everything you need (except alcoholic drinks) is included in the price. But if you want to buy something you can always redraw money at the airport when you arrive.</p>
                         </div>
                       </paper-card>
                     </section>
     <!-- #Hiking @hiking find-next-page -->
                     <section data-route="hiking">
+                      <my-left-image-paper-card image="images/500/kayak002.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title"></h2>
+                          <p class="lead"></p>
+                          <p></p>
+                        </div>
+                      </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Hiking</h2>
-                          <p>This is the hiking section</p>
+                          <h2 class="page-title"></h2>
+                          <p class="lead">We have six packages to choose between:</p>
+                        </div>
+                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
+
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+
+                        </paper-menu>
+                        <div class="card-content">
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Before the trip</h2>
+                          <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
+                          <p></p>
+                          <p></p>
+                          <iron-image preload class="right-image image-with-margin" alt="sprayskirt" src="http://naturguiden.com/images/stories/ourpackage/equipment/sprayskirt.jpeg"></iron-image>
+                          <h3>About equipment you need</h3>
+                          <p></p>
+                          <h3>About shoes</h3>
+                          <p></p>
+                          <h3>Equipment that you need to bring <small>(available for rent, pre booking needed)</small></h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <p class="bg-info">We provide you with everything you need except your personal equipment including sleeping bag.</p>
+                          <h3>Clothes</h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <h3>We will provide you with the following equipment</h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <h3>About money</h3>
+                          <p>We still don't use Euro in Sweden. But you can use credit card almost everywhere. Everything you need (except alcoholic drinks) is included in the price. But if you want to buy something you can always redraw money at the airport when you arrive.</p>
                         </div>
                       </paper-card>
                     </section>
     <!-- #Mtb @mtb find-next-page -->
                     <section data-route="mtb">
+                      <my-left-image-paper-card image="images/500/kayak002.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title">Mountain Bike in the forests of Sweden</h2>
+                          <p class="lead">Enjoy MTB in the Swedish woodland. With a guide you get the best tracks, the most beautiful scenery and more fun. Dirt roads, narrow tracks, up and down.</p>
+                          <p>Stop at a small lake and take a swim, make a camp fire in some remote area at lunch and make a hot dog. Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB.</p>
+                        </div>
+                      </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">MTB</h2>
-                          <p>This is the MTB section</p>
+                          <h2 class="page-title">Biking in Swedish woodlands</h2>
+                          <p class="lead">Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB. A weekend with a lot of biking. We stay at a camp in the middle of the forest, with a lots of tracks and dirt roads.</p>
+                          <p>Choose to come in May, take part in the great MTB competition <a href="http://www.kolmardsbiken.se">“Kolmårdsbiken”</a> , start fee for free.</p>
+                          <h3>Dates</h3>
+                          <h4>Individuals</h4>
+                          <p>No fixed date</p>
+                          <h4>Groups</h4>
+                          <p>Any date during season</p>
+                          <h3>Information</h3>
+                          <p>During three days we ride MTB in the forests of Östergötland. The nights are spent in nice four beds cabins with a small kitchen. During the days we explore all tracks in the surrounding forest. Take a break at some lake for a swim before we continue.</p>
+                          <p>You get your bike at the airport / train station and then we head of into the forest towards our camp.</p>
+                          <p>Bring your own bike, we pay the fee to take it with you.</p>
+                          <h4>Season</h4>
+                          <p>April - October</p>
+                          <h4>Gradient</h4>
+                          <p>Middle to tough in condition depending on the group</p>
+                          <h4>Lodging</h4>
+                          <p>Four bed cabins with kitchen</p>
+                          <h4>Get here</h4>
+                          <p>Plane to Skavsta or train to Nyköping</p>
+                          <h4>Pick up</h4>
+                          <p>At Skavsta airport</p>
+                          <h4>Transport</h4>
+                          <p>Transfer of luggage from and back to Skavsta airport. You go with bike to the camp.</p>
+                          <h4>Personal equipment</h4>
+                          <p>Suitable gear for bicycling, outdoor- and rain clothes, bathing gear.</p>
+                          <h4>Equipment included</h4>
+                          <p>MTB and helmet.</p>
+                          <h4>Bring your own bike</h4>
+                          <p>If you bring your own bike we pay the fee to bring it here.</p>
+                          <h4>Price: 662 EUR</h4>
+                          <h3>Included in the price</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Day I </td>
+                                  <td>Transfer of luggage, dinner, guide, rent of MTB, safety equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day II </td>
+                                  <td>Breakfast, lunch, dinner, guide, rent of MTB, safety equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day III </td>
+                                  <td>Breakfast, lunch, dinner, guide, rent of MTB, safety equipment, share in double room</td>
+                                </tr>
+                                <tr>
+                                  <td>Day IV </td>
+                                  <td>Breakfast, lunch, guide, rent of MTB, safety equipment, transfer of luggage</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                          <h3>Choices of extras</h3>
+                          <h4>Extra days</h4>
+                          <p>It is possible to extend the tour with one or several days.</p>
+                          <p>Price for each extra day: 122 Euro</p>
+                          <h4>Stay on your own</h4>
+                          <p>Stay some extra days on the camp on our own</p>
+                          <p>Price for two persons in a cabin, no meals included xx Euro</p>
+                          <h4>Arrive earlier, depart later</h4>
+                          <p>Guests that want to see more of Sweden can of course come earlier or depart later than what is stated in our program. Spend some more days out in the archipelago or take a tour to Stockholm, one hour away.</p>
+                          <p>Price of extras: Guests undertake all extra costs themselves</p>
+                          <h3>Program Biking in Swedish wooded landscape</h3>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-condensed">
+                              <tbody>
+                                <tr>
+                                  <td>Day I </td>
+                                  <td>Arrival, transfer, MTB</td>
+                                </tr>
+                                <tr>
+                                  <td>Day II </td>
+                                  <td>MTB</td>
+                                </tr>
+                                <tr>
+                                  <td>Day III </td>
+                                  <td>MTB</td>
+                                </tr>
+                                <tr>
+                                  <td>Day IV </td>
+                                  <td>MTB, transfer, departure</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="bg-info">A three nights trip</p>
+                          <h4>Day I</h4>
+                          <p>Arrival at Skavsta Airport. After an introduction you get your bikes. While we take care of the baggage, you head towards the hostel on your bikes. The guide follows you and we find our way mostly on narrow roads. Later in the afternoon we reach the hostel and you can check in. The dinner is served and afterwards we might go for a short tour.</p>
+                          <h4>Day II & III</h4>
+                          <p>We eat a good and healthy breakfast and make our lunch packages. Then we head off on our bikes. Finding the most fun roads, we stop to make the best parts several times. We take our lunch in some nice location, maybe stop for a swim in one of the lakes we pass. If you like we come back to the hostel for a break before we do another trip or we spent the whole day out in the wild. In the evenings we make our dinner, preferably outdoors. Maybe we do some other activities like swimming, canoeing, or fishing.</p>
+                          <h4>Day IV</h4>
+                          <p>After breakfast we head back towards the airport. We adjust our time schedule for the departure of the aircraft. At the airport we take a shower and something to eat before the plane leaves.</p>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Before the trip</h2>
+                          <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
+                          <p>On our MTB weekends we stay at the same place the whole time. We do different tours every day, stay away the whole day or come back for lunch depending on the desire of the group. Part from your cloth for MTB you need a small backpack to bring something to eat during the tour, maybe a swim suite and a towel if we make a brake at some lake for a swim.</p>
+                          <iron-image preload class="right-image image-with-margin image-width-md image-height-md" alt="Mountain Bike" src="http://naturguiden.com/images/stories/ourpackage/equipment/MTB_bike.jpg" sizing="contain"></iron-image>
+                          <h3>About our bike</h3>
+                          <p>For rent we have the following bike. If you prefer to bring your own bike we reduce the price with 80EUR, the price you pay at RyanAir to bring a bike.</p>
+                          <ul class="flame-list">
+                            <li>24 Gear Nishiki with aluminium frame and damper on the front fork</li>
+                            <li>Shimano breaks and gears</li>
+                            <li>SPD or ordinary pedals</li>
+                            <li>Gears: Shimano Deore</li>
+                            <li>Weight: 13 kg</li>
+                          </ul>
+                          <h3>We will provide you with the following equipment</h3>
+                          <ul class="flame-list">
+                            <li>MTB</li>
+                            <li>Helmet</li>
+                          </ul>
+                          <h3>About money</h3>
+                          <p>We still don't use Euro in Sweden. But you can use credit card almost everywhere. Everything you need (except alcoholic drinks) is included in the price. But if you want to buy something you can always redraw money at the airport when you arrive.</p>
                         </div>
                       </paper-card>
                     </section>
     <!-- #Multi activity @multi activity find-next-page -->
                     <section data-route="multi">
+                      <my-left-image-paper-card image="images/500/kayak002.jpg">
+                        <div class="card-content">
+                          <h2 class="page-title"></h2>
+                          <p class="lead"></p>
+                          <p></p>
+                        </div>
+                      </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Multi activity</h2>
-                          <p>This is the multi activity section</p>
+                          <h2 class="page-title"></h2>
+                          <p class="lead">We have X packages to choose between:</p>
+                        </div>
+                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
+
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+                            <my-fancy-list separated header="XXX"
+                            image="images/100/XXX.jpg"
+                            aria-expanded$="[[isExpanded(opened-XXX)]]" aria-controls="XXX" onclick="show_collapsed_package('#XXX')"
+                            class="col-sm-4 pointer">
+                              <p></p>
+                            </my-fancy-list>
+
+                        </paper-menu>
+                        <div class="card-content">
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                          <iron-collapse id="XXX" tabindex="0" opened="{{opened-XXX}}">
+                            <div>
+                              <p class="lead"></p>
+                              <p></p>
+                              <h3>Dates</h3>
+                              <h4>Individuals</h4>
+                              <p>No fixed date</p>
+                              <h4>Groups</h4>
+                              <p>Any date during season</p>
+                              <h3>Information</h3>
+                              <p></p>
+                              <h4>Season</h4>
+                              <p></p>
+                              <h4>Gradient</h4>
+                              <p></p>
+                              <h4>Lodging</h4>
+                              <p></p>
+                              <h4>Get here</h4>
+                              <p></p>
+                              <h4>Pick up</h4>
+                              <p></p>
+                              <h4>Transport</h4>
+                              <p></p>
+                              <h4>Personal equipment</h4>
+                              <p></p>
+                              <h4>Equipment included</h4>
+                              <p></p>
+                              <h4>Equipment available for rent</h4>
+                              <p></p>
+                              <h4>Price: XXX EUR</h4>
+                              <h3>Included in the price</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-warning"><b>Not included:</b> alcoholic drinks</p>
+                              <h3>XXX</h3>
+                              <div class="table-responsive">
+                                <table class="table table-hover table-condensed">
+                                  <tbody>
+                                    <tr>
+                                      <td>Day I </td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Day II </td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p class="bg-info">A XXX night trip</p>
+                              <h4>Day I</h4>
+                              <p></p>
+                              <h4>Day II</h4>
+                              <p></p>
+                            </div>
+                          </iron-collapse>
+                        </div>
+                      </paper-card>
+                      <paper-card>
+                        <div class="card-content">
+                          <h2 class="page-title">Before the trip</h2>
+                          <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
+                          <p></p>
+                          <p></p>
+                          <iron-image preload class="right-image image-with-margin" alt="sprayskirt" src="http://naturguiden.com/images/stories/ourpackage/equipment/sprayskirt.jpeg"></iron-image>
+                          <h3>About equipment you need</h3>
+                          <p></p>
+                          <h3>About shoes</h3>
+                          <p></p>
+                          <h3>Equipment that you need to bring <small>(available for rent, pre booking needed)</small></h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <p class="bg-info">We provide you with everything you need except your personal equipment including sleeping bag.</p>
+                          <h3>Clothes</h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <h3>We will provide you with the following equipment</h3>
+                          <ul class="flame-list">
+                            <li></li>
+                          </ul>
+                          <h3>About money</h3>
+                          <p>We still don't use Euro in Sweden. But you can use credit card almost everywhere. Everything you need (except alcoholic drinks) is included in the price. But if you want to buy something you can always redraw money at the airport when you arrive.</p>
                         </div>
                       </paper-card>
                     </section>
@@ -1350,7 +2469,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Accommodation @accommodation find-next-page -->
                     <section data-route="accommodation">
                       <paper-card>
-                        <iron-image src="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg" alt="Tenting in mountains" class="left-image image-with-margin image-width-md image-height-md img-rounded" sizing="cover"></iron-image>
+                        <iron-image preload src="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg" alt="Tenting in mountains" class="left-image image-with-margin image-width-md image-height-md img-rounded" sizing="cover"></iron-image>
                         <div class="card-content">
                           <h2 class="page-title">Accommodation</h2>
                           <p class="lead">We offer several  different levels of accommodations, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
@@ -1406,7 +2525,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #About Naturguiden @about naturguiden find-next-page -->
                     <section data-route="about-naturguiden">
                       <paper-card>
-                        <iron-image src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
+                        <iron-image preload src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
                         <div class="card-content dont-wrap-image">
                           <h2 class="page-title">About Naturguiden</h2>
                           <p class="lead">Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
@@ -1424,7 +2543,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Abour Sweden @about sweden find-next-page -->
                     <section data-route="about-sweden">
                       <paper-card>
-                        <iron-image src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
+                        <iron-image preload alt="Map of Sweden" src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
                         <div class="card-content">
                           <h2 class="page-title">About Sweden</h2>
                           <p class="lead">Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
@@ -1444,7 +2563,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Weather in Sweden @weather in sweden find-next-page -->
                     <section data-route="weather-sweden">
                       <paper-card>
-                        <iron-image src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
+                        <iron-image preload alt="sun over ice" src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
                         <div class="card-content">
                           <h2 class="page-title">Weather in Sweden</h2>
                           <p class="lead">What about the weather, what can we expect when coming to Sweden?</p>
@@ -1718,7 +2837,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Pictures #Photos @pictures @photos find-next-page -->
                     <section data-route="pictures">
                       <paper-card>
-                        <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
+                        <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
                         <div class="card-content">
                           <h2 class="page-title">A winter album from Gothenburg</h2>
                           <p class="lead">Some photos from a snowy Gothenburg</p>
@@ -1730,7 +2849,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                       </paper-card>
                       <paper-card>
-                        <iron-image class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
+                        <iron-image preload alt="people ice-skating" class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
                         <div class="card-content">
                           <h2 class="page-title">Ice-skating 2011</h2>
                           <p class="lead">A fantastic trip in on lake Vättern</p>
@@ -1884,7 +3003,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
   <script>
-  function show_skiing(selector) {
+  function show_collapsed_package(selector) {
     $(selector).siblings('iron-collapse').hide();
     $(selector).show();
   }
