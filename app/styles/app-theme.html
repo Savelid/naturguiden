@@ -108,11 +108,34 @@ iron-image {
 
 /* General styles */
 
+html, body {
+  color: #757575;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+
+.left-menu {
+  max-width: 300px;
+}
+address {
+  font-style: normal;
+}
 ul.flame-list {
   list-style-image: url('../images/postbullets.png');
 }
 ul.nothing-list {
   list-style-type: none;
+}
+ul.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
 }
 .pointer {
   cursor: pointer;
@@ -169,13 +192,10 @@ paper-menu iron-icon {
   margin-right: 33px;
   opacity: 0.54;
 }
-
 paper-menu a{
   @apply(--layout-horizontal);
   @apply(--layout-center);
-  color: inherit;;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  color: inherit;
   text-decoration: none;
 }
 paper-menu {
@@ -191,8 +211,6 @@ paper-menu paper-item {
   }
 }
 paper-toolbar.tall .app-name {
-  font-size: 40px;
-  font-weight: 300;
   /* Required for main area's paper-scroll-header-panel custom condensing transformation */
   -webkit-transform-origin: left center;
   transform-origin: left center;
@@ -207,11 +225,6 @@ paper-toolbar.tall {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-
-#mainToolbar:not(.tall) .middle {
-  font-size: 18px;
-  padding-bottom: 0;
 }
 
 #mainToolbar .tab-menu-container {
@@ -300,16 +313,6 @@ paper-tabs .link {
   margin-right:0;
   margin-bottom:0;
 }
-.menu-trigger:after{
-  content: url('../test.svg');
-  position: absolute;
-  top: 12px;
-  right: 6px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-}
 paper-menu div.divider {
   padding: 0;
   margin: 12px 0;
@@ -317,12 +320,7 @@ paper-menu div.divider {
 }
 paper-menu div.subheader {
   color: var(--color-menu-subheader);
-  align-items: center;
-  font-family: 'Roboto', 'Noto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
+  cursor: default;
   padding: 8px 16px;
 }
 paper-menu a:hover {
@@ -335,7 +333,6 @@ footer{
   background-color: rgb(66,66,66);
 }
 footer h3 {
-  font-size: 16px;
   color: #DDD;
 }
 .footer-checkbox:checked + .footer-heading:after{
@@ -365,8 +362,8 @@ footer h3 {
 .footer-heading:after{
   content: '';
   position: absolute;
-  top: 0;
   right: 0;
+  margin-top: -16px;
   display: block;
   width: 23.8px;
   height: 23.8px;
@@ -453,11 +450,6 @@ footer h3 {
       }
       .image-height-md {
         height: 200px;
-      }
-
-      paper-toolbar.tall .app-name {
-        font-size: 24px;
-        font-weight: 400;
       }
     }
     </style>

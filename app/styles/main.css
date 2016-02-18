@@ -6,21 +6,3 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
-
-body {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #757575;
-}
-
-iframe {
-    display: block;
-    width: 100%;
-    border: none;
-}
-audio, canvas, iframe, img, svg, video {
-    vertical-align: middle;
-}
-
-.left-menu {
-  max-width: 300px;
-}

@@ -72,7 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-scroll-header-panel drawer fixed>
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
-          <paper-icon-button id="paperToggle" icon="icons:menu" paper-drawer-toggle></paper-icon-button>
+          <paper-icon-button id="paperToggle" icon="custom-icons:menu" paper-drawer-toggle></paper-icon-button>
           <span class="paper-font-title">Menu</span>
         </paper-toolbar>
 
@@ -85,42 +85,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu class="list" selectable="a, paper-item" attr-for-selected="data-route" selected="[[route]]">
           <a href="{{baseUrl}}" data-route="home">
             <paper-item>
-              <iron-icon icon="icons:home"></iron-icon>
+              <iron-icon icon="custom-icons:home"></iron-icon>
               Home
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}adventures" data-route="adventures">
             <paper-item>
-              <iron-icon icon="icons:pets"></iron-icon>
+              <iron-icon icon="custom-icons:pets"></iron-icon>
               Our adventures
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}info" data-route="info">
             <paper-item>
-              <iron-icon icon="icons:info"></iron-icon>
+              <iron-icon icon="custom-icons:info"></iron-icon>
               Information
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}learn-more" data-route="learn-more">
             <paper-item>
-              <iron-icon icon="icons:explore"></iron-icon>
+              <iron-icon icon="custom-icons:explore"></iron-icon>
               Learn more
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}pictures" data-route="pictures">
             <paper-item>
-              <iron-icon icon="image:collections"></iron-icon>
+              <iron-icon icon="custom-icons:collections"></iron-icon>
               Photos
             </paper-item>
           </a>
 
           <a href="{{baseUrl}}About-us" data-route="about-us">
             <paper-item>
-              <iron-icon icon="custom-icons:naturguiden-clear"></iron-icon>
+              <iron-icon icon="custom-icons:naturguiden"></iron-icon>
               About us
             </paper-item>
           </a>
@@ -188,14 +188,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <a href="{{baseUrl}}booking" data-route="booking">
             <paper-item>
-              <iron-icon icon="event"></iron-icon>
+              <iron-icon icon="custom-icons:event"></iron-icon>
               Booking
             </paper-item>
           </a>
 
           <a href$="{{baseUrl}}about-us/contact" data-route="contact">
             <paper-item>
-              <iron-icon icon="communication:phone"></iron-icon>
+              <iron-icon icon="custom-icons:phone"></iron-icon>
               Contact us
             </paper-item>
           </a>
@@ -210,7 +210,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall" >
-          <paper-icon-button id="paperToggle" icon="icons:menu" paper-drawer-toggle></paper-icon-button>
+          <paper-icon-button id="paperToggle" icon="custom-icons:menu" paper-drawer-toggle></paper-icon-button>
           <div class="top top-container center horizontal layout">
             <div class="app-name">Naturguiden</div>
           </div>
@@ -241,12 +241,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-card>
                   <div class="card-content">
                     <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
-                    <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script>
+                    <!-- <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script> -->
                   </div>
                 </paper-card>
                 <paper-card>
                   <div class="card-content">
-                    <div id="c_f91bbf77679afb6f21cdc8bd9114b04a" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Östersund Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/f91bbf77679afb6f21cdc8bd9114b04a"></script>
+                    <!-- <div id="c_f91bbf77679afb6f21cdc8bd9114b04a" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Östersund Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/f91bbf77679afb6f21cdc8bd9114b04a"></script> -->
                   </div>
                 </paper-card>
 
@@ -271,7 +271,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                       <my-left-image-paper-card image="images/500/clean_bandit001.jpg">
                           <div class="card-content">
-                            <h2 class="page-title">Longing for outdoor adventures?!</h2>
+                            <h1>Longing for outdoor adventures?!</h1>
                             <p>Do as Clean Bandit, visit us for some nice skating. Enjoy DUST CLEARS</p>
                           </div>
                           <div class="card-actions">
@@ -288,7 +288,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                       <my-left-image-paper-card image="images/500/happy_w001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Adventure Tours in Sweden</h2>
+                          <h1>Adventure Tours in Sweden</h1>
                           <p>Join us on our tours. We have gathered our best outdoor experiences and are now offering all inclusive guided tours. We offer tours for small groups where we tailor each tour after the interests and wishes of the participants.</p>
                         </div>
                         <div class="card-actions">
@@ -305,7 +305,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">They write about our skating trips:</h2>
+                          <h1>They write about our skating trips:</h1>
                           <p class="lead">There are several articles about skating in Sweden. The most recent articles you found here.</p>
 
                           <my-fancy-list  header="The guardian 25 Oct 2013"
@@ -362,7 +362,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Inspiration</h2>
+                          <h1>Inspiration</h1>
                           <p class="lead">A nice video from one of our guest. Coming here for Nordic skating 2015</p>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
@@ -375,7 +375,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="adventures">
                       <my-left-image-paper-card image="images/500/skating002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Nordic skating</h2>
+                          <h1>Nordic skating</h1>
                           <p>Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
                         </div>
                         <div class="card-actions">
@@ -392,7 +392,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/skiing001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Cross country skiing</h2>
+                          <h1>Cross country skiing</h1>
                           <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
 
                           <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
@@ -408,7 +408,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Kayak & canoe</h2>
+                          <h1>Kayak & canoe</h1>
                           <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
                         </div>
                         <div class="card-actions">
@@ -419,7 +419,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/tent001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Hiking</h2>
+                          <h1>Hiking</h1>
                           <p>Leave the civilisation for a couple of days. Join our hiking tours in the beautiful nature of Sweden. Time for recovery and recreation, the most beautiful trails, what to eat and where to sleep - everything is arranged for you. Leave the control and just enjoy.</p>
                             Choose between:
                             <ul>
@@ -435,7 +435,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/mtb_forest.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Mountain bike</h2>
+                          <h1>Mountain bike</h1>
                           <p>Enjoy MTB in the Swedish woodland. With a guide you get the best tracks, the most beautiful scenery and more fun. Dirt roads, narrow tracks, up and down.</p>
 
                           <p>Stop at a small lake and take a swim, make a camp fire in some remote area at lunch and make a hot dog. Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB.</p>
@@ -448,7 +448,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Multi activity</h2>
+                          <h1>Multi activity</h1>
                           <p>Experience a lot of Sweden wilderness and enjoy both hiking, biking and canoeing.</p>
                           <p>Three active days, one day with biking on narrow roads, one day hiking trough oak landscapes and leafy woods and one day with canoe or kayak on narrow rivers or open sea.</p>
                           <p>Choose preferred level, it is not a competition it should be a recreation tour but the distance differs between the different packages.</p>
@@ -464,7 +464,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="skating">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Skating</h2>
+                          <h1>Skating</h1>
                           <p class="lead">Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
                           <p>All-included guided tours where we skate on the best ice possible, often far out in the wilderness.</p>
                         </div>
@@ -494,7 +494,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </div>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">The guided tour for you</h2>
+                          <h1>The guided tour for you</h1>
                           <p class="lead">Gliding easily with the wind in your back over perfect ice, scenic shorelines on your left. The guide in front of you keeps his concentration on the ice and any change in the quality. We adapt the speed and the distance to the group. Taking a rest at some island for a lunch break. In small groups we travel with minibus to the best skating areas and stay in nearby hotels or hostels.</p>
                           <h3>Dates</h3>
                           <h4>Groups</h4>
@@ -656,7 +656,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip</h2>
+                          <h1>Before the trip</h1>
                           <p class="lead">Naturguiden skating trips gives you the opportunity to experience the unique adventure of skating on natural ice on some of Sweden’s many lakes or the Baltic Sea.</p>
                           <p>It is an activity that closely interacts with the conditions that the  nature and the weather give us. It could be a question about finding the limits  for what is possible. How fare can we go before the ice breaks, when is it safe  to continue and when is it time to go back? To be able to judge and make the  right decisions you need experience and a safety oriented approach. The  Naturguiden guides have that experience and always consider the safety aspects.  This short information gives you all the practical and safety information you  need to get right equipped for a safe and comfortable skating weekend.</p>
                           <h3>Weather</h3>
@@ -715,7 +715,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="skating-nl">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Skating</h2>
+                          <h1>Skating</h1>
                           <p class="lead">This page is under construction and will be avilable soon</p>
                         </div>
                       </paper-card>
@@ -724,7 +724,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="skating-fr">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Skating</h2>
+                          <h1>Skating</h1>
                           <p class="lead">This page is under construction and will be avilable soon</p>
                         </div>
                       </paper-card>
@@ -733,7 +733,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="skiing">
                       <my-left-image-paper-card image="images/500/skiing002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Cross country skiing</h2>
+                          <h1>Cross country skiing</h1>
                           <p class="lead">Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
                           <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
                         </div>
@@ -755,7 +755,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Cross country skiing <small class="hidden-xs">in the Swedish mountains!</small></h2>
+                          <h1>Cross country skiing <small class="hidden-xs">in the Swedish mountains!</small></h1>
                           <p class="lead">We have three packages to choose between:</p>
                         </div>
                         <paper-menu selectable="my-fancy-list , a" class="row row-special">
@@ -1073,7 +1073,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip - Skiing</h2>
+                          <h1>Before the trip - Skiing</h1>
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p>On our skiing tours we cross the mountains on cross country skies. It is almost as hiking but on skies. No prepared tracks if we don´t find some one else tracks. If the snow is deep we better stay in a row, let first person making the tracks for the rest of us. But most often the snow is hard and we can skies on top.</p>
                           <p>The weather and temperature can change very much, even from day to day. In April we could have nice sunny days were we can ski only in our T-shirt. Or we might have strong wind, snow and ten degrees below zero, all clothes and goggles are needed.</p>
@@ -1123,7 +1123,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="skiing-fr">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Skiing</h2>
+                          <h1>Skiing</h1>
                           <p class="lead">This page is under construction and will be avilable soon</p>
                         </div>
                       </paper-card>
@@ -1132,14 +1132,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="canoe">
                       <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Kayak & canoe</h2>
+                          <h1>Kayak & canoe</h1>
                           <p class="lead">Kayak among thousands of islands on the Baltic Sea</p>
                           <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
                         </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Kayak & canoe adventures</h2>
+                          <h1>Kayak & canoe adventures</h1>
                           <p class="lead">We have two packages to choose between:</p>
                         </div>
                         <paper-menu selectable="my-fancy-list" class="row row-special">
@@ -1328,7 +1328,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip</h2>
+                          <h1>Before the trip</h1>
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p>You don´t need to have a lot of experience in kayak to be able to join this tour. Actually you can join even if you never done this before.</p>
                           <p>On our Kayak tours we will be out among the islands in the archipelago during the whole tour. We sleep in tents and doing all cocking outdoor.</p>
@@ -1369,14 +1369,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="hiking">
                       <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title"></h2>
+                          <h1></h1>
                           <p class="lead"></p>
                           <p></p>
                         </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title"></h2>
+                          <h1></h1>
                           <p class="lead">We have six packages to choose between:</p>
                         </div>
                         <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
@@ -1832,7 +1832,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip</h2>
+                          <h1>Before the trip</h1>
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p></p>
                           <p></p>
@@ -1863,14 +1863,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="mtb">
                       <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Mountain Bike in the forests of Sweden</h2>
+                          <h1>Mountain Bike in the forests of Sweden</h1>
                           <p class="lead">Enjoy MTB in the Swedish woodland. With a guide you get the best tracks, the most beautiful scenery and more fun. Dirt roads, narrow tracks, up and down.</p>
                           <p>Stop at a small lake and take a swim, make a camp fire in some remote area at lunch and make a hot dog. Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB.</p>
                         </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Biking in Swedish woodlands</h2>
+                          <h1>Biking in Swedish woodlands</h1>
                           <p class="lead">Go fast on small dirt roads, try to keep the speed on the narrow tracks. Enjoy the nature and the fun of MTB. A weekend with a lot of biking. We stay at a camp in the middle of the forest, with a lots of tracks and dirt roads.</p>
                           <p>Choose to come in May, take part in the great MTB competition <a href="http://www.kolmardsbiken.se">“Kolmårdsbiken”</a> , start fee for free.</p>
                           <h3>Dates</h3>
@@ -1969,7 +1969,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip</h2>
+                          <h1>Before the trip</h1>
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p>On our MTB weekends we stay at the same place the whole time. We do different tours every day, stay away the whole day or come back for lunch depending on the desire of the group. Part from your cloth for MTB you need a small backpack to bring something to eat during the tour, maybe a swim suite and a towel if we make a brake at some lake for a swim.</p>
                           <iron-image preload class="right-image image-with-margin image-width-md image-height-md" alt="Mountain Bike" src="http://naturguiden.com/images/stories/ourpackage/equipment/MTB_bike.jpg" sizing="contain"></iron-image>
@@ -1996,14 +1996,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="multi">
                       <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
-                          <h2 class="page-title"></h2>
+                          <h1></h1>
                           <p class="lead"></p>
                           <p></p>
                         </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title"></h2>
+                          <h1></h1>
                           <p class="lead">We have X packages to choose between:</p>
                         </div>
                         <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
@@ -2237,7 +2237,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Before the trip</h2>
+                          <h1>Before the trip</h1>
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                           <p></p>
                           <p></p>
@@ -2268,7 +2268,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="info">
                       <my-left-image-paper-card image="images/500/skating001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">About our tours</h2>
+                          <h1>About our tours</h1>
                           <p>Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
                           <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
                         </div>
@@ -2280,7 +2280,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/boat001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">How to get here</h2>
+                          <h1>How to get here</h1>
                           <p>We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
                         </div>
                         <div class="card-actions">
@@ -2291,7 +2291,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/cabin_w001.jpg">
                         <div class="card-content">
-                          <h2 class="page-title">Accommodation</h2>
+                          <h1>Accommodation</h1>
                           <p>We offer several  different levels of accommodatio, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
                         </div>
                         <div class="card-actions">
@@ -2305,7 +2305,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="about-tours">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">About our tours</h2>
+                          <h1>About our tours</h1>
                           <p class="lead">Naturguiden specializes in nature tourism and offers guided adventures in the provinces of Östergötland and Jämtland. We offer our customers all inclusive adventure-packages with an experienced guide, transfer, food and accommodation.</p>
                           <p>Naturguiden offers adventures all year around. We have found the most beautiful places for you, we provide you with information about the area, nature-related and practical outdoor knowledge. Our local knowledge makes the trip secure, comfortable and more memorable. With our network we can offer you activities and experiences you can never achieve by yourself.</p>
                           The packages Naturguiden has to offer:
@@ -2370,7 +2370,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="how-get-here">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">How to get here</h2>
+                          <h1>How to get here</h1>
                           <p class="lead">We have adapt all our tours to make it easy for you to get here. Most of our tours starts right at the airport or the railway station. For each tour you find information about where we pick you up. We believe that most of our guests come with plain or by train, but if you come by car we describe some alternative ways to get to Sweden at the end of this document.</p>
                           <p>If you have any questions do not hesitate to contact us.</p>
 
@@ -2422,7 +2422,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload src="http://www.naturguiden.com/images/stories/ourpackage/tent2mountain.jpg" alt="Tenting in mountains" class="left-image image-with-margin image-width-md image-height-md img-rounded" sizing="cover"></iron-image>
                         <div class="card-content">
-                          <h2 class="page-title">Accommodation</h2>
+                          <h1>Accommodation</h1>
                           <p class="lead">We offer several  different levels of accommodations, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
                           <h3>Shelter:  Our most basic accomodation</h3>
                           <p>Sleeping outdoor  on the ground, only with a simple shelter as a roof, protecting you from rain.  Sleeping matrees is included but not the sleeping bag.</p>
@@ -2478,7 +2478,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
                         <div class="card-content dont-wrap-image">
-                          <h2 class="page-title">About Naturguiden</h2>
+                          <h1>About Naturguiden</h1>
                           <p class="lead">Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
                           <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
                           <p>Events, team building and conferences for business  groups. The focus is always on giving the participants a great time but also bring  the team closer together. More information on <a href="http://www.naturguiden.se/"><span style="text-decoration: underline;">www.naturguiden.se</span></a> (only in  Swedish)</p>
@@ -2494,7 +2494,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <div class="scroll-to-container" id="contact">
                         <paper-card>
                           <div class="card-content">
-                            <h2 class="page-title">Contact information</h2>
+                            <h1>Contact information</h1>
                             <div class="row">
                               <div class="col-sm-6">
                                 <h3>Naturguiden</h3>
@@ -2563,7 +2563,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload alt="Map of Sweden" src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
                         <div class="card-content">
-                          <h2 class="page-title">About Sweden</h2>
+                          <h1>About Sweden</h1>
                           <p class="lead">Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
                           <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
                           <p>Then we have the mountains, high areas without trees. Down hill skies is almost a national sport . Cross country skies something all kids learn. Hiking on skies in the mountain is popular in wintertime and hiking in summertime of course. Visit the mountains in April the fifth season. Still cold and snow but long lasting sunny days.</p>
@@ -2581,7 +2581,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload alt="sun over ice" src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
                         <div class="card-content">
-                          <h2 class="page-title">Weather in Sweden</h2>
+                          <h1>Weather in Sweden</h1>
                           <p class="lead">What about the weather, what can we expect when coming to Sweden?</p>
                           <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
                           <p>The weather depends of course on time of year and where in Sweden the tour take place. We will here try to give you a ruff  idea so you know what to expect.</p>
@@ -2779,7 +2779,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="booking">
                       <paper-card>
                         <div class="card-content">
-                          <h2 class="page-title">Booking</h2>
+                          <h1>Booking</h1>
                           <p>This is the booking section</p>
                         </div>
                       </paper-card>
@@ -2789,7 +2789,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
                         <div class="card-content">
-                          <h2 class="page-title">A winter album from Gothenburg</h2>
+                          <h1>A winter album from Gothenburg</h1>
                           <p class="lead">Some photos from a snowy Gothenburg</p>
                         </div>
                         <div class="card-actions">
@@ -2801,7 +2801,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <iron-image preload alt="people ice-skating" class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
                         <div class="card-content">
-                          <h2 class="page-title">Ice-skating 2011</h2>
+                          <h1>Ice-skating 2011</h1>
                           <p class="lead">A fantastic trip in on lake Vättern</p>
                         </div>
                         <div class="card-actions">
@@ -2861,37 +2861,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </ul>
                 </div>
                 <div class="col-sm-4">
-                  <input class="footer-checkbox" type="checkbox" checked>
-                  <h3 class="footer-heading">Information</h3>
-                  <ul class="list-unstyled footer-list">
-                    <li><a href$="{{baseUrl}}info/about-tours" data-route="about-tours">Overview</a></li>
-                    <li>
-                      <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">About our tours</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">How to get here</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">About Naturguiden</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">About Sweden</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">Weather in Sweden</a>
-                    </li>
-                    <li>
-                      <a href$="{{baseUrl}}info/contact" data-route="contact">Contact us</a>
-                    </li>
-                  </ul>
+                  <div>
+                    <input class="footer-checkbox" type="checkbox" checked>
+                    <h3 class="footer-heading">Information</h3>
+                    <ul class="list-unstyled footer-list">
+                      <li>
+                        <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">About our tours</a>
+                      </li>
+                      <li>
+                        <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">How to get here</a>
+                      </li>
+                      <li>
+                        <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <input class="footer-checkbox" type="checkbox" checked>
+                    <h3 class="footer-heading">About us</h3>
+                    <ul class="list-unstyled footer-list">
+                      <li>
+                        <a href$="{{baseUrl}}about-us" data-route="about-us">About Naturguiden</a>
+                      </li>
+                      <li>
+                        <a href$="{{baseUrl}}about-us/contact" data-route="about-us">Contact us</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="col-sm-4">
                   <input class="footer-checkbox" type="checkbox" checked>
-                  <h3 class="footer-heading">Other categories</h3>
+                  <h3 class="footer-heading">Learn more</h3>
                   <ul class="list-unstyled footer-list">
+                    <li>
+                      <a href$="{{baseUrl}}learn-more" data-route="learn-more">About Sweden</a>
+                    </li>
+                    <li>
+                      <a href$="{{baseUrl}}learn-more/weather" data-route="learn-more">Weather in Sweden</a>
+                    </li>
                     <li>
                       <a href="{{baseUrl}}booking" data-route="booking">Booking</a>
                     </li>
@@ -2918,8 +2925,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="col-sm-6 col-md-4">
                   <address>
                     <strong>John Savelid</strong><br>
-                    <a href="mailto:#">info@naturguiden.se</a><br>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                    <a href="mailto:info@naturguiden.se">info@naturguiden.se</a><br>
+                    <abbr title="Phone">P:</abbr> +46 70 53 53 630
                   </address>
                 </div>
               </div>
