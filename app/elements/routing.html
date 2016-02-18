@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     }
 
-    function scrollToContent(data, next) {
+    function scrollToCollapsedContent(data, next) {
       app.params = data.params;
       jQuery('#' + data.params.name).siblings('iron-collapse').hide();
       jQuery('#' + data.params.name).show();
@@ -52,9 +52,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     });
 
-    page('/adventures/:type/:name', scrollToContent, function(data) {
+    page('/adventures/:type/:name', scrollToCollapsedContent, function(data) {
       app.params = data.params;
       app.route = app.params.type;
+    });
+
+    page('/about-us/contact', function() {
+      app.route = 'about-us';
+      jQuery('#contact')[0].scrollIntoView({behavior: 'smooth'});
+    });
+
+    page('/learn-more/weather', function() {
+      app.route = 'learn-more';
+      jQuery('#weather')[0].scrollIntoView({behavior: 'smooth'});
     });
 
     // Routes that scroll to top (like if loading a new page)
@@ -68,15 +78,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page(app.baseUrl, function() {
       app.route = 'home';
-    });
-
-    page('/users', function() {
-      app.route = 'users';
-    });
-
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
     });
 
     page('/adventures', function() {
@@ -134,20 +135,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'accommodation';
     });
 
-    page('/info/about-naturguiden', function() {
-      app.route = 'about-naturguiden';
+    page('/learn-more', function() {
+      app.route = 'learn-more';
     });
 
-    page('/info/about-sweden', function() {
-      app.route = 'about-sweden';
-    });
-
-    page('/info/weather-sweden', function() {
-      app.route = 'weather-sweden';
-    });
-
-    page('/info/contact', function() {
-      app.route = 'contact';
+    page('/about-us', function() {
+      app.route = 'about-us';
     });
 
     page('/booking', function() {

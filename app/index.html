@@ -77,6 +77,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-toolbar>
 
         <!-- Drawer Content -->
+        <!--  #
+              #
+              # Menu
+              #
+              # -->
         <paper-menu class="list" selectable="a, paper-item" attr-for-selected="data-route" selected="[[route]]">
           <a href="{{baseUrl}}" data-route="home">
             <paper-item>
@@ -181,62 +186,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <div class="divider"></div>
 
-          <!--
-          <paper-submenu>
-            <paper-item data-route="adventures" class="menu-trigger">
-              <iron-icon icon="icons:pets"></iron-icon>
-              Our adventures
-            </paper-item>
-            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-
-              <a href$="{{baseUrl}}adventures" data-route="adventures">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  All
-                </paper-item>
-              </a>
-
-              <a href$="{{baseUrl}}adventures/skating" data-route="skating">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Nordic Skating
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Skiing
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Kayak & canoe
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Hiking
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  MTB
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}adventures/multi" data-route="multi">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Multi Activity
-                </paper-item>
-              </a>
-
-            </paper-menu>
-          </paper-submenu>
-        -->
-
           <a href="{{baseUrl}}booking" data-route="booking">
             <paper-item>
               <iron-icon icon="event"></iron-icon>
@@ -244,109 +193,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
           </a>
 
-          <a href$="{{baseUrl}}info/contact" data-route="contact">
+          <a href$="{{baseUrl}}about-us/contact" data-route="contact">
             <paper-item>
               <iron-icon icon="communication:phone"></iron-icon>
               Contact us
             </paper-item>
           </a>
-
-          <!-- <paper-submenu>
-            <paper-item data-route="info" class="menu-trigger">
-              <iron-icon icon="info"></iron-icon>
-              Information
-            </paper-item>
-            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-
-              <a href$="{{baseUrl}}info" data-route="info">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Owerview
-                </paper-item>
-              </a>
-
-              <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  About our tours
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  How to get here
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Accommundation
-                </paper-item>
-              </a>
-
-            </paper-menu>
-          </paper-submenu>
-
-          <paper-submenu>
-            <paper-item data-route="info" class="menu-trigger">
-              <iron-icon icon="info"></iron-icon>
-              Read more
-            </paper-item>
-            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-
-              <a href$="{{baseUrl}}info" data-route="info">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Owerview
-                </paper-item>
-              </a>
-
-              <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  About Sweden
-                </paper-item>
-              </a>
-              <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
-                <paper-item>
-                  <iron-icon icon="naturguiden_"></iron-icon>
-                  Weather in Sweden
-                </paper-item>
-              </a>
-
-            </paper-menu>
-          </paper-submenu>
-
-          <a href="{{baseUrl}}pictures" data-route="pictures">
-            <paper-item>
-              <iron-icon icon="image:collections"></iron-icon>
-              Photos
-            </paper-item>
-          </a>
-
-          <paper-submenu>
-            <paper-item data-route="info" class="menu-trigger">
-              <iron-icon icon="info"></iron-icon>
-              About us
-            </paper-item>
-            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-
-              <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
-                <paper-item>
-                  <iron-icon icon="custom-icons:naturguiden-clear"></iron-icon>
-                  About Naturguiden
-                </paper-item>
-              </a>
-
-              <a href$="{{baseUrl}}info/contact" data-route="contact">
-                <paper-item>
-                  <iron-icon icon="custom-icons:naturguiden-filled"></iron-icon>
-                  Contact us
-                </paper-item>
-              </a>
-
-            </paper-menu>
-          </paper-submenu> -->
 
         </paper-menu>
 
@@ -373,13 +225,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route">
               <paper-tab data-route="home" link><a href$="{{baseUrl}}" class="link">Home</a></paper-tab>
               <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
-              <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">More information</a></paper-tab>
-              <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Booking</a></paper-tab>
+              <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">Information</a></paper-tab>
+              <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more" class="link">Learn more</a></paper-tab>
               <paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>
-              <!--
-              <paper-tab data-route="contact" link><a href$="{{baseUrl}}contact" class="link">Contact</a></paper-tab>
-              <paper-tab data-route="about" link><a href$="{{baseUrl}}about" class="link">About</a></paper-tab>
-              -->
+              <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us" class="link">About us</a></paper-tab>
+
             </paper-tabs>
             <div class="bottom tabs-right-spacing"></div>
         </paper-toolbar>
@@ -926,7 +776,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           </a>
                         </paper-menu>
 
-                        <div class="card-content collapse-container">
+                        <div class="card-content scroll-to-container">
                           <iron-collapse id="skiingstandard" tabindex="0" opened="false">
                             <div>
                               <h2>Standard</h2>
@@ -1304,7 +1154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </my-fancy-list>
                           </a>
                         </paper-menu>
-                        <div class="card-content collapse-container">
+                        <div class="card-content scroll-to-container">
                           <iron-collapse id="canoecanoe" tabindex="0" opened="true">
                             <div>
                               <h2>Canoeing south of Stockholm</h2>
@@ -2450,53 +2300,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           </a>
                         </div>
                       </my-left-image-paper-card>
-                      <my-left-image-paper-card image="images/500/forest001.jpg">
-                        <div class="card-content">
-                          <h2 class="page-title">About Naturguiden</h2>
-                          <p>Adventures, outdoor in the nature, is our passion.  All inclusive adventure-packages with an experienced guide, transfer, food and  accommodation is what we offer. We have found the most beautiful places for you,  well suited for your chosen activity.</p>
-                          <p>Naturguiden was founded in 1996 and since then have given thousands of people a great time in the Swedish nature.</p>
-                        </div>
-                        <div class="card-actions">
-                          <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
-                            <paper-button>Read more</paper-button>
-                          </a>
-                        </div>
-                      </my-left-image-paper-card>
-                      <my-left-image-paper-card image="images/500/lake001.jpg">
-                        <div class="card-content">
-                          <h2 class="page-title">About Sweden</h2>
-                          <p>Sweden have a lot to offer when coming to outdoor sports. With over 250.000 lakes, 1.350 km of coast with more than 40.000 islands, several big rivers, water is one big reason. We have one of the best area in the world for skating on natural ice, awesome. Kayak in the archipelago or on any of the lakes is also fantastic.</p>
-                          <p>The forest is another reason for being a great outdoor nation, over 50% is forest. Fantastic opportunities for biking, hiking, hunting, cross country skies, snowmobiles, dog sledge and such things..</p>
-                        </div>
-                        <div class="card-actions">
-                          <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
-                            <paper-button>Read more</paper-button>
-                          </a>
-                        </div>
-                      </my-left-image-paper-card>
-                      <my-left-image-paper-card image="images/500/lake002.jpg">
-                        <div class="card-content">
-                          <h2 class="page-title">Weather in Sweden</h2>
-                          <p>What about the weather, what can we expect when coming to Sweden?</p>
-                          <p>As the main thing with the holiday is the outdoor activity, the weather is important.</p>
-                        </div>
-                        <div class="card-actions">
-                          <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
-                            <paper-button>Read more</paper-button>
-                          </a>
-                        </div>
-                      </my-left-image-paper-card>
-                      <my-left-image-paper-card image="images/500/guides001.jpg">
-                        <div class="card-content">
-                          <h2 class="page-title">Contact us</h2>
-                          <p>Contact us </p>
-                        </div>
-                        <div class="card-actions">
-                          <a href$="{{baseUrl}}info/contact" data-route="contact">
-                            <paper-button>Read more</paper-button>
-                          </a>
-                        </div>
-                      </my-left-image-paper-card>
                     </section>
     <!-- #About our tours @about our tours find-next-page -->
                     <section data-route="about-tours">
@@ -2670,8 +2473,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                       </paper-card>
                     </section>
-    <!-- #About Naturguiden @about naturguiden find-next-page -->
-                    <section data-route="about-naturguiden">
+    <!-- #About us @about us find-next-page -->
+                    <section data-route="about-us">
                       <paper-card>
                         <iron-image preload src="http://www.naturguiden.com/images/stories/Logo_RGB.jpg" alt="Naturguiden logo" class="left-image image-width-md image-height-md" sizing="contain"></iron-image>
                         <div class="card-content dont-wrap-image">
@@ -2687,9 +2490,76 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p>/John Savelid</p>
                         </div>
                       </paper-card>
+
+                      <div class="scroll-to-container" id="contact">
+                        <paper-card>
+                          <div class="card-content">
+                            <h2 class="page-title">Contact information</h2>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <h3>Naturguiden</h3>
+                                <h4>Postal adress</h4>
+                                <ul class="nothing-list">
+                                  <li>Naturguiden</li>
+                                  <li>Munkhagsgatan 120B</li>
+                                  <li>58725 LINKÖPING</li>
+                                  <li>SWEDEN</li>
+                                </ul>
+                                <h4>Phone</h4>
+                                <ul class="nothing-list">
+                                  <li>+46 70 53 53 630</li>
+                                </ul>
+                                <h4>Email</h4>
+                                <ul class="nothing-list">
+                                  <li>info@naturguiden.se</li>
+                                </ul>
+                                <h4>Web</h4>
+                                <ul class="nothing-list">
+                                  <li>
+                                    <a href="http://www.naturguiden.com">http://www.naturguiden.com</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="col-sm-6">
+                                <h3>Agents</h3>
+                                <p>You can also contact our agent in your country and make the complete booking there.</p>
+                                <p class="bg-warning">Note: They don't sell all our tours presented on the web</p>
+                                <h4>Nederland</h4>
+                                <ul class="nothing-list">
+                                  <li><h4>Almgrens Travel</h4></li>
+                                  <li>Skating tours</li>
+                                  <li>
+                                    <ul class="nothing-list">
+                                      <li>
+                                        <a href="http://www.almgrens.nl">http://www.almgrens.nl</a>
+                                      </li>
+                                      <li>+31 562 850 970</li>
+                                      <li>info@almgrens.nl</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                                <h4>England</h4>
+                                <ul class="nothing-list">
+                                  <li><h4>Nature Travels</h4></li>
+                                  <li>Skating, MTB and Kayak tours</li>
+                                  <li>
+                                    <ul class="nothing-list">
+                                      <li>
+                                        <a href="http://www.naturetravels.co.uk">http://www.naturetravels.co.uk</a>
+                                      </li>
+                                      <li>+44 1929 463 774</li>
+                                      <li>admin@naturetravels.co.uk</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </paper-card>
+                      </div>
                     </section>
-    <!-- #Abour Sweden @about sweden find-next-page -->
-                    <section data-route="about-sweden">
+    <!-- #Learn more @learn more find-next-page -->
+                    <section data-route="learn-more">
                       <paper-card>
                         <iron-image preload alt="Map of Sweden" src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
                         <div class="card-content">
@@ -2707,9 +2577,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p>More information about what to bring and what to ware you find connected to each product category.</p>
                         </div>
                       </paper-card>
-                    </section>
-    <!-- #Weather in Sweden @weather in sweden find-next-page -->
-                    <section data-route="weather-sweden">
+                      <div class="scroll-to-container" id="weather">
                       <paper-card>
                         <iron-image preload alt="sun over ice" src="http://naturguiden.com/images/stories/ourpackage/sun_over_ice.jpg" class="left-image image-with-margin image-width-md image-height-md" sizing="cover"></iron-image>
                         <div class="card-content">
@@ -2905,73 +2773,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           Days with at least 10 mm rain/snow: 20 days a year</p>
                         </div>
                       </paper-card>
-                    </section>
-    <!-- #Contact us @contact us find-next-page -->
-                    <section data-route="contact">
-                      <paper-card>
-                        <div class="card-content">
-                          <h2 class="page-title">Contact information</h2>
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <h3>Naturguiden</h3>
-                              <h4>Postal adress</h4>
-                              <ul class="nothing-list">
-                                <li>Naturguiden</li>
-                                <li>Munkhagsgatan 120B</li>
-                                <li>58725 LINKÖPING</li>
-                                <li>SWEDEN</li>
-                              </ul>
-                              <h4>Phone</h4>
-                              <ul class="nothing-list">
-                                <li>+46 70 53 53 630</li>
-                              </ul>
-                              <h4>Email</h4>
-                              <ul class="nothing-list">
-                                <li>info@naturguiden.se</li>
-                              </ul>
-                              <h4>Web</h4>
-                              <ul class="nothing-list">
-                                <li>
-                                  <a href="http://www.naturguiden.com">http://www.naturguiden.com</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-sm-6">
-                              <h3>Agents</h3>
-                              <p>You can also contact our agent in your country and make the complete booking there.</p>
-                              <p class="bg-warning">Note: They don't sell all our tours presented on the web</p>
-                              <h4>Nederland</h4>
-                              <ul class="nothing-list">
-                                <li><h4>Almgrens Travel</h4></li>
-                                <li>Skating tours</li>
-                                <li>
-                                  <ul class="nothing-list">
-                                    <li>
-                                      <a href="http://www.almgrens.nl">http://www.almgrens.nl</a>
-                                    </li>
-                                    <li>+31 562 850 970</li>
-                                    <li>info@almgrens.nl</li>
-                                  </ul>
-                                </li>
-                              </ul>
-                              <h4>England</h4>
-                              <ul class="nothing-list">
-                                <li><h4>Nature Travels</h4></li>
-                                <li>Skating, MTB and Kayak tours</li>
-                                <li>
-                                  <ul class="nothing-list">
-                                    <li>
-                                      <a href="http://www.naturetravels.co.uk">http://www.naturetravels.co.uk</a>
-                                    </li>
-                                    <li>+44 1929 463 774</li>
-                                    <li>admin@naturetravels.co.uk</li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </paper-card>
+                      </div>
                     </section>
     <!-- #Booking @booking find-next-page -->
                     <section data-route="booking">
