@@ -51,12 +51,14 @@ for further information on custom CSS properties.
 
   --color-menu-link: var(--paper-grey-900);
   --color-menu-selected: var(--paper-blue-500);
+  --color-menu-subheader: var(--paper-grey-500);
 
   /* Backgrounds */
   --color-image-background: var(--paper-teal-100);
   --color-header-background: var(--paper-blue-500);
   --color-page-background: var(--paper-grey-200);
   --color-drawer-background: var(--paper-white);
+  --color-drawer-hover-background: var(--paper-grey-100);
   --primary-color: var(--paper-red-500); /* drawer-header-background */
 
     --color-test: var(--paper-pink-300);
@@ -303,11 +305,28 @@ paper-tabs .link {
   position: absolute;
   top: 12px;
   right: 6px;
-  z-index: 5;
   display: block;
   width: 20px;
   height: 20px;
   background-size: cover;
+}
+paper-menu div.divider {
+  padding: 0;
+  margin: 12px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+paper-menu div.subheader {
+  color: var(--color-menu-subheader);
+  align-items: center;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 8px 16px;
+}
+paper-menu a:hover {
+  background-color: var(--color-drawer-hover-background);
 }
 
 footer{

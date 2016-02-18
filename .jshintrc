@@ -17,6 +17,7 @@
     "wrap": true,
     "unwrap": true,
     "Polymer": true,
+    "jQuery": true,
     "Platform": true,
     "page": true,
     "app": true

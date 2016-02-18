@@ -72,21 +72,119 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-scroll-header-panel drawer fixed>
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
+          <paper-icon-button id="paperToggle" icon="icons:menu" paper-drawer-toggle></paper-icon-button>
           <span class="paper-font-title">Menu</span>
         </paper-toolbar>
 
         <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+        <paper-menu class="list" selectable="a, paper-item" attr-for-selected="data-route" selected="[[route]]">
           <a href="{{baseUrl}}" data-route="home">
             <paper-item>
-              <iron-icon icon="home"></iron-icon>
+              <iron-icon icon="icons:home"></iron-icon>
               Home
             </paper-item>
           </a>
 
+          <a href="{{baseUrl}}adventures" data-route="adventures">
+            <paper-item>
+              <iron-icon icon="icons:pets"></iron-icon>
+              Our adventures
+            </paper-item>
+          </a>
+
+          <a href="{{baseUrl}}info" data-route="info">
+            <paper-item>
+              <iron-icon icon="icons:info"></iron-icon>
+              Information
+            </paper-item>
+          </a>
+
+          <a href="{{baseUrl}}learn-more" data-route="learn-more">
+            <paper-item>
+              <iron-icon icon="icons:explore"></iron-icon>
+              Learn more
+            </paper-item>
+          </a>
+
+          <a href="{{baseUrl}}pictures" data-route="pictures">
+            <paper-item>
+              <iron-icon icon="image:collections"></iron-icon>
+              Photos
+            </paper-item>
+          </a>
+
+          <a href="{{baseUrl}}About-us" data-route="about-us">
+            <paper-item>
+              <iron-icon icon="custom-icons:naturguiden-clear"></iron-icon>
+              About us
+            </paper-item>
+          </a>
+
+          <div class="divider"></div>
+
+          <div class="subheader">
+            Our adventures
+          </div>
+
+          <a href$="{{baseUrl}}adventures/skating" data-route="skating">
+            <paper-item>
+              Nordic Skating
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">
+            <paper-item>
+              Skiing
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">
+            <paper-item>
+              Kayak & canoe
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">
+            <paper-item>
+              Hiking
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">
+            <paper-item>
+              Mountain bike
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}adventures/multi" data-route="multi">
+            <paper-item>
+              Multi Activity
+            </paper-item>
+          </a>
+
+          <div class="divider"></div>
+
+          <div class="subheader">
+            Information
+          </div>
+
+          <a href$="{{baseUrl}}info/about-tours" data-route="about-tours">
+            <paper-item>
+              About our tours
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}info/how-get-here" data-route="how-get-here">
+            <paper-item>
+              How to get here
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
+            <paper-item>
+              Accommundation
+            </paper-item>
+          </a>
+
+          <div class="divider"></div>
+
+          <!--
           <paper-submenu>
             <paper-item data-route="adventures" class="menu-trigger">
-              <iron-icon icon="pets"></iron-icon>
+              <iron-icon icon="icons:pets"></iron-icon>
               Our adventures
             </paper-item>
             <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
@@ -137,6 +235,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </paper-menu>
           </paper-submenu>
+        -->
 
           <a href="{{baseUrl}}booking" data-route="booking">
             <paper-item>
@@ -145,7 +244,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
           </a>
 
-          <paper-submenu>
+          <a href$="{{baseUrl}}info/contact" data-route="contact">
+            <paper-item>
+              <iron-icon icon="communication:phone"></iron-icon>
+              Contact us
+            </paper-item>
+          </a>
+
+          <!-- <paper-submenu>
             <paper-item data-route="info" class="menu-trigger">
               <iron-icon icon="info"></iron-icon>
               Information
@@ -240,7 +346,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </a>
 
             </paper-menu>
-          </paper-submenu>
+          </paper-submenu> -->
 
         </paper-menu>
 
@@ -252,7 +358,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall" >
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <paper-icon-button id="paperToggle" icon="icons:menu" paper-drawer-toggle></paper-icon-button>
           <div class="top top-container center horizontal layout">
             <div class="app-name">Naturguiden</div>
           </div>

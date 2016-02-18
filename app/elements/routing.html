@@ -33,12 +33,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     function scrollToContent(data, next) {
       app.params = data.params;
-      $('#' + data.params.name).siblings('iron-collapse').hide();
-      $('#' + data.params.name).show();
-      $('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
-      $('#' + data.params.name).attr('opened','true');
+      jQuery('#' + data.params.name).siblings('iron-collapse').hide();
+      jQuery('#' + data.params.name).show();
+      jQuery('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
+      jQuery('#' + data.params.name).attr('opened','true');
 
-      $('#' + data.params.name).parent()[0].scrollIntoView({behavior: "smooth"});
+      jQuery('#' + data.params.name).parent()[0].scrollIntoView({behavior: 'smooth'});
       next();
     }
 
