@@ -46,9 +46,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Bootstrap -->
   <link href="styles/bootstrap.min.css" rel="stylesheet">
 
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
@@ -141,17 +138,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-menu>
           </paper-submenu>
 
+          <a href="{{baseUrl}}booking" data-route="booking">
+            <paper-item>
+              <iron-icon icon="event"></iron-icon>
+              Booking
+            </paper-item>
+          </a>
+
           <paper-submenu>
             <paper-item data-route="info" class="menu-trigger">
               <iron-icon icon="info"></iron-icon>
-              More information
+              Information
             </paper-item>
             <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
 
               <a href$="{{baseUrl}}info" data-route="info">
                 <paper-item>
                   <iron-icon icon="chevron-right"></iron-icon>
-                  All
+                  Owerview
                 </paper-item>
               </a>
 
@@ -173,12 +177,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   Accommundation
                 </paper-item>
               </a>
-              <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
+
+            </paper-menu>
+          </paper-submenu>
+
+          <paper-submenu>
+            <paper-item data-route="info" class="menu-trigger">
+              <iron-icon icon="info"></iron-icon>
+              Read more
+            </paper-item>
+            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
+
+              <a href$="{{baseUrl}}info" data-route="info">
                 <paper-item>
                   <iron-icon icon="chevron-right"></iron-icon>
-                  About Naturguiden
+                  Owerview
                 </paper-item>
               </a>
+
               <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
                 <paper-item>
                   <iron-icon icon="chevron-right"></iron-icon>
@@ -187,27 +203,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </a>
               <a href$="{{baseUrl}}info/weather-sweden" data-route="weather-sweden">
                 <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
+                  <iron-icon icon="naturguiden_"></iron-icon>
                   Weather in Sweden
-                </paper-item>
-              </a>
-
-              <a href$="{{baseUrl}}info/contact" data-route="contact">
-                <paper-item>
-                  <iron-icon icon="chevron-right"></iron-icon>
-                  Contact us
                 </paper-item>
               </a>
 
             </paper-menu>
           </paper-submenu>
-
-          <a href="{{baseUrl}}booking" data-route="booking">
-            <paper-item>
-              <iron-icon icon="event"></iron-icon>
-              Booking
-            </paper-item>
-          </a>
 
           <a href="{{baseUrl}}pictures" data-route="pictures">
             <paper-item>
@@ -215,6 +217,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               Photos
             </paper-item>
           </a>
+
+          <paper-submenu>
+            <paper-item data-route="info" class="menu-trigger">
+              <iron-icon icon="info"></iron-icon>
+              About us
+            </paper-item>
+            <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
+
+              <a href$="{{baseUrl}}info/about-naturguiden" data-route="about-naturguiden">
+                <paper-item>
+                  <iron-icon icon="custom-icons:naturguiden-clear"></iron-icon>
+                  About Naturguiden
+                </paper-item>
+              </a>
+
+              <a href$="{{baseUrl}}info/contact" data-route="contact">
+                <paper-item>
+                  <iron-icon icon="custom-icons:naturguiden-filled"></iron-icon>
+                  Contact us
+                </paper-item>
+              </a>
+
+            </paper-menu>
+          </paper-submenu>
 
         </paper-menu>
 
@@ -298,7 +324,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </a>
                           </div>
                           <div class="card-actions">
-                            <a href$="{{baseUrl}}adventures/skating">
+                            <a href$="{{baseUrl}}adventures/skating" data-route="skating">
                               <paper-button>To our Ice-skating page</paper-button>
                             </a>
                           </div>
@@ -755,37 +781,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
                           <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
                         </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/skiing/skiingstandard" data-route="skiing">
+                            <paper-button>Standard</paper-button>
+                          </a>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/skiing/skiingadventure" data-route="skiing">
+                            <paper-button>Adventure</paper-button>
+                          </a>
+                        </div>
+                        <div class="card-actions">
+                          <a href$="{{baseUrl}}adventures/skiing/skiingmidnight" data-route="skiing">
+                            <paper-button>Midnight</paper-button>
+                          </a>
+                        </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
                           <h2 class="page-title">Cross country skiing <small class="hidden-xs">in the Swedish mountains!</small></h2>
                           <p class="lead">We have three packages to choose between:</p>
                         </div>
-                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
-                            <my-fancy-list separated header="Standard"
-                            image="images/100/skiing001.jpg"
-                            aria-expanded$="[[isExpanded(opened-skiing-standard)]]" aria-controls="skiing-standard" onclick="show_collapsed_package('#skiing-standard')"
-                            class="col-sm-4 pointer">
+                        <paper-menu selectable="my-fancy-list , a" class="row row-special">
+                          <a href$="{{baseUrl}}adventures/skiing/skiingstandard" class="col-sm-4">
+                            <my-fancy-list separated header="Standard" image="images/100/skiing001.jpg">
                               <p>Our standard package is including everything for a fantastic skiing experience!</p>
                             </my-fancy-list>
-
-                            <my-fancy-list separated header="Adventure"
-                            image="images/100/skiing002.jpg"
-                            aria-expanded$="[[isExpanded(opened-skiing-adventure)]]" aria-controls="skiing-adventure" onclick="show_collapsed_package('#skiing-adventure')"
-                            class="col-sm-4 pointer">
+                          </a>
+                          <a href$="{{baseUrl}}adventures/skiing/skiingadventure" class="col-sm-4">
+                            <my-fancy-list separated header="Adventure" image="images/100/skiing002.jpg">
                               <p>This package focuses more on giving you an adventure to remember.</p>
                             </my-fancy-list>
-
-                            <my-fancy-list separated header="Midnight-Sun"
-                            image="images/100/skiing003.jpg"
-                            aria-expanded$="[[isExpanded(opened-skiing-midnight)]]" aria-controls="skiing-midnight" onclick="show_collapsed_package('#skiing-midnight')"
-                            class="col-sm-4 pointer">
+                          </a>
+                          <a href$="{{baseUrl}}adventures/skiing/skiingmidnight" class="col-sm-4">
+                            <my-fancy-list separated header="Midnight-Sun" image="images/100/skiing003.jpg">
                               <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
                             </my-fancy-list>
+                          </a>
                         </paper-menu>
-                        <div class="card-content">
-                          <iron-collapse id="skiing-standard" tabindex="0" opened="{{opened-skiing-standard}}">
+
+                        <div class="card-content collapse-container">
+                          <iron-collapse id="skiingstandard" tabindex="0" opened="false">
                             <div>
+                              <h2>Standard</h2>
                               <p class="lead">Cross country skiing over the mountains. Experience the space and the meditative in crossing the mountains on skies. Enjoy the breaks with beautiful views sitting in our dug couches eating our lunch.</p>
                               <p>We spend the nights in mountains lodges enjoy the time together during the evening.</p>
                               <p>First day we start training downhill skiing with cross country skies. Good to have knowledge when we get up on the mountains. You carry your own backpack with personal equipment during the tour.</p>
@@ -880,7 +918,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <p>This day we follow the marked tracks towards Ljungdalen. If we have met no people in earlier days, we will probably meet some today. It goes up and down over some minor mountains and after 13 km, you get the last part downhill from the mountain through the forest down to the village Ljungdalen. In the afternoon we are back. A welcome shower or maybe a visit to the small indoor swimming pool is waiting. A good dinner ends a fantastic tour before it is time for the bus back to Östersund.</p>
                             </div>
                           </iron-collapse>
-                          <iron-collapse id="skiing-adventure" tabindex="1" opened="{{opened-skiing-adventure}}">
+                          <iron-collapse id="skiingadventure" tabindex="1" opened="false">
+                            <div>
+                              <h2>Adventure</h2>
                               <p class="lead">A tour with more adventures. First night we spend in a snow cave. We heading for the highest summit and most of the tour is made of track. But there is also some luxury, one night at Helgas with sauna and time to relax.</p>
                               <p>First day starting with training on downhill skiing on cross country skies. Could be tricky but with some help you got the right technique.</p>
                               <h3>Dates</h3>
@@ -976,8 +1016,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <p>The last stretch down to Ljungdalen is downhill, hopefully not too steep. In the evening we are back at the hostel. A welcome shower or maybe a visit to the small indoor swimming pool is waiting. A good dinner ends a fantastic tour.</p>
                               <h4>Day V</h4>
                               <p>Early breakfast and then to the bus that leaves at 06.00. Back in Östersund at half past nine. Take an early plane back home or take some hours in the city of Östersund.</p>
+                            </div>
                           </iron-collapse>
-                          <iron-collapse id="skiing-midnight" tabindex="2" opened="{{opened-skiing-midnight}}">
+                          <iron-collapse id="skiingmidnight" tabindex="2" opened="false">
+                            <div>
+                              <h2>Midnight Sun</h2>
                               <p class="lead">Visit the highest mountain region of Sweden, situated in the far north-east parts of the country. Here we will be skiing during late spring, early summer, when there is still snow. During this time of the year, we almost will experience the midnight sun, a time of the year when the sun only sets for an hour midnight. We will then be able to ski during the whole day and the whole night. For sleeping, there are nice cabins to spend the nights, or days in, depending on when we want to ski. The strong sun and white snow makes it essential to bring sunglasses, a hat and sun factor.</p>
                               <h3>Dates:</h3>
                               <h4>Individuals</h4>
@@ -1068,6 +1111,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <p>The third day, we wake up a little late and decide during breakfast where to ski this day. Maybe we take a long tour, or find a nice slope for Telemarking or just enjoy the nice weather and make a couch in the snow, relaxing and reading some book.</p>
                               <h4>Day IV</h4>
                               <p>A period of the year when night and day almost looks the same. We get up real early in the morning, the sun already high on the sky. Today we heading back towards the civilisation, slightly downhill all the way back to Abisko. Then transfer back to Kiruna and the airport.</p>
+                            </div>
                           </iron-collapse>
                         </div>
                       </paper-card>
@@ -1142,25 +1186,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <h2 class="page-title">Kayak & canoe adventures</h2>
                           <p class="lead">We have two packages to choose between:</p>
                         </div>
-                        <paper-menu selectable="my-fancy-list" class="row" style="margin-left:0; margin-right:0; margin-bottom: 8px;">
-
-                            <my-fancy-list separated header="Canoe, south Stockholm"
-                            image="images/100/canoe001.jpg"
-                            aria-expanded$="[[isExpanded(opened-canoe-cano)]]" aria-controls="canoe-canoe" onclick="show_collapsed_package('#canoe-canoe')"
-                            class="col-sm-6 pointer">
+                        <paper-menu selectable="my-fancy-list" class="row row-special">
+                          <a href$="{{baseUrl}}adventures/canoe/canoecanoe" class="col-sm-6">
+                            <my-fancy-list separated header="Canoe, south Stockholm" image="images/100/canoe001.jpg">
                               <p>Canoe south of Stockholm for two days</p>
                             </my-fancy-list>
-
-                            <my-fancy-list separated header="Kayaking in the archipelago"
-                            image="images/100/kayak001.jpg"
-                            aria-expanded$="[[isExpanded(opened-canoe-kayak)]]" aria-controls="canoe-kayak" onclick="show_collapsed_package('#canoe-kayak')"
-                            class="col-sm-6 pointer">
+                          </a>
+                          <a href$="{{baseUrl}}adventures/canoe/canoekayak" class="col-sm-6">
+                            <my-fancy-list separated header="Kayaking in the archipelago" image="images/100/kayak001.jpg">
                               <p>Kayaking in the archipelago of the Baltic sea</p>
                             </my-fancy-list>
+                          </a>
                         </paper-menu>
-                        <div class="card-content">
-                          <iron-collapse id="canoe-canoe" tabindex="0" opened="{{opened-canoe-canoe}}">
+                        <div class="card-content collapse-container">
+                          <iron-collapse id="canoecanoe" tabindex="0" opened="true">
                             <div>
+                              <h2>Canoeing south of Stockholm</h2>
                               <p class="lead">Two days in canoe on long narrow lakes and on calm rivers. Close to Stockholm but away from the civilisation.</p>
                               <p>A journey on water through Swedish woodlands. Sleeping in tent , cooking over open fire, washing yourself in the lake. Enjoy the nature and the feeling of being alone at the camp site, sitting around the fire looking at the stars. No experiences of canoe needed, we adjust the journey after the group.</p>
                               <h3>Dates</h3>
@@ -1233,8 +1274,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <p>Waking up close to the lake. Maybe start the day with a bath before breakfast. We pack all our stuff back in the canoes, leave no trace, and continue our journey. Today everyone is used to the canoe and can put more focus to the surroundings when following the shore line south. Once we need to stop and pull the canoe from one lake to the next. A small canoe wagon is very handy, we don’t need to carry. After several breaks and a nice lunch we reach Gnesta, our goal. An ice cream as reward before unload the canoes, arrange with the baggage and walk the 100 meters to the railway station and the train back towards Stockholm.</p>
                             </div>
                           </iron-collapse>
-                          <iron-collapse id="canoe-kayak" tabindex="1" opened="{{opened-canoe-kayak}}">
+                          <iron-collapse id="canoekayak" tabindex="1" opened="false">
                             <div>
+                              <h2>Kayaking in the archipelago</h2>
                               <p class="lead">During three days we paddle kayaks in the beautiful archipelago of Nyköping. Between islands and skerries, out in the open sea and in seduced caves.</p>
                               <p>We sleep in tents on the islands along the way, prepare the food over open fire and wash ourselves in rock pools of the Baltic Sea.</p>
                               <h3>Dates</h3>
@@ -3002,15 +3044,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   </template>
-  <script>
-  function show_collapsed_package(selector) {
-    $(selector).siblings('iron-collapse').hide();
-    $(selector).show();
-  }
-  document.querySelector('template[is=dom-bind]').isExpanded = function(opened) {
-    return String(opened);
-  };
-</script>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->

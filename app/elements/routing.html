@@ -9,6 +9,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <script src="../bower_components/page/page.js"></script>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 <script>
   window.addEventListener('WebComponentsReady', function() {
 
@@ -27,13 +31,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     }
 
+    function scrollToContent(data, next) {
+      app.params = data.params;
+      $('#' + data.params.name).siblings('iron-collapse').hide();
+      $('#' + data.params.name).show();
+      $('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
+      $('#' + data.params.name).attr('opened','true');
+
+      $('#' + data.params.name).parent()[0].scrollIntoView({behavior: "smooth"});
+      next();
+    }
+
     function closeDrawer(ctx, next) {
       app.closeDrawer();
       next();
     }
 
-    // Routes
-    page('*', scrollToTop, closeDrawer, function(ctx, next) {
+    // Routes for adventure packages (scrolled down to content)
+    page('*', closeDrawer, function(ctx, next) {
+      next();
+    });
+
+    page('/adventures/:type/:name', scrollToContent, function(data) {
+      app.params = data.params;
+      app.route = app.params.type;
+    });
+
+    // Routes that scroll to top (like if loading a new page)
+    page('*', scrollToTop, function(ctx, next) {
       next();
     });
 
@@ -61,6 +86,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/adventures/skating', function() {
       app.route = 'skating';
     });
+
     page('/adventures/skating/nl', function() {
       app.route = 'skating-nl';
     });
@@ -71,6 +97,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/adventures/skiing', function() {
       app.route = 'skiing';
     });
+
     page('/adventures/skiing/fr', function() {
       app.route = 'skiing-fr';
     });
