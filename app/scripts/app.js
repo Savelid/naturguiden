@@ -49,12 +49,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var appName = Polymer.dom(document).querySelector('#mainToolbar .app-name');
     var appLogo = Polymer.dom(document).querySelector('#mainToolbar .app-logo');
     var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
+    var naturguiden_name = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
 
     var detail = e.detail;
     var heightDiff = detail.height - detail.condensedHeight;
     var yRatio = Math.min(1, detail.y / heightDiff);
     // appName max size when condensed. The smaller the number the smaller the condensed size.
-    var maxMiddleScale = 0.00;
+    var maxMiddleScale = 0.40;
     var auxHeight = heightDiff - detail.y;
     var auxScale = heightDiff / (1 - maxMiddleScale);
     var scaleTop = 0 + yRatio;
@@ -64,12 +65,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Move/translate middleContainer
     Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
 
-    // Scale middleContainer appName
-    Polymer.Base.transform('scale(' + scaleTop + ') translateZ(0)', appName);
 
     // Scale middleContainer appName
-    Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appLogo);
-    appLogo.style.opacity = scaleBottom;
+    //Polymer.Base.transform('scale(' + scaleTop + ') translateZ(0)', appName);
+
+    // Scale middleContainer appName
+    //Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appLogo);
+    //appLogo.style.opacity = scaleBottom;
+    naturguiden_name.style.width = 100 - (yRatio * 50) + '%';
+
   });
 
   // Scroll page to top and expand header

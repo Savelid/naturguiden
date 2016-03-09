@@ -211,23 +211,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall" >
           <paper-icon-button id="paperToggle" icon="custom-icons:menu" paper-drawer-toggle></paper-icon-button>
-          <div class="top top-container center horizontal layout">
-            <div class="app-name">Naturguiden</div>
-          </div>
+          <div class="flex"></div>
+          <a href="https://www.facebook.com/Naturguiden/">
+            <paper-icon-button class="large" icon="special-icons:facebook"></paper-icon-button>
+          </a>
+          <paper-icon-button class="large" icon="special-icons:tripadvisor"></paper-icon-button>
+          <paper-icon-button class="large" icon="special-icons:instagram"></paper-icon-button>
+          <a href$="{{baseUrl}}about-us/contact" data-route="contact">
+            <paper-icon-button class="large" icon="special-icons:mail"></paper-icon-button>
+          </a>
+
           <!-- Application name -->
-          <div class="middle middle-container center horizontal layout">
-            <div class="app-logo" style="padding:0px; padding-bottom: 0px;"><iron-image alt="Naturguiden logo" src="images/logo.png" style="height:120px; width:188px;"></iron-image></div>
+          <div class="middle middle-container center horizontal layout" style="width:300px;">
+            <div class="app-logo" style="padding:0px; padding-bottom: 0px;">
+              <a href="{{baseUrl}}" data-route="home">
+                <img class="naturguiden_name" alt="Naturguiden name" src="images/name.png">
+              </a>
+            </div>
           </div>
 
           <!-- Application sub title -->
 
             <div class="bottom flex"></div>
-            <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route">
-              <paper-tab data-route="home" link><a href$="{{baseUrl}}" class="link">Home</a></paper-tab>
+            <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route" scrollable hide-scroll-button selectable="paper-tab">
+              <paper-tab data-route="home" link style="width:0; padding:0;">&nbsp;</paper-tab>
               <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
               <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">Information</a></paper-tab>
               <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more" class="link">Learn more</a></paper-tab>
-              <paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>
+              <!--<paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>-->
               <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us" class="link">About us</a></paper-tab>
 
             </paper-tabs>
@@ -237,21 +248,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Main Content -->
           <div class="content">
             <div class="row">
-              <div class="col-md-3 content-left hidden-sm hidden-xs">
+              <div class="col-md-4 content-left hidden-sm hidden-xs">
+                <paper-card>
+                  <div class="card-content">
+                    <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
+                    <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script>
+                  </div>
+                </paper-card>
                 <paper-card>
                   <div class="card-content">
                     <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
                     <!-- <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script> -->
+                    <blockquote class="instagram-media" data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/z7-BnZD6vC/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A photo posted by @iceguide</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-07T18:45:18+00:00">Mar 7, 2015 at 10:45am PST</time></p></div></blockquote>
+                    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
                   </div>
                 </paper-card>
                 <paper-card>
                   <div class="card-content">
                     <!-- <div id="c_f91bbf77679afb6f21cdc8bd9114b04a" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Östersund Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/f91bbf77679afb6f21cdc8bd9114b04a"></script> -->
+                    <div id="TA_selfserveprop583" class="TA_selfserveprop">
+                    <ul id="B1Lxhc" class="TA_links n3pNiIe3Asb">
+                    <li id="s0nk50qwnru" class="p3vvSf6a3W">
+                    <a target="_blank" href="https://www.tripadvisor.co.uk/"><img src="http://www.tripadvisor.co.uk/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <script src="http://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=583&amp;locationId=2010311&amp;lang=en_UK&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=false&amp;iswide=false&amp;border=false&amp;display_version=2"></script>
+
                   </div>
                 </paper-card>
 
               </div>
-              <div class="col-md-9 content-right">
+              <div class="col-md-8 content-right">
                 <div class="card-stack">
                  <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
@@ -365,9 +393,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <h1>Inspiration</h1>
                           <p class="lead">A nice video from one of our guest. Coming here for Nordic skating 2015</p>
                         </div>
-                        <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                        </div>
+                        <google-youtube
+                          video-id="b5CztALMDsU"
+                          fluid
+                          chromeless
+                          rel="0"
+                          start="5"
+                          autoplay="0">
+                        </google-youtube>
                       </paper-card>
 
                     </section>

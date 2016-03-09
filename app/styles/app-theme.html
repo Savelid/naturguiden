@@ -55,7 +55,7 @@ for further information on custom CSS properties.
 
   /* Backgrounds */
   --color-image-background: var(--paper-teal-100);
-  --color-header-background: var(--paper-blue-500);
+  --color-header-background: var(--paper-blue-300);
   --color-page-background: var(--paper-grey-200);
   --color-drawer-background: var(--paper-white);
   --color-drawer-hover-background: var(--paper-grey-100);
@@ -162,6 +162,10 @@ footer a {
 #drawerToolbar {
 
 }
+paper-icon-button.large {
+  width: 48px;
+  height: 48px;
+}
 iron-collapse {
   border:0;
   box-decoration-break: none;
@@ -171,6 +175,18 @@ iron-collapse {
 paper-tabs {
   width: calc(100% - 300px);
   max-width: 1200px;
+  background-color: inherit;
+}
+paper-tabs .link {
+  @apply(--layout-horizontal);
+  @apply(--layout-center-center);
+  text-decoration: inherit;
+  text-transform: uppercase;
+  color: inherit;
+  height: 100%;
+}
+paper-tab {
+  padding: 0 15px;
 }
 paper-scroll-header-panel {
   height: 100%;
@@ -223,8 +239,8 @@ paper-toolbar.tall {
 
 #mainToolbar .middle-container  {
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 48px;
+  margin-right: 0;
 }
 
 #mainToolbar .tab-menu-container {
@@ -248,14 +264,6 @@ paper-toolbar.tall {
   max-width: 1200px;
   margin: 0 auto;
   width: calc(100% - 16px);
-}
-
-paper-tabs .link {
-  @apply(--layout-horizontal);
-  @apply(--layout-center-center);
-  text-decoration: inherit;
-  color: inherit;
-  height: 100%;
 }
 
 .left-image {
@@ -325,6 +333,11 @@ paper-menu div.subheader {
 }
 paper-menu a:hover {
   background-color: var(--color-drawer-hover-background);
+}
+
+.naturguiden_name {
+  width: 100%;
+  --iron-image-width: 100%;
 }
 
 footer{
@@ -406,7 +419,7 @@ footer h3 {
     /* Medium devices (desktops, 992px and up) */
     @media (min-width: 992px) {
       .content-left {
-        width: 270px;
+        width: 332px;
       }
       .content-right {
         max-width: calc(100% - 270px);
@@ -414,10 +427,6 @@ footer h3 {
       .card-stack {
         margin: 0 auto 0 0;
         width: calc(100% - 16px);
-      }
-      #mainToolbar .middle-container  {
-        margin-left: 48px;
-        margin-right: 0;
       }
     }
 
