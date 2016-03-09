@@ -174,7 +174,7 @@ iron-collapse {
 }
 paper-tabs {
   width: calc(100% - 300px);
-  max-width: 1200px;
+  max-width: 900px;
   background-color: inherit;
 }
 paper-tabs .link {
@@ -186,7 +186,8 @@ paper-tabs .link {
   height: 100%;
 }
 paper-tab {
-  padding: 0 15px;
+  width: 25%;
+  padding: 0 10px;
 }
 paper-scroll-header-panel {
   height: 100%;
@@ -235,6 +236,8 @@ paper-toolbar.tall .app-name {
 }
 paper-toolbar.tall {
   background-color: transparent;
+  --paper-toolbar-height: 64px;
+  --paper-toolbar-sm-height: 64px;
 }
 
 #mainToolbar .middle-container  {
@@ -340,6 +343,10 @@ paper-menu a:hover {
   --iron-image-width: 100%;
 }
 
+.logo-container {
+  width: 200px;
+}
+
 footer{
   padding: 16px 40px;
   color: rgb(158,158,158);
@@ -393,6 +400,7 @@ footer h3 {
 
   .tabs-right-spacing{
     width: calc(100% - 1470px);
+    min-width: 150px;
   }
 
   /* Breakpoints */
@@ -413,8 +421,12 @@ footer h3 {
       display: block;
     }
     .footer-checkbox:checked + .footer-heading:after {
-      content: ''; }
+      content: '';
     }
+    .logo-container {
+      width: 250px;
+    }
+  }
 
     /* Medium devices (desktops, 992px and up) */
     @media (min-width: 992px) {
@@ -427,6 +439,9 @@ footer h3 {
       .card-stack {
         margin: 0 auto 0 0;
         width: calc(100% - 16px);
+      }
+      .logo-container {
+        width: 300px;
       }
     }
 
