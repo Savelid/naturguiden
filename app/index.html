@@ -60,9 +60,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
+
+  <script>
+    function showNews() {
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("newsFeed").innerHTML = xmlhttp.responseText;
+                }
+            };
+            xmlhttp.open("GET","http://localhost/ng_skating_db/news.php");
+            xmlhttp.send();
+    }
+    function showPhotos() {
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("photoFeed").innerHTML = xmlhttp.responseText;
+                }
+            };
+            xmlhttp.open("GET","http://localhost/ng_skating_db/photos.php");
+            xmlhttp.send();
+    }
+    </script>
+
 </head>
 
-<body unresolved class="fullbleed layout vertical">
+<body unresolved class="fullbleed layout vertical" onload="showNews()">
 
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
@@ -143,7 +181,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
           <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">
             <paper-item>
-              Kayak & canoe
+              Kayaking
             </paper-item>
           </a>
           <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">
@@ -151,7 +189,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               Hiking
             </paper-item>
           </a>
-          <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">
+          <!-- <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">
             <paper-item>
               Mountain bike
             </paper-item>
@@ -160,7 +198,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-item>
               Multi Activity
             </paper-item>
-          </a>
+          </a> -->
 
           <div class="divider"></div>
 
@@ -249,11 +287,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="content">
             <div class="row">
               <div class="col-md-4 content-left hidden-sm hidden-xs">
-                <paper-card>
-                  <div class="card-content">
-                    <paper-button raised>Book Now</paper-button>
-                  </div>
-                </paper-card>
+
+                <div style="padding:15px; width:100%;">
+                  <a href="{{baseUrl}}booking" data-route="booking">
+                    <paper-button raised style="width: 100%; background: #FFC107;">Book Now</paper-button>
+                  </a>
+                </div>
+
+                <div id="newsFeed">
+                  <paper-spinner active class="center-block"></paper-spinner>
+                  <paper-card hidden>
+                    <div class="card-content">
+                      Sorry, unable to load news from the server :(
+                    </div>
+                  </paper-card>
+                </div>
+
                 <paper-card>
                   <div class="card-content">
                     <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
@@ -496,9 +545,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <div class="row">
                         <div class="col-sm-6">
                           <paper-card>
-                            <div class="embed-responsive embed-responsive-16by9">
-                              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b5CztALMDsU?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                            </div>
+                            <google-youtube
+                              video-id="b5CztALMDsU"
+                              fluid
+                              chromeless
+                              rel="0"
+                              start="5"
+                              autoplay="0">
+                            </google-youtube>
                             <div class="card-content">
                               <p class="lead">Get inspired by watching this move from one of our guests that visited us last winter</p>
                             </div>
@@ -506,9 +560,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                         <div class="col-sm-6">
                           <paper-card>
-                            <div class="embed-responsive embed-responsive-16by9">
-                              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SdfL2nY-Xs8?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                            </div>
+                            <google-youtube
+                              video-id="SdfL2nY-Xs8"
+                              fluid
+                              chromeless
+                              rel="0"
+                              start="5"
+                              autoplay="0">
+                            </google-youtube>
                             <div class="card-content">
                               <p class="lead">Clean Bandits fantastic music video from lake Vättern</p>
                               <p>Their next hit <a href="http://www.youtube.com/watch?v=m-M1AtrxztU"><em>Rather Be</em></a> are more known and you have probably heard it</p>
@@ -2809,9 +2868,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             <paper-radio-group selected="skating" id="mainRadio">
                               <paper-radio-button name="skating">Skating</paper-radio-button>
                               <paper-radio-button name="skiing">Skiing</paper-radio-button>
-                              <paper-radio-button name="kayak">Kayak/Canoe</paper-radio-button>
+                              <paper-radio-button name="kayak">Kayak</paper-radio-button>
                               <paper-radio-button name="hiking">Hiking</paper-radio-button>
-                              <paper-radio-button name="multi">Multi activity</paper-radio-button>
+                              <!-- <paper-radio-button name="multi">Multi activity</paper-radio-button> -->
                             </paper-radio-group>
                             <br>
                             <paper-radio-group selected="standard" id="skiingRadio" hidden>
@@ -2820,10 +2879,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <paper-radio-button name="midnight">Midnight</paper-radio-button>
                             </paper-radio-group>
 
-                            <paper-radio-group selected="kayaking" id="kayakRadio" hidden>
+                            <!-- <paper-radio-group selected="kayaking" id="kayakRadio" hidden>
                               <paper-radio-button name="kayaking">Kayaking</paper-radio-button>
                               <paper-radio-button name="canoeing">Canoeing</paper-radio-button>
-                            </paper-radio-group>
+                            </paper-radio-group> -->
 
                             <div>
                               Arrival/depature:
@@ -2897,8 +2956,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             document.getElementById('mainRadio').addEventListener('paper-radio-group-changed', function(event) {
                               if(document.getElementById('mainRadio').selected == 'skiing'){skiingRadio.hidden = false;}
                               else {skiingRadio.hidden = true;}
-                              if(document.getElementById('mainRadio').selected == 'kayak'){kayakRadio.hidden = false;}
-                              else {kayakRadio.hidden = true;}
+                              // if(document.getElementById('mainRadio').selected == 'kayak'){kayakRadio.hidden = false;}
+                              // else {kayakRadio.hidden = true;}
                             });
                           </script>
                         </div>
@@ -2906,6 +2965,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </section>
     <!-- #Pictures #Photos @pictures @photos find-next-page -->
                     <section data-route="pictures">
+
+                      <div id="photoFeed">
+                        <paper-spinner hidden class="center-block"></paper-spinner>
+                        <paper-card hidden>
+                          <div class="card-content">
+                            Sorry, unable to load pictures from the server :(
+                          </div>
+                        </paper-card>
+                      </div>
+
                       <paper-card>
                         <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
                         <div class="card-content">
