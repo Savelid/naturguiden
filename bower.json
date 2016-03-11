@@ -9,7 +9,8 @@
     "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
     "polymer": "Polymer/polymer#^1.2.0",
     "paper-menu": "PolymerElements/paper-menu#4fecb43601",
-    "google-youtube": "GoogleWebComponents/google-youtube#~1.2.1"
+    "google-youtube": "GoogleWebComponents/google-youtube#~1.2.1",
+    "gold-email-input": "PolymerElements/gold-email-input#~1.0.7"
   },
   "devDependencies": {
     "web-component-tester": "*"
