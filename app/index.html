@@ -61,53 +61,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
 
-  <script>
-    function showNews() {
-
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("newsFeed").innerHTML = xmlhttp.responseText;
-                }
-            };
-            xmlhttp.open("GET","http://localhost/ng_skating_db/news.php");
-            xmlhttp.send();
-    }
-    function showPhotos() {
-
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("photoFeed").innerHTML = xmlhttp.responseText;
-                }
-            };
-            xmlhttp.open("GET","http://localhost/ng_skating_db/photos.php");
-            xmlhttp.send();
-    }
-    </script>
-
 </head>
 
-<body unresolved class="fullbleed layout vertical" onload="showNews()">
+<body unresolved class="fullbleed layout vertical">
 
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
     <paper-drawer-panel force-narrow id="paperDrawerPanel">
       <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
+      <paper-scroll-header-panel drawer>
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
           <paper-icon-button id="paperToggle" icon="custom-icons:menu" paper-drawer-toggle></paper-icon-button>
@@ -179,7 +142,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               Skiing
             </paper-item>
           </a>
-          <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">
+          <a href$="{{baseUrl}}adventures/kayak" data-route="kayak">
             <paper-item>
               Kayaking
             </paper-item>
@@ -242,6 +205,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       </paper-scroll-header-panel>
 
+
       <!-- Main Area -->
       <div main>  <!-- main for paper-drawer-panel -->
       <paper-scroll-header-panel id="headerPanelMain" condenses keep-condensed-header noReveal>
@@ -272,7 +236,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Application sub title -->
 
             <div class="bottom flex" style="min-width: 220px;"></div>
-            <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs" link attr-for-selected="data-route" selectable="paper-tab">
+            <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs main-tab-menu" link attr-for-selected="data-route" selectable="paper-tab, paper-menu-button">
               <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
               <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">Information</a></paper-tab>
               <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more" class="link">Learn more</a></paper-tab>
@@ -290,17 +254,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                 <div style="padding:15px; width:100%;">
                   <a href="{{baseUrl}}booking" data-route="booking">
-                    <paper-button raised style="width: 100%; background: #FFC107;">Book Now</paper-button>
+                    <paper-button raised style="width: 100%; background: #FFC107;">Send an inquiry</paper-button>
                   </a>
                 </div>
 
                 <div id="newsFeed">
-                  <paper-spinner active class="center-block"></paper-spinner>
-                  <paper-card hidden>
-                    <div class="card-content">
-                      Sorry, unable to load news from the server :(
-                    </div>
-                  </paper-card>
+                  <iron-ajax auto
+                      url="http://admin.naturguiden.com/query.php"
+                      handle-as="json"
+                      last-response="{{ajaxResponse}}"></iron-ajax>
+
+                  <template is="dom-repeat" items="[[ajaxResponse.testData]]">
+                    <paper-card class="newscard" heading="[[item.header]]" image="[[item.image]]">
+                      <div class="card-content">
+                        <p>[[item.content]]</p>
+                      </div>
+                      <div hidden="[[!item.link]]" class="card-actions">
+                        <a href="[[url(item.link)]]">
+                          <paper-button>[[item.linktext]]</paper-button>
+                        </a>
+                      </div>
+                  </template>
                 </div>
 
                 <paper-card>
@@ -321,6 +295,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
               <div class="col-md-8 content-right">
                 <div class="card-stack">
+                  <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAdventure">
+                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" scrollable selectable="paper-tab" no-bar noink>
+                        <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">Ice - skating</a></paper-tab>
+                        <paper-tab data-route="skiing" link><a href$="{{baseUrl}}adventures/skiing" class="link">Cross country skiing</a></paper-tab>
+                        <paper-tab data-route="kayak" link><a href$="{{baseUrl}}adventures/kayak" class="link">Kayaking</a></paper-tab>
+                        <paper-tab data-route="hiking" link><a href$="{{baseUrl}}adventures/hiking" class="link">Hiking</a></paper-tab>
+                      </paper-tabs>
+                    </paper-card>
+                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuInfo">
+                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" scrollable selectable="paper-tab" no-bar noink>
+                        <paper-tab data-route="about-tours" link><a href$="{{baseUrl}}info/about-tours" class="link">About our tours</a></paper-tab>
+                        <paper-tab data-route="how-get-here" link><a href$="{{baseUrl}}info/how-get-here" class="link">How to get here</a></paper-tab>
+                        <paper-tab data-route="accommodation" link><a href$="{{baseUrl}}info/accommodation" class="link">Accommodation</a></paper-tab>
+                      </paper-tabs>
+                    </paper-card>
+                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuMore">
+                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" scrollable selectable="paper-tab" no-bar noink>
+                        <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more/about-sweden" class="link">About Sweden</a></paper-tab>
+                        <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more/weather" class="link">Weather in Sweden</a></paper-tab>
+                      </paper-tabs>
+                    </paper-card>
+                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAbout">
+                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" scrollable selectable="paper-tab" no-bar noink>
+                        <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us/about-us" class="link">About us</a></paper-tab>
+                        <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us/contact" class="link">Contact us</a></paper-tab>
+                        <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us/booking" class="link">Send an inquiry</a></paper-tab>
+                      </paper-tabs>
+                    </paper-card>
                  <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
                     <!--
@@ -481,11 +483,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </my-left-image-paper-card>
                       <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
                         <div class="card-content">
-                          <h1>Kayak & canoe</h1>
+                          <h1>Kayak & kayak</h1>
                           <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
                         </div>
                         <div class="card-actions">
-                          <a href$="{{baseUrl}}adventures/canoe">
+                          <a href$="{{baseUrl}}adventures/kayak">
                             <paper-button>Read more</paper-button>
                           </a>
                         </div>
@@ -522,8 +524,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <my-left-image-paper-card image="http://naturguiden.com/images/stories/ourpackage/kayak3.jpg">
                         <div class="card-content">
                           <h1>Multi activity</h1>
-                          <p>Experience a lot of Sweden wilderness and enjoy both hiking, biking and canoeing.</p>
-                          <p>Three active days, one day with biking on narrow roads, one day hiking trough oak landscapes and leafy woods and one day with canoe or kayak on narrow rivers or open sea.</p>
+                          <p>Experience a lot of Sweden wilderness and enjoy both hiking, biking and kayaking.</p>
+                          <p>Three active days, one day with biking on narrow roads, one day hiking trough oak landscapes and leafy woods and one day with kayak or kayak on narrow rivers or open sea.</p>
                           <p>Choose preferred level, it is not a competition it should be a recreation tour but the distance differs between the different packages.</p>
                         </div>
                         <div class="card-actions">
@@ -1211,45 +1213,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                       </paper-card>
                     </section>
-    <!-- #Canoe #Kayak @canoe @kayak find-next-page -->
-                    <section data-route="canoe">
+    <!-- #kayak #Kayak @kayak @kayak find-next-page -->
+                    <section data-route="kayak">
                       <my-left-image-paper-card image="images/500/kayak002.jpg">
                         <div class="card-content">
-                          <h1>Kayak & canoe</h1>
+                          <h1>Kayaking</h1>
                           <p class="lead">Kayak among thousands of islands on the Baltic Sea</p>
                           <p>Join us on our Kayak tours in the beautiful archipelago of the Baltic sea. Between islands and skerries, out in the open sea and in seduced caves. There are thousands of islands, most of them unsettled. The Swedish "allemansrätt" gives us the right to camp on any one of them.  At lunchtime we make a break on some island, cock a meal, maybe take a swim. In the evenings we camp on another island, make dinner over open fire, sleep in tents.</p>
                         </div>
                       </my-left-image-paper-card>
                       <paper-card>
                         <div class="card-content">
-                          <h1>Kayak & canoe adventures</h1>
+                          <h1>Kayak adventures</h1>
                           <p class="lead">We have two packages to choose between:</p>
                         </div>
                         <paper-menu selectable="my-fancy-list" class="row row-special">
-                          <a href$="{{baseUrl}}adventures/canoe/canoecanoe" class="col-sm-6">
-                            <my-fancy-list separated header="Canoe, south Stockholm" image="images/100/canoe001.jpg">
-                              <p>Canoe south of Stockholm for two days</p>
+                          <a href$="{{baseUrl}}adventures/kayak/kayakkayak" class="col-sm-6">
+                            <my-fancy-list separated header="kayak, south Stockholm" image="images/100/kayak001.jpg">
+                              <p>kayak south of Stockholm for two days</p>
                             </my-fancy-list>
                           </a>
-                          <a href$="{{baseUrl}}adventures/canoe/canoekayak" class="col-sm-6">
+                          <a href$="{{baseUrl}}adventures/kayak/kayakkayak" class="col-sm-6">
                             <my-fancy-list separated header="Kayaking in the archipelago" image="images/100/kayak001.jpg">
                               <p>Kayaking in the archipelago of the Baltic sea</p>
                             </my-fancy-list>
                           </a>
                         </paper-menu>
                         <div class="card-content scroll-to-container">
-                          <iron-collapse id="canoecanoe" tabindex="0" opened="true">
+                          <iron-collapse id="kayakkayak" tabindex="0" opened="true">
                             <div>
-                              <h2>Canoeing south of Stockholm</h2>
-                              <p class="lead">Two days in canoe on long narrow lakes and on calm rivers. Close to Stockholm but away from the civilisation.</p>
-                              <p>A journey on water through Swedish woodlands. Sleeping in tent , cooking over open fire, washing yourself in the lake. Enjoy the nature and the feeling of being alone at the camp site, sitting around the fire looking at the stars. No experiences of canoe needed, we adjust the journey after the group.</p>
+                              <h2>kayaking south of Stockholm</h2>
+                              <p class="lead">Two days in kayak on long narrow lakes and on calm rivers. Close to Stockholm but away from the civilisation.</p>
+                              <p>A journey on water through Swedish woodlands. Sleeping in tent , cooking over open fire, washing yourself in the lake. Enjoy the nature and the feeling of being alone at the camp site, sitting around the fire looking at the stars. No experiences of kayak needed, we adjust the journey after the group.</p>
                               <h3>Dates</h3>
                               <h4>Individuals</h4>
                               <p>No fixed date</p>
                               <h4>Groups</h4>
                               <p>Any date during season</p>
                               <h3>Information</h3>
-                              <p>Two days where we travel in Canoe on narrow lakes and rivers about 50 km south Stockholm. One night in tent at a nice place along the way. We prepare dinner together over open fire, make a real meal at lunchtime on gas stoves. Take time for a bath in the lake. Watching the wildlife, maybe try to catch a fish for dinner.</p>
+                              <p>Two days where we travel in kayak on narrow lakes and rivers about 50 km south Stockholm. One night in tent at a nice place along the way. We prepare dinner together over open fire, make a real meal at lunchtime on gas stoves. Take time for a bath in the lake. Watching the wildlife, maybe try to catch a fish for dinner.</p>
                               <p>The tour starts in Åkers Styckebruk. Train from Stockholm and bus the last 10 minutes. We end two days later in Gnesta from where you take the local train back to Stockholm.</p>
                               <h4>Season</h4>
                               <p>April – October</p>
@@ -1270,7 +1272,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <h4>Personal equipment</h4>
                               <p>Suitable footwear, durable outdoor- and rain clothes, bathing gear.</p>
                               <h4>Equipment included</h4>
-                              <p>Canoe, tents, cooking stove.</p>
+                              <p>kayak, tents, cooking stove.</p>
                               <h4>Equipment available for rent</h4>
                               <p>Sleeping bag 150 SEK (ca 18 EUR)</p>
                               <h4>Price: 244 EUR</h4>
@@ -1280,40 +1282,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                                   <tbody>
                                     <tr>
                                       <td>Day I </td>
-                                      <td>Lunch, 2-course dinner, share in tent, guide, rent of canoe.</td>
+                                      <td>Lunch, 2-course dinner, share in tent, guide, rent of kayak.</td>
                                     </tr>
                                     <tr>
                                       <td>Day II </td>
-                                      <td>Breakfast, lunch, guide, rent of canoe.</td>
+                                      <td>Breakfast, lunch, guide, rent of kayak.</td>
                                     </tr>
                                   </tbody>
                                 </table>
                               </div>
                               <p class="bg-warning"><b>Not included:</b> alcoholic drinks & Transfer</p>
-                              <h3>Programme Canoe, south Stockholm - 2 days</h3>
+                              <h3>Programme kayak, south Stockholm - 2 days</h3>
                               <div class="table-responsive">
                                 <table class="table table-hover table-condensed">
                                   <tbody>
                                     <tr>
                                       <td>Day I </td>
-                                      <td>Arrival, Canoe</td>
+                                      <td>Arrival, kayak</td>
                                     </tr>
                                     <tr>
                                       <td>Day II </td>
-                                      <td>Canoe, departure</td>
+                                      <td>kayak, departure</td>
                                     </tr>
                                   </tbody>
                                 </table>
                               </div>
                               <p class="bg-info">A 1 night trip</p>
                               <h4>Day I</h4>
-                              <p>Arrival, train from Stockholm to Läggesta. The guide meet the group at Läggesta station and help them get the right bus to Åkers Styckebruk (10 minutes with bus). Everyone get dry bags for the cloth, sleeping bag etc. We load the canoes, safety instructions and a short course, how to do the paddling best way. Start our tour along the shore with the sun in our face. Slow in the beginning make sure everyone get the right technique. After some hours it feels great to stop at some nice place and stretch our legs. Take something to eat and maybe a bath in the lake. Later we stop for lunch, a real meal made on the gas stove.</p>
+                              <p>Arrival, train from Stockholm to Läggesta. The guide meet the group at Läggesta station and help them get the right bus to Åkers Styckebruk (10 minutes with bus). Everyone get dry bags for the cloth, sleeping bag etc. We load the kayaks, safety instructions and a short course, how to do the paddling best way. Start our tour along the shore with the sun in our face. Slow in the beginning make sure everyone get the right technique. After some hours it feels great to stop at some nice place and stretch our legs. Take something to eat and maybe a bath in the lake. Later we stop for lunch, a real meal made on the gas stove.</p>
                               <p>In the evening we find us a nice place for night camp. Put up our tents, making the fire and start making dinner together. Ending the day sitting around the fire locking at the stars.</p>
                               <h4>Day II</h4>
-                              <p>Waking up close to the lake. Maybe start the day with a bath before breakfast. We pack all our stuff back in the canoes, leave no trace, and continue our journey. Today everyone is used to the canoe and can put more focus to the surroundings when following the shore line south. Once we need to stop and pull the canoe from one lake to the next. A small canoe wagon is very handy, we don’t need to carry. After several breaks and a nice lunch we reach Gnesta, our goal. An ice cream as reward before unload the canoes, arrange with the baggage and walk the 100 meters to the railway station and the train back towards Stockholm.</p>
+                              <p>Waking up close to the lake. Maybe start the day with a bath before breakfast. We pack all our stuff back in the kayaks, leave no trace, and continue our journey. Today everyone is used to the kayak and can put more focus to the surroundings when following the shore line south. Once we need to stop and pull the kayak from one lake to the next. A small kayak wagon is very handy, we don’t need to carry. After several breaks and a nice lunch we reach Gnesta, our goal. An ice cream as reward before unload the kayaks, arrange with the baggage and walk the 100 meters to the railway station and the train back towards Stockholm.</p>
                             </div>
                           </iron-collapse>
-                          <iron-collapse id="canoekayak" tabindex="1" opened="false">
+                          <iron-collapse id="kayakkayak" tabindex="1" opened="false">
                             <div>
                               <h2>Kayaking in the archipelago</h2>
                               <p class="lead">During three days we paddle kayaks in the beautiful archipelago of Nyköping. Between islands and skerries, out in the open sea and in seduced caves.</p>
@@ -2045,7 +2047,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <h4>Day I</h4>
                           <p>Arrival at Skavsta Airport. After an introduction you get your bikes. While we take care of the baggage, you head towards the hostel on your bikes. The guide follows you and we find our way mostly on narrow roads. Later in the afternoon we reach the hostel and you can check in. The dinner is served and afterwards we might go for a short tour.</p>
                           <h4>Day II & III</h4>
-                          <p>We eat a good and healthy breakfast and make our lunch packages. Then we head off on our bikes. Finding the most fun roads, we stop to make the best parts several times. We take our lunch in some nice location, maybe stop for a swim in one of the lakes we pass. If you like we come back to the hostel for a break before we do another trip or we spent the whole day out in the wild. In the evenings we make our dinner, preferably outdoors. Maybe we do some other activities like swimming, canoeing, or fishing.</p>
+                          <p>We eat a good and healthy breakfast and make our lunch packages. Then we head off on our bikes. Finding the most fun roads, we stop to make the best parts several times. We take our lunch in some nice location, maybe stop for a swim in one of the lakes we pass. If you like we come back to the hostel for a break before we do another trip or we spent the whole day out in the wild. In the evenings we make our dinner, preferably outdoors. Maybe we do some other activities like swimming, kayaking, or fishing.</p>
                           <h4>Day IV</h4>
                           <p>After breakfast we head back towards the airport. We adjust our time schedule for the departure of the aircraft. At the airport we take a shower and something to eat before the plane leaves.</p>
                         </div>
@@ -2881,7 +2883,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                             <!-- <paper-radio-group selected="kayaking" id="kayakRadio" hidden>
                               <paper-radio-button name="kayaking">Kayaking</paper-radio-button>
-                              <paper-radio-button name="canoeing">Canoeing</paper-radio-button>
+                              <paper-radio-button name="kayaking">kayaking</paper-radio-button>
                             </paper-radio-group> -->
 
                             <div>
@@ -3036,7 +3038,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <a href$="{{baseUrl}}adventures/skiing/fr" data-route="skiing-fr">- French </a>
                     </li>
                     <li>
-                      <a href$="{{baseUrl}}adventures/canoe" data-route="canoe">Kayak & canoe</a>
+                      <a href$="{{baseUrl}}adventures/kayak" data-route="kayak">Kayak & kayak</a>
                     </li>
                     <li>
                       <a href$="{{baseUrl}}adventures/hiking" data-route="hiking">Hiking</a>
@@ -3151,6 +3153,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
+  <iron-media-query id="mquery" query="min-width: 768px"></iron-media-query>
+
 </body>
 
 </html>

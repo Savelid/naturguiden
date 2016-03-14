@@ -172,7 +172,7 @@ iron-collapse {
   box-shadow: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-paper-tabs {
+paper-tabs.main-tab-menu {
   width: calc(100% - 300px);
   max-width: 900px;
   background-color: inherit;
@@ -185,9 +185,13 @@ paper-tabs .link {
   color: inherit;
   height: 100%;
 }
+paper-tabs[no-bar] paper-tab.iron-selected {
+  color: var(--color-menu-selected);
+}
+paper-tabs {
+}
 paper-tab {
-  width: 25%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 paper-scroll-header-panel {
   height: 100%;
@@ -245,7 +249,7 @@ paper-toolbar.tall .app-name {
   background-color: transparent;
 
 }
-paper-toolbar.tall {
+paper-toolbar, paper-toolbar.tall {
   background-color: transparent;
   --paper-toolbar-height: 64px;
   --paper-toolbar-sm-height: 64px;

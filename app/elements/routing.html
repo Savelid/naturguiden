@@ -47,8 +47,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     }
 
+    function hideSubmenu(ctx, next) {
+      jQuery('.submenu').hide();
+      next();
+    }
+
+    function showSubmenu(name) {
+      jQuery('#' + name).show();
+    }
+
     // Routes for adventure packages (scrolled down to content)
-    page('*', closeDrawer, function(ctx, next) {
+    page('*', closeDrawer, hideSubmenu, function(ctx, next) {
       next();
     });
 
@@ -60,11 +69,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/about-us/contact', function() {
       app.route = 'about-us';
       jQuery('#contact')[0].scrollIntoView({behavior: 'smooth'});
+      showSubmenu('submenuAbout');
     });
 
     page('/learn-more/weather', function() {
       app.route = 'learn-more';
       jQuery('#weather')[0].scrollIntoView({behavior: 'smooth'});
+      showSubmenu('submenuMore');
     });
 
     // Routes that scroll to top (like if loading a new page)
@@ -82,10 +93,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/adventures', function() {
       app.route = 'adventures';
+      showSubmenu('submenuAdventure');
     });
 
     page('/adventures/skating', function() {
       app.route = 'skating';
+      showSubmenu('submenuAdventure');
     });
 
     page('/adventures/skating/nl', function() {
@@ -97,18 +110,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/adventures/skiing', function() {
       app.route = 'skiing';
+      showSubmenu('submenuAdventure');
     });
 
     page('/adventures/skiing/fr', function() {
       app.route = 'skiing-fr';
     });
 
-    page('/adventures/canoe', function() {
-      app.route = 'canoe';
+    page('/adventures/kayak', function() {
+      app.route = 'kayak';
+      showSubmenu('submenuAdventure');
     });
 
     page('/adventures/hiking', function() {
       app.route = 'hiking';
+      showSubmenu('submenuAdventure');
     });
 
     page('/adventures/mtb', function() {
@@ -121,26 +137,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/info', function() {
       app.route = 'info';
+      showSubmenu('submenuInfo');
     });
 
     page('/info/about-tours', function() {
       app.route = 'about-tours';
+      showSubmenu('submenuInfo');
     });
 
     page('/info/how-get-here', function() {
       app.route = 'how-get-here';
+      showSubmenu('submenuInfo');
     });
 
     page('/info/accommodation', function() {
       app.route = 'accommodation';
+      showSubmenu('submenuInfo');
     });
 
     page('/learn-more', function() {
       app.route = 'learn-more';
+      showSubmenu('submenuMore');
     });
 
     page('/about-us', function() {
       app.route = 'about-us';
+      showSubmenu('submenuAbout');
     });
 
     page('/booking', function() {
