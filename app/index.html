@@ -2864,8 +2864,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="booking">
                       <paper-card>
                         <div class="card-content">
-                          <h1>Booking</h1>
-                          <form is="iron-form" id="eventsDemo" method="get" action="/">
+                          <h1>Send an inquiry</h1>
+                          <form is="iron-form" id="eventsDemo" method="post" action="MAILTO:savelid@gmail.com" autocomplete="on" oninput="number_of_people_output.value=parseInt(number_of_people.value)">
 
                             <paper-radio-group selected="skating" id="mainRadio">
                               <paper-radio-button name="skating">Skating</paper-radio-button>
@@ -2875,10 +2875,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <!-- <paper-radio-button name="multi">Multi activity</paper-radio-button> -->
                             </paper-radio-group>
                             <br>
-                            <paper-radio-group selected="standard" id="skiingRadio" hidden>
-                              <paper-radio-button name="standard">Standard</paper-radio-button>
-                              <paper-radio-button name="adventure">Adenture</paper-radio-button>
-                              <paper-radio-button name="midnight">Midnight</paper-radio-button>
+                            <paper-radio-group name="skiing_type" selected="standard" id="skiingRadio" hidden>
+                              <paper-radio-button value="standard">Standard</paper-radio-button>
+                              <paper-radio-button value="adventure">Adenture</paper-radio-button>
+                              <paper-radio-button value="midnight">Midnight</paper-radio-button>
                             </paper-radio-group>
 
                             <!-- <paper-radio-group selected="kayaking" id="kayakRadio" hidden>
@@ -2887,7 +2887,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </paper-radio-group> -->
 
                             <div>
-                              Arrival/depature:
+                              Expected Arrival/depature:
                             </div>
                             <div>
                               <input type="date" name="arrival"/> -
@@ -2895,34 +2895,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </div>
                             <br>
 
-                            <div>Number of people:</div>
-                            <paper-slider min="0" max="8" max-markers="8" step="1" value="2" pin snaps></paper-slider>
+                            <div id="number_of_people_slider">
+                              Number of people:
+                              <output for="number_of_people" name="number_of_people_output" value="2"></output>
+                            </div>
+                            <paper-slider name="number_of_people" min="0" max="8" max-markers="8" step="1" value="2" pin snaps></paper-slider>
 
-                            <h3>Guest #1 Contact person</h3>
+                            <paper-textarea name="comments" label="Comments/requests/questions (press enter for more rows)"></paper-textarea>
+                            <br>
 
-                            <paper-input label="Name" required auto-validate autocomplete error-message="A name is required"></paper-input>
-                            <gold-email-input label="Email address" required auto-validate autocomplete error-message="Please enter a valid email adress"></gold-email-input>
-                            <paper-input label="Phone number" autocomplete></paper-input>
-                            <paper-textarea label="Postal adress (press enter for more rows)" autocomplete></paper-textarea>
-                            <paper-input label="Country" autocomplete></paper-input>
-                            <paper-input label="Year of birth" type="number" max="2100" min="1900" error-message="Please enter a year"></paper-input>
-                            <paper-input label="Height (cm)" type="number" max="250" min="50" error-message="Please enter a height"></paper-input>
-                            <paper-input label="Shoe size" type="number" max="50" min="25" step="0.5" error-message="Please enter a shoe size"></paper-input>
-                            <paper-textarea label="Other information (food preferences for example)"></paper-textarea>
+                            <fieldset>
+                              <legend>Contact person information:</legend>
 
-                            <h3>Guest #2</h3>
-                            <paper-input label="Name" required auto-validate autocomplete error-message="A name is required"></paper-input>
-                            <paper-input label="Year of birth" type="number" max="2100" min="1900" error-message="Please enter a year"></paper-input>
-                            <paper-input label="Height (cm)" type="number" max="250" min="50" error-message="Please enter a height"></paper-input>
-                            <paper-input label="Shoe size" type="number" max="50" min="25" step="0.5" error-message="Please enter a shoe size"></paper-input>
-                            <paper-textarea label="Other information (food preferences for example)"></paper-textarea>
-
-                            <h3>Guest #3</h3>
-                            <paper-input label="Name" required auto-validate autocomplete error-message="A name is required"></paper-input>
-                            <paper-input label="Year of birth" type="number" max="2100" min="1900" error-message="Please enter a year"></paper-input>
-                            <paper-input label="Height (cm)" type="number" max="250" min="50" error-message="Please enter a height"></paper-input>
-                            <paper-input label="Shoe size" type="number" max="50" min="25" step="0.5" error-message="Please enter a shoe size"></paper-input>
-                            <paper-textarea label="Other information (food preferences for example)"></paper-textarea>
+                              <paper-input name="name" label="Name" required auto-validate autocomplete error-message="A name is required"></paper-input>
+                              <gold-email-input name="email" label="Email address" required auto-validate autocomplete error-message="Please enter a valid email adress"></gold-email-input>
+                              <paper-input name="phone" label="Phone number" autocomplete></paper-input>
+                              <!--<paper-textarea label="Postal adress (press enter for more rows)" autocomplete></paper-textarea>-->
+                              <paper-input name="country" label="Country" autocomplete></paper-input>
+                            </fieldset>
 
                             <paper-button raised onclick="_delayedSubmit(event)" disabled id="eventsDemoSubmit">
                               <paper-spinner id="spinner" hidden></paper-spinner>Submit</paper-button>
