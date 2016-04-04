@@ -270,27 +270,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <p>[[item.content]]</p>
                       </div>
                       <div hidden="[[!item.link]]" class="card-actions">
-                        <a href="[[url(item.link)]]">
+                        <a href="[[item.link]]">
                           <paper-button>[[item.linktext]]</paper-button>
                         </a>
                       </div>
                   </template>
                 </div>
-
-                <paper-card>
-                  <div class="card-content">
-                    <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
-                    <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script>
-                  </div>
-                </paper-card>
-                <paper-card>
-                  <div class="card-content">
-                    <!-- klart settings: komplett, 3 dagar, temp, symbol, temp(max/min), vind; Celcius, m/s; 200px X 200px, transparent, transparent, #757575, Verdana -->
-                    <!-- <div id="c_2212d4377452696c92f121b8b81f37e7" class="completo"><h2 style="color: #757575; margin: 0 0 3px; padding: 2px; font: bold 13px/1.2 Verdana; text-align: center;">Linköping Weather</h2></div><script type="text/javascript" src="http://www.klart.se/widget/widget_loader/2212d4377452696c92f121b8b81f37e7"></script> -->
-                    <blockquote class="instagram-media" data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/z7-BnZD6vC/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A photo posted by @iceguide</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-07T18:45:18+00:00">Mar 7, 2015 at 10:45am PST</time></p></div></blockquote>
-                    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
-                  </div>
-                </paper-card>
 
               </div>
               <div class="col-md-8 content-right">
@@ -2865,7 +2850,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <div class="card-content">
                           <h1>Send an inquiry</h1>
-                          <form is="iron-form" id="eventsDemo" method="post" action="MAILTO:savelid@gmail.com" autocomplete="on" oninput="number_of_people_output.value=parseInt(number_of_people.value)">
+                          <form is="iron-form" id="eventsDemo" method="get" action="MAILTO:savelid@gmail.com" autocomplete="on" onchange="x.value=parseInt(number_of_people.value)">
 
                             <paper-radio-group selected="skating" id="mainRadio">
                               <paper-radio-button name="skating">Skating</paper-radio-button>
@@ -2894,12 +2879,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <input type="date" name="depature"/>
                             </div>
                             <br>
-
                             <div id="number_of_people_slider">
                               Number of people:
-                              <output for="number_of_people" name="number_of_people_output" value="2"></output>
+                              <output name="x" for="number_of_people" style="display: inline-block"></output>
                             </div>
-                            <paper-slider name="number_of_people" min="0" max="8" max-markers="8" step="1" value="2" pin snaps></paper-slider>
+                            <paper-slider name="number_of_people" id="number_of_people" min="0" max="16" max-markers="16" step="1" value="2" pin snaps style="width:100%"></paper-slider>
 
                             <paper-textarea name="comments" label="Comments/requests/questions (press enter for more rows)"></paper-textarea>
                             <br>
