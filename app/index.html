@@ -2850,7 +2850,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-card>
                         <div class="card-content">
                           <h1>Send an inquiry</h1>
-                          <form is="iron-form" id="eventsDemo" method="get" action="MAILTO:savelid@gmail.com" autocomplete="on" onchange="x.value=parseInt(number_of_people.value)">
+                          <form is="iron-form" id="bookingForm" method="post" action="formhandler.php" name="booking-form" autocomplete="on" onchange="x.value=parseInt(number_of_people.value)">
 
                             <paper-radio-group selected="skating" id="mainRadio">
                               <paper-radio-button name="skating">Skating</paper-radio-button>
@@ -2860,10 +2860,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <!-- <paper-radio-button name="multi">Multi activity</paper-radio-button> -->
                             </paper-radio-group>
                             <br>
-                            <paper-radio-group name="skiing_type" selected="standard" id="skiingRadio" hidden>
-                              <paper-radio-button value="standard">Standard</paper-radio-button>
-                              <paper-radio-button value="adventure">Adenture</paper-radio-button>
-                              <paper-radio-button value="midnight">Midnight</paper-radio-button>
+                            <paper-radio-group selected="standard" id="skiingRadio" hidden>
+                              <paper-radio-button name="standard">Standard</paper-radio-button>
+                              <paper-radio-button name="adventure">Adenture</paper-radio-button>
+                              <paper-radio-button name="midnight">Midnight</paper-radio-button>
+                            </paper-radio-group>
+                            <paper-radio-group selected="four-day" id="hikingRadio" hidden>
+                              <paper-radio-button name="four-day">4 day trip</paper-radio-button>
+                              <paper-radio-button name="eight-day">8 day trip</paper-radio-button>
+                              <paper-radio-button name="pilgrim">Pilgrim journey</paper-radio-button>
                             </paper-radio-group>
 
                             <!-- <paper-radio-group selected="kayaking" id="kayakRadio" hidden>
@@ -2897,7 +2902,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               <!--<paper-textarea label="Postal adress (press enter for more rows)" autocomplete></paper-textarea>-->
                               <paper-input name="country" label="Country" autocomplete></paper-input>
                             </fieldset>
-
+                            <!-- <paper-button raised onclick="submitForm()">Submit</paper-button> -->
                             <paper-button raised onclick="_delayedSubmit(event)" disabled id="eventsDemoSubmit">
                               <paper-spinner id="spinner" hidden></paper-spinner>Submit</paper-button>
                             <paper-button raised onclick="_reset(event)">Reset</paper-button>
@@ -2905,9 +2910,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             <div class="output"></div>
                           </form>
                           <script>
-                            eventsDemo.addEventListener('change', function(event) {
+                            bookingForm.addEventListener('change', function(event) {
                               // Validate the entire form to see if we should enable the `Submit` button.
-                              eventsDemoSubmit.disabled = !eventsDemo.validate();
+                              eventsDemoSubmit.disabled = !bookingForm.validate();
                             });
                             function _delayedSubmit(event) {
                               spinner.active = true;
@@ -2916,24 +2921,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               // Simulate a slow server response.
                               setTimeout(function() {
                                 Polymer.dom(event).localTarget.parentElement.submit();
-                              }, 1000);
+                              }, 5000);
                             }
                             function _reset(event) {
                               var form = Polymer.dom(event).localTarget.parentElement
                               form.reset();
                               form.querySelector('.output').innerHTML = '';
                             }
-                            document.getElementById('eventsDemo').addEventListener('iron-form-submit', function(event) {
+                            document.getElementById('bookingForm').addEventListener('iron-form-submit', function(event) {
                               spinner.active = false;
                               spinner.hidden = true;
                               eventsDemoSubmit.disabled = false;
-                              this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+                              this.querySelector('.output').innerHTML = "Successfully sent the message!";
                             });
                             document.getElementById('mainRadio').addEventListener('paper-radio-group-changed', function(event) {
                               if(document.getElementById('mainRadio').selected == 'skiing'){skiingRadio.hidden = false;}
                               else {skiingRadio.hidden = true;}
-                              // if(document.getElementById('mainRadio').selected == 'kayak'){kayakRadio.hidden = false;}
-                              // else {kayakRadio.hidden = true;}
+                              if(document.getElementById('mainRadio').selected == 'hiking'){hikingRadio.hidden = false;}
+                              else {hikingRadio.hidden = true;}
                             });
                           </script>
                         </div>
