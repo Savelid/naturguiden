@@ -61,10 +61,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     });
 
-    page('/adventures/:type/:name', scrollToCollapsedContent, function(data) {
-      app.params = data.params;
-      app.route = app.params.type;
-    });
+    // page('/adventures/:type/:name', scrollToCollapsedContent, function(data) {
+    //   app.params = data.params;
+    //   app.route = app.params.type;
+    // });
 
     page('/about-us/contact', function() {
       app.route = 'about-us';
@@ -108,9 +108,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'skating-fr';
     });
 
-    page('/adventures/skiing', function() {
+    page('/adventures/skiing', function(data) {
       app.route = 'skiing';
       showSubmenu('submenuAdventure');
+      app.params.type = '0';
+      app.params = data.params;
+    });
+
+    page('/adventures/skiing/:type', function(data) {
+      app.route = 'skiing';
+      showSubmenu('submenuAdventure');
+      app.params = data.params;
     });
 
     page('/adventures/skiing/fr', function() {
@@ -171,6 +179,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/pictures', function() {
       app.route = 'pictures';
+    });
+
+    page('/before-trip/:type', function(data) {
+      app.route = 'before-trip';
+      app.params = data.params;
     });
 
     // 404
