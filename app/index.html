@@ -259,22 +259,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <a href="{{baseUrl}}booking" data-route="booking">
                     <paper-button raised style="width: 100%; background: #FFC107;">Send an inquiry</paper-button>
                   </a>
-                    <paper-button raised style="width: 100%; background: #FFC107;" id="btn">Click</paper-button>
                 </div>
 
                 <script>
                   document.querySelector("#ajaxNewsFeed").addEventListener("error", function (e) {
-                    console.log("error!");
+                    console.log("error newsFeed");
                     document.querySelector("#newsFeedError").hidden = false;
                     document.querySelector("#newsFeedSpinner").active = false;
+                    document.querySelector("#newsFeedSpinner").hidden = true;
                   });
                   document.querySelector("#ajaxNewsFeed").addEventListener("request", function (e) {
-                    console.log("request!");
+                    console.log("request newsFeed");
                     document.querySelector("#newsFeedSpinner").active = true;
+                    document.querySelector("#newsFeedSpinner").hidden = false;
                   });
                   document.querySelector("#ajaxNewsFeed").addEventListener("response", function (e) {
-                    console.log("response!");
+                    console.log("response newsFeed");
                     document.querySelector("#newsFeedError").hidden = true;
+                    document.querySelector("#newsFeedSpinner").active = false;
+                    document.querySelector("#newsFeedSpinner").hidden = true;
                   });
                 </script>
 
@@ -288,7 +291,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       timeout="10000"
                       last-response="{{ajaxResponse}}" id="ajaxNewsFeed"></iron-ajax>
 
-                  <template is="dom-repeat" items="[[ajaxResponse.testData]]">
+                  <template is="dom-repeat" items="[[ajaxResponse.news]]">
                     <paper-card class="newscard" heading="[[item.header]]" image="[[item.image]]">
                       <div class="card-content">
                         <p>[[item.content]]</p>
@@ -2178,39 +2181,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Pictures #Photos @pictures @photos find-next-page -->
                     <section data-route="pictures">
 
-                      <div id="photoFeed">
-                        <paper-spinner hidden class="center-block"></paper-spinner>
-                        <paper-card hidden>
-                          <div class="card-content">
-                            Sorry, unable to load pictures from the server :(
-                          </div>
-                        </paper-card>
+                      <paper-spinner id="photoFeedSpinner" hidden class="center-block"></paper-spinner>
+                      <paper-card hidden id="photoFeedError">
+                        <div class="card-content">
+                          Sorry, unable to load photo albums from the server :(
+                        </div>
+                      </paper-card>
+                      <div class="row">
+                        <template is="dom-repeat" items="[[ajaxResponse.photos]]">
+                            <div class="col-sm-6">
+                              <paper-card>
+                                <iron-image preload alt="[[item.link_alt]]" class="image-width-full image-height-md" sizing="cover" src="[[item.image_url]]" heading="[[item.header]]"></iron-image>
+                                <div class="card-content">
+                                  <h1>[[item.header]]</h1>
+                                  <p class="lead">[[item.content]]</p>
+                                </div>
+                                <div class="card-actions">
+                                  <a href="[[item.link_url]]">
+                                    <paper-button>[[item.link_text]]</paper-button>
+                                  </a>
+                                </div>
+                              </paper-card>
+                            </div>
+                        </template>
                       </div>
 
-                      <paper-card>
-                        <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
-                        <div class="card-content">
-                          <h1>A winter album from Gothenburg</h1>
-                          <p class="lead">Some photos from a snowy Gothenburg</p>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <paper-card>
+                            <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
+                            <div class="card-content">
+                              <h1>A winter album from Gothenburg</h1>
+                              <p class="lead">Some photos from a snowy Gothenburg</p>
+                            </div>
+                            <div class="card-actions">
+                              <a href="https://goo.gl/photos/aWQYfey3MYAEcGFr5">
+                                <paper-button>See album or add your own photos</paper-button>
+                              </a>
+                            </div>
+                          </paper-card>
                         </div>
-                        <div class="card-actions">
-                          <a href="https://goo.gl/photos/aWQYfey3MYAEcGFr5">
-                            <paper-button>See album or add your own photos</paper-button>
-                          </a>
+                        <div class="col-sm-6">
+                          <paper-card>
+                            <iron-image preload alt="people ice-skating" class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
+                            <div class="card-content">
+                              <h1>Ice-skating 2011</h1>
+                              <p class="lead">A fantastic trip in on lake Vättern</p>
+                            </div>
+                            <div class="card-actions">
+                              <a href="https://goo.gl/photos/UcMGMAk8WpW8fvBe8">
+                                <paper-button>See album or add your own photos</paper-button>
+                              </a>
+                            </div>
+                          </paper-card>
                         </div>
-                      </paper-card>
-                      <paper-card>
-                        <iron-image preload alt="people ice-skating" class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
-                        <div class="card-content">
-                          <h1>Ice-skating 2011</h1>
-                          <p class="lead">A fantastic trip in on lake Vättern</p>
-                        </div>
-                        <div class="card-actions">
-                          <a href="https://goo.gl/photos/UcMGMAk8WpW8fvBe8">
-                            <paper-button>See album or add your own photos</paper-button>
-                          </a>
-                        </div>
-                      </paper-card>
+                      </div>
                     </section>
     <!-- #Before trip @before trip find-next-page -->
                     <section data-route="before-trip">
