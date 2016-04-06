@@ -50,7 +50,7 @@ for further information on custom CSS properties.
   /* Font colors */
 
   --color-menu-link: var(--paper-grey-900);
-  --color-menu-selected: var(--paper-blue-500);
+  --color-menu-selected: var(--paper-grey-50);
   --color-menu-subheader: var(--paper-grey-500);
 
   /* Backgrounds */
@@ -60,6 +60,7 @@ for further information on custom CSS properties.
   --color-drawer-background: var(--paper-white);
   --color-drawer-hover-background: var(--paper-grey-100);
   --primary-color: var(--paper-red-500); /* drawer-header-background */
+  --color-menu-selected-background: var(--paper-light-blue-600);
 
     --color-test: var(--paper-pink-300);
 
@@ -186,7 +187,9 @@ paper-tabs .link {
   height: 100%;
 }
 paper-tabs[no-bar] paper-tab.iron-selected {
-  color: var(--color-menu-selected);
+  color: var(--color-menu-selected-background);
+  /*color: var(--color-menu-selected);
+  background-color: var(--color-menu-selected-background);*/
 }
 paper-tabs {
 }
@@ -196,7 +199,7 @@ paper-tab {
 paper-scroll-header-panel {
   height: 100%;
 }
-paper-card {
+paper-card{
   border-radius: 2px;
   height: 100%;
   width: 100%;
@@ -238,6 +241,11 @@ paper-menu {
 .col-3-selectable paper-card {
   width: calc(33% - 20px);
   margin: 0 8px;
+}
+
+.selectable-content.paper-menu > .iron-selected {
+    font-weight: inherit;
+    background-color: var(--color-menu-selected-background);
 }
 
 paper-menu paper-item {

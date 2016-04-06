@@ -31,16 +31,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     }
 
-    function scrollToCollapsedContent(data, next) {
-      app.params = data.params;
-      jQuery('#' + data.params.name).siblings('iron-collapse').hide();
-      jQuery('#' + data.params.name).show();
-      jQuery('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
-      jQuery('#' + data.params.name).attr('opened','true');
-
-      jQuery('#' + data.params.name).parent()[0].scrollIntoView({behavior: 'smooth'});
-      next();
-    }
+    // function scrollToCollapsedContent(data, next) {
+    //   app.params = data.params;
+    //   jQuery('#' + data.params.name).siblings('iron-collapse').hide();
+    //   jQuery('#' + data.params.name).show();
+    //   jQuery('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
+    //   jQuery('#' + data.params.name).attr('opened','true');
+    //
+    //   jQuery('#' + data.params.name).parent()[0].scrollIntoView({behavior: 'smooth'});
+    //   next();
+    // }
 
     function closeDrawer(ctx, next) {
       app.closeDrawer();
@@ -68,14 +68,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/about-us/contact', function() {
       app.route = 'about-us';
-      jQuery('#contact')[0].scrollIntoView({behavior: 'smooth'});
       showSubmenu('submenuAbout');
+      jQuery('#contact')[0].scrollIntoView({behavior: 'smooth'});
     });
 
     page('/learn-more/weather', function() {
       app.route = 'learn-more';
-      jQuery('#weather')[0].scrollIntoView({behavior: 'smooth'});
       showSubmenu('submenuMore');
+      jQuery('#weather')[0].scrollIntoView({behavior: 'smooth'});
     });
 
     // Routes that scroll to top (like if loading a new page)
@@ -101,17 +101,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       showSubmenu('submenuAdventure');
     });
 
-    page('/adventures/skating/nl', function() {
-      app.route = 'skating-nl';
+    page('/adventures/skating_nl', function() {
+      //app.route = 'skating-nl';
+      app.route = 'page-not-done';
     });
-    page('/adventures/skating/fr', function() {
-      app.route = 'skating-fr';
+    page('/adventures/skating_fr', function() {
+      //app.route = 'skating-fr';
+      app.route = 'page-not-done';
     });
 
     page('/adventures/skiing', function(data) {
       app.route = 'skiing';
       showSubmenu('submenuAdventure');
-      app.params.type = '0';
+      data.params.type = 0;
       app.params = data.params;
     });
 
@@ -121,8 +123,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.params = data.params;
     });
 
-    page('/adventures/skiing/fr', function() {
-      app.route = 'skiing-fr';
+    page('/adventures/skiing_fr', function() {
+      //app.route = 'skiing-fr';
+      app.route = 'page-not-done';
     });
 
     page('/adventures/kayak', function() {
@@ -133,14 +136,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/adventures/hiking', function() {
       app.route = 'hiking';
       showSubmenu('submenuAdventure');
-    });
-
-    page('/adventures/mtb', function() {
-      app.route = 'mtb';
-    });
-
-    page('/adventures/multi', function() {
-      app.route = 'multi';
     });
 
     page('/info', function() {
