@@ -262,34 +262,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </div>
 
                 <script>
-                  document.querySelector("#ajaxNewsFeed").addEventListener("error", function (e) {
-                    console.log("error newsFeed");
-                    document.querySelector("#newsFeedError").hidden = false;
-                    document.querySelector("#newsFeedSpinner").active = false;
-                    document.querySelector("#newsFeedSpinner").hidden = true;
+                  document.querySelector("#ajaxRequest").addEventListener("error", function (e) {
+                    console.log("error, could not get JSON data");
+                    document.querySelector(".ajaxError").hidden = false;
+                    document.querySelector(".ajaxSpinner").active = false;
+                    document.querySelector(".ajaxSpinner").hidden = true;
                   });
-                  document.querySelector("#ajaxNewsFeed").addEventListener("request", function (e) {
-                    console.log("request newsFeed");
-                    document.querySelector("#newsFeedSpinner").active = true;
-                    document.querySelector("#newsFeedSpinner").hidden = false;
+                  document.querySelector("#ajaxRequest").addEventListener("request", function (e) {
+                    console.log("request JSON data");
+                    document.querySelector(".ajaxSpinner").active = true;
+                    document.querySelector(".ajaxSpinner").hidden = false;
                   });
-                  document.querySelector("#ajaxNewsFeed").addEventListener("response", function (e) {
-                    console.log("response newsFeed");
-                    document.querySelector("#newsFeedError").hidden = true;
-                    document.querySelector("#newsFeedSpinner").active = false;
-                    document.querySelector("#newsFeedSpinner").hidden = true;
+                  document.querySelector("#ajaxRequest").addEventListener("response", function (e) {
+                    console.log("received JSON data");
+                    document.querySelector(".ajaxError").hidden = true;
+                    document.querySelector(".ajaxSpinner").active = false;
+                    document.querySelector(".ajaxSpinner").hidden = true;
                   });
                 </script>
 
-                <paper-spinner id="newsFeedSpinner" class="center-block"></paper-spinner>
-                <paper-card hidden id="newsFeedError"><div class="card-content">Sorry! Unable to load news content</div></paper-card>
+                <paper-spinner class="ajaxSpinner" class="center-block"></paper-spinner>
+                <paper-card hidden class="ajaxError"><div class="card-content">Sorry! Unable to load news content</div></paper-card>
 
                 <div id="newsFeed">
                   <iron-ajax auto
                       url="http://admin.naturguiden.com/query.php"
                       handle-as="json"
                       timeout="10000"
-                      last-response="{{ajaxResponse}}" id="ajaxNewsFeed"></iron-ajax>
+                      last-response="{{ajaxResponse}}" id="ajaxRequest"></iron-ajax>
 
                   <template is="dom-repeat" items="[[ajaxResponse.news]]">
                     <paper-card class="newscard" heading="[[item.header]]" image="[[item.image]]">
@@ -780,7 +780,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
                           <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
                         </div>
-                        <div class="card-actions">
+                        <!-- <div class="card-actions">
                           <a href$="{{baseUrl}}adventures/skiing/0" data-route="skiing">
                             <paper-button>Standard</paper-button>
                           </a>
@@ -794,33 +794,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <a href$="{{baseUrl}}adventures/skiing/2" data-route="skiing">
                             <paper-button>Midnight</paper-button>
                           </a>
-                        </div>
+                        </div> -->
                       </my-left-image-paper-card>
-                      <paper-card>
+                      <paper-card class="flex-menu-horizontal">
                         <div class="card-content">
                           <h1>Cross country skiing <small class="hidden-xs">in the Swedish mountains!</small></h1>
                           <p class="lead">We have three packages to choose between:</p>
                         </div>
-                        <paper-menu class="row row-special col-3-selectable" selected="{{params.type}}" onclick="_scrollToContent('#skiing-pack-content')">
-                            <paper-card separated heading="Standard" image="images/100/skiing001.jpg">
+
+                          <my-image-menubar selected="{{params.type}}" onclick="_scrollToContent('#skiing-pack-content')">
+
+                            <paper-card heading="Standard" image="images/500/skiing001.jpg">
                               <div class="card-content">
                                 <p>Our standard package is including everything for a fantastic skiing experience!</p>
                               </div>
                             </paper-card>
 
-                            <paper-card separated heading="Adventure" image="images/100/skiing002.jpg">
+                            <paper-card heading="Adventure" image="images/500/skiing002.jpg">
                               <div class="card-content">
                                 <p>This package focuses more on giving you an adventure to remember.</p>
                               </div>
                             </paper-card>
 
-                            <paper-card separated heading="Midnight-Sun" image="images/100/skiing003.jpg">
+                            <paper-card heading="Midnight-Sun" image="images/500/skiing003.jpg">
                               <div class="card-content">
                                 <p>Experiens the fantastic feeling of skiing all night where the sun never sets</p>
                               </div>
                             </paper-card>
 
-                        </paper-menu>
+                          </my-image-menubar>
 
                         <div class="card-content scroll-to-container" id="skiing-pack-content">
                           <iron-pages selected="{{params.type}}">
@@ -2181,8 +2183,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- #Pictures #Photos @pictures @photos find-next-page -->
                     <section data-route="pictures">
 
-                      <paper-spinner id="photoFeedSpinner" hidden class="center-block"></paper-spinner>
-                      <paper-card hidden id="photoFeedError">
+                      <paper-spinner class=".ajaxSpinner" hidden class="center-block"></paper-spinner>
+                      <paper-card hidden class=".ajaxError">
                         <div class="card-content">
                           Sorry, unable to load photo albums from the server :(
                         </div>
@@ -2190,13 +2192,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <div class="row">
                         <template is="dom-repeat" items="[[ajaxResponse.photos]]">
                             <div class="col-sm-6">
-                              <paper-card>
-                                <iron-image preload alt="[[item.link_alt]]" class="image-width-full image-height-md" sizing="cover" src="[[item.image_url]]" heading="[[item.header]]"></iron-image>
-                                <div class="card-content">
-                                  <h1>[[item.header]]</h1>
+                              <paper-card heading="[[item.header]]" image="[[item.image_url]]">
+                                <!--<iron-image preload alt="[[item.link_alt]]" class="image-width-full image-height-md" sizing="cover" src="[[item.image_url]]" heading="[[item.header]]"></iron-image>-->
+                                <div class="card-content" hidden="[[!item.content]]">
+                                  <!--<h1>[[item.header]]</h1>-->
                                   <p class="lead">[[item.content]]</p>
                                 </div>
-                                <div class="card-actions">
+                                <div hidden="[[!item.link_url]]" class="card-actions">
                                   <a href="[[item.link_url]]">
                                     <paper-button>[[item.link_text]]</paper-button>
                                   </a>
@@ -2204,37 +2206,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               </paper-card>
                             </div>
                         </template>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <paper-card>
-                            <iron-image preload alt="Winter in Gothenburg" class="image-width-full image-height-md" sizing="cover" src="images/1200/winter001.jpg"></iron-image>
-                            <div class="card-content">
-                              <h1>A winter album from Gothenburg</h1>
-                              <p class="lead">Some photos from a snowy Gothenburg</p>
-                            </div>
-                            <div class="card-actions">
-                              <a href="https://goo.gl/photos/aWQYfey3MYAEcGFr5">
-                                <paper-button>See album or add your own photos</paper-button>
-                              </a>
-                            </div>
-                          </paper-card>
-                        </div>
-                        <div class="col-sm-6">
-                          <paper-card>
-                            <iron-image preload alt="people ice-skating" class="image-width-full image-height-md" sizing="cover" src="images/1200/skating2011.jpg"></iron-image>
-                            <div class="card-content">
-                              <h1>Ice-skating 2011</h1>
-                              <p class="lead">A fantastic trip in on lake Vättern</p>
-                            </div>
-                            <div class="card-actions">
-                              <a href="https://goo.gl/photos/UcMGMAk8WpW8fvBe8">
-                                <paper-button>See album or add your own photos</paper-button>
-                              </a>
-                            </div>
-                          </paper-card>
-                        </div>
                       </div>
                     </section>
     <!-- #Before trip @before trip find-next-page -->

@@ -209,6 +209,11 @@ paper-card{
     color: white;
   };
 }
+
+paper-card .card-actions {
+    margin-top: -4px;
+}
+
 paper-card.newscard {
   --paper-card-header:{
     max-height: 150px;
@@ -217,6 +222,29 @@ paper-card.newscard {
 paper-card.photocard {
 
 }
+paper-menu.flex-menu-horizontal {
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+
+}
+paper-card.package-card {
+  width: 30%;
+  vertical-align: top;
+
+}
+paper-card.package-card .card-content{
+  height: 120px;
+}
+
 my-left-image-paper-card {
   border-radius: 2px;
   padding: 0;
@@ -238,6 +266,12 @@ paper-menu {
     color: var(--color-menu-selected);
   };
 }
+
+my-image-menubar {
+  display: inline-block;
+  width: 100%;
+}
+
 .col-3-selectable paper-card {
   width: calc(33% - 20px);
   margin: 0 8px;
