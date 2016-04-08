@@ -307,6 +307,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
               <div class="col-md-8 content-right">
                 <div class="card-stack">
+
                   <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAdventure">
                       <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink>
                         <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">
@@ -321,6 +322,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <paper-tab data-route="hiking" link><a href$="{{baseUrl}}adventures/hiking" class="link">Hiking</a></paper-tab>
                       </paper-tabs>
                     </paper-card>
+
                     <paper-card style="margin-bottom:6px;" class="submenu" id="submenuInfo">
                       <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink>
                         <paper-tab data-route="about-tours" link><a href$="{{baseUrl}}info/about-tours" class="link">
@@ -337,12 +339,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </a></paper-tab>
                       </paper-tabs>
                     </paper-card>
+
                     <paper-card style="margin-bottom:6px;" class="submenu" id="submenuMore">
                       <paper-tabs class="center-block self-end" selectable="paper-tab" no-bar noink>
                         <paper-tab link onclick="_scrollToContent('#about_sweden')">About Sweden</paper-tab>
                         <paper-tab link onclick="_scrollToContent('#weather')">Weather in Sweden</paper-tab>
                       </paper-tabs>
                     </paper-card>
+
                     <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAbout">
                       <paper-tabs class="center-block self-end" selectable="paper-tab" no-bar noink>
                         <paper-tab link onclick="_scrollToContent('#about_us')">About us</a></paper-tab>
@@ -350,6 +354,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Send an inquiry</a></paper-tab>
                       </paper-tabs>
                     </paper-card>
+
                  <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
                     <!--
@@ -838,7 +843,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </paper-card>
 
                           </my-image-menubar>
-
+                          
                         <div class="card-content scroll-to-container" id="skiing-pack-content">
                           <iron-pages selected="{{params.type}}">
                             <div>
