@@ -211,7 +211,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <!-- Main Area -->
       <div main>  <!-- main for paper-drawer-panel -->
-      <paper-scroll-header-panel id="headerPanelMain" condenses keep-condensed-header noReveal>
+      <paper-scroll-header-panel id="headerPanelMain" condenses="[[condenses]]" keep-condensed-header noReveal>
 
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall" >
@@ -308,7 +308,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="col-md-8 content-right">
                 <div class="card-stack">
 
-                  <paper-card style="margin-bottom:6px;">
+                  <paper-card style="margin-bottom:6px;" id="subMenuCard">
 
                     <paper-tabs selected="[[route]]" class="submenu center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink id="submenuAdventure">
                       <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">
