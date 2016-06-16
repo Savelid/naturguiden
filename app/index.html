@@ -193,7 +193,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <a href="{{baseUrl}}booking" data-route="booking">
             <paper-item>
               <iron-icon icon="custom-icons:event"></iron-icon>
-              Booking
+              Send an inquiry
             </paper-item>
           </a>
 
@@ -281,9 +281,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   });
                 </script>
 
-                <paper-spinner class="ajaxSpinner" class="center-block"></paper-spinner>
-                <paper-card hidden class="ajaxError"><div class="card-content">Sorry! Unable to load news content</div></paper-card>
-
                 <div id="newsFeed">
                   <iron-ajax auto
                       url="http://admin.naturguiden.com/query.php"
@@ -304,56 +301,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </template>
                 </div>
 
+                <paper-spinner class="ajaxSpinner" class="center-block"></paper-spinner>
+                <paper-card hidden class="ajaxError"><div class="card-content">Sorry! Unable to load news content</div></paper-card>
+
               </div>
               <div class="col-md-8 content-right">
                 <div class="card-stack">
 
-                  <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAdventure">
-                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink>
-                        <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">
-                          <span class="hidden-xs">Ice skating</span>
-                          <span class="hidden-lg hidden-md hidden-sm">Skating</span>
-                        </a></paper-tab>
-                        <paper-tab data-route="skiing" link><a href$="{{baseUrl}}adventures/skiing" class="link">
-                          <span class="hidden-xs">Cross country skiing</span>
-                          <span class="hidden-lg hidden-md hidden-sm">Skiing</span>
-                        </a></paper-tab>
-                        <paper-tab data-route="kayak" link><a href$="{{baseUrl}}adventures/kayak" class="link">Kayak<span class="hidden-xs">ing</span></a></paper-tab>
-                        <paper-tab data-route="hiking" link><a href$="{{baseUrl}}adventures/hiking" class="link">Hiking</a></paper-tab>
-                      </paper-tabs>
-                    </paper-card>
+                  <paper-card style="margin-bottom:6px;">
 
-                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuInfo">
-                      <paper-tabs selected="[[route]]" class="center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink>
-                        <paper-tab data-route="about-tours" link><a href$="{{baseUrl}}info/about-tours" class="link">
-                          <span class="hidden-xs">About our tours</span>
-                          <span class="hidden-lg hidden-md hidden-sm">Tours</span>
-                        </a></paper-tab>
-                        <paper-tab data-route="how-get-here" link><a href$="{{baseUrl}}info/how-get-here" class="link">
-                          <span class="hidden-xs">How to get here</span>
-                          <span class="hidden-lg hidden-md hidden-sm">Get here</span>
-                        </a></paper-tab>
-                        <paper-tab data-route="accommodation" link><a href$="{{baseUrl}}info/accommodation" class="link">
-                          <span class="hidden-xs">Accommodation</span>
-                          <span class="hidden-lg hidden-md hidden-sm">Housing</span>
-                        </a></paper-tab>
-                      </paper-tabs>
-                    </paper-card>
+                    <paper-tabs selected="[[route]]" class="submenu center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink id="submenuAdventure">
+                      <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">
+                        <span class="hidden-xs">Ice skating</span>
+                        <span class="hidden-lg hidden-md hidden-sm">Skating</span>
+                      </a></paper-tab>
+                      <paper-tab data-route="skiing" link><a href$="{{baseUrl}}adventures/skiing" class="link">
+                        <span class="hidden-xs">Cross country skiing</span>
+                        <span class="hidden-lg hidden-md hidden-sm">Skiing</span>
+                      </a></paper-tab>
+                      <paper-tab data-route="kayak" link><a href$="{{baseUrl}}adventures/kayak" class="link">Kayak<span class="hidden-xs">ing</span></a></paper-tab>
+                      <paper-tab data-route="hiking" link><a href$="{{baseUrl}}adventures/hiking" class="link">Hiking</a></paper-tab>
+                    </paper-tabs>
 
-                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuMore">
-                      <paper-tabs class="center-block self-end" selectable="paper-tab" no-bar noink>
-                        <paper-tab link onclick="_scrollToContent('#about_sweden')">About Sweden</paper-tab>
-                        <paper-tab link onclick="_scrollToContent('#weather')">Weather in Sweden</paper-tab>
-                      </paper-tabs>
-                    </paper-card>
+                    <paper-tabs selected="[[route]]" class="submenu center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink id="submenuInfo">
+                      <paper-tab data-route="about-tours" link><a href$="{{baseUrl}}info/about-tours" class="link">
+                        <span class="hidden-xs">About our tours</span>
+                        <span class="hidden-lg hidden-md hidden-sm">Tours</span>
+                      </a></paper-tab>
+                      <paper-tab data-route="how-get-here" link><a href$="{{baseUrl}}info/how-get-here" class="link">
+                        <span class="hidden-xs">How to get here</span>
+                        <span class="hidden-lg hidden-md hidden-sm">Get here</span>
+                      </a></paper-tab>
+                      <paper-tab data-route="accommodation" link><a href$="{{baseUrl}}info/accommodation" class="link">
+                        <span class="hidden-xs">Accommodation</span>
+                        <span class="hidden-lg hidden-md hidden-sm">Housing</span>
+                      </a></paper-tab>
+                    </paper-tabs>
 
-                    <paper-card style="margin-bottom:6px;" class="submenu" id="submenuAbout">
-                      <paper-tabs class="center-block self-end" selectable="paper-tab" no-bar noink>
-                        <paper-tab link onclick="_scrollToContent('#about_us')">About us</a></paper-tab>
-                        <paper-tab link onclick="_scrollToContent('#contact')">Contact us</a></paper-tab>
-                        <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Send an inquiry</a></paper-tab>
-                      </paper-tabs>
-                    </paper-card>
+                    <paper-tabs class="submenu center-block self-end" selectable="paper-tab" no-bar noink id="submenuMore">
+                      <paper-tab link onclick="_scrollToContent('#about_sweden')">About Sweden</paper-tab>
+                      <paper-tab link onclick="_scrollToContent('#weather')">Weather in Sweden</paper-tab>
+                    </paper-tabs>
+
+                    <paper-tabs class="submenu center-block self-end" selectable="paper-tab" no-bar noink id="submenuAbout">
+                      <paper-tab link onclick="_scrollToContent('#about_us')">About us</a></paper-tab>
+                      <paper-tab link onclick="_scrollToContent('#contact')">Contact us</a></paper-tab>
+                      <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Send an inquiry</a></paper-tab>
+                    </paper-tabs>
+
+                  </paper-card>
 
                  <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
@@ -1603,7 +1599,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <my-left-image-paper-card image="images/500/cabin_w001.jpg">
                         <div class="card-content">
                           <h1>Accommodation</h1>
-                          <p>We offer several  different levels of accommodatio, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
+                          <p>We offer several  different levels of accommodations, not all is avaible on all tours On some tours  you can choose between differnt levels, on others you can not. Here you will get  an idea about what the different levels stands for.</p>
                         </div>
                         <div class="card-actions">
                           <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
