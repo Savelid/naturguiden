@@ -289,12 +289,15 @@ paper-menu paper-item {
     text-decoration: inherit;
   }
 }
-paper-toolbar.tall .app-name {
+paper-toolbar.tall,paper-toolbar.small .app-name {
   /* Required for main area's paper-scroll-header-panel custom condensing transformation */
   -webkit-transform-origin: left center;
   transform-origin: left center;
   background-color: transparent;
 
+}
+paper-toolbar.small {
+  background-color: var(--color-header-background);
 }
 paper-toolbar.tall {
   background-color: transparent;

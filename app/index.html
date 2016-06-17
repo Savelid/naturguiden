@@ -211,7 +211,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <!-- Main Area -->
       <div main>  <!-- main for paper-drawer-panel -->
-      <paper-scroll-header-panel id="headerPanelMain" condenses="[[condenses]]" keep-condensed-header noReveal>
+      <paper-scroll-header-panel id="headerPanelMain" condenses="[[desktop]]" keep-condensed-header="[[desktop]]" noReveal="[[desktop]]" fixed="[[!desktop]]">
 
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall" >
@@ -2550,7 +2550,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </platinum-sw-cache>
     </platinum-sw-register> -->
 
-
+    <iron-media-query query="(min-width: 768px)" query-matches="{{queryMatches}}"></iron-media-query>
   </template>
   <script>
     function _scrollToContent(target) {
@@ -2562,7 +2562,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="scripts/app.js"></script>
 
   <!-- endbuild-->
-  <iron-media-query id="mquery" query="min-width: 768px"></iron-media-query>
 
 </body>
 

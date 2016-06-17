@@ -71,13 +71,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/about-us/contact', function() {
       app.route = 'about-us';
       showSubmenu('submenuAbout');
-      jQuery('#contact')[0].scrollIntoView({behavior: 'smooth'});
+      app.scrollingTo('#contact');
     });
 
     page('/learn-more/weather', function() {
       app.route = 'learn-more';
       showSubmenu('submenuMore');
-      jQuery('#weather')[0].scrollIntoView({behavior: 'smooth'});
+      app.scrollingTo('#weather');
     });
 
     // Routes that scroll to top (like if loading a new page)

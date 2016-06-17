@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   // Sets app default base URL
   app.baseUrl = '/';
-  app.condenses = 'true';
+
   if (window.location.port === '') {  // if production
     // Uncomment app.baseURL below and
     // set app.baseURL to '/your-pathname/' if running from folder in production
@@ -35,6 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+    setHeaderProperties();
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -51,7 +52,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //var appLogo = Polymer.dom(document).querySelector('#mainToolbar .app-logo');
     var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
     var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
-
     var detail = e.detail;
     var heightDiff = detail.height - detail.condensedHeight;
     var yRatio = Math.min(1, detail.y / heightDiff);
@@ -72,7 +72,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Scale middleContainer appName
     //Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appLogo);
     //appLogo.style.opacity = scaleBottom;
-    naturguidenName.style.width = 100 - (yRatio * 50) + '%';
+    if (app.desktop) {
+      naturguidenName.style.width = 100 - (yRatio * 50) + '%';
+    }
 
   });
 
@@ -84,5 +86,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.closeDrawer = function() {
     app.$.paperDrawerPanel.closeDrawer();
   };
+
+  app.scrollingTo = function(target) {
+    var targetPos = Polymer.dom(document).querySelector(target).getBoundingClientRect().top;
+    app.$.headerPanelMain.scroll(targetPos, true);
+  };
+
+  window.addEventListener('resize', function() {
+    setHeaderProperties();
+  });
+
+  function setHeaderProperties() {
+    if (app.currentQueryMatches !== app.queryMatches) {
+      app.currentQueryMatches = app.queryMatches;
+      var mainToolbar = Polymer.dom(document).querySelector('#mainToolbar');
+      var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
+      if (app.queryMatches) {
+        mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)small(?!\S)/g , 'tall');
+        app.desktop = true;
+        naturguidenName.style.width = '100%';
+      }else {
+        app.desktop = false;
+        mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)tall(?!\S)/g , 'small');
+        naturguidenName.style.width = '50%';
+      }
+      console.log('Desktop mode: ' + app.desktop);
+    }
+  }
 
 })(document);
