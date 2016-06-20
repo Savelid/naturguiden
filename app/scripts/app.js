@@ -101,8 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.$.headerPanelMain.keepCondensedHeader = app.desktop;
       app.$.headerPanelMain.noReveal = app.desktop;
       app.$.headerPanelMain.fixed = !app.desktop;
-      Polymer.Base.transform('translate3d(0,' + 0 + '%,0)', middleContainer);
-      app.$.headerPanelMain.measureHeaderHeight();
+      Polymer.Base.transform('translate3d(0,0,0)', middleContainer);
     }
   }
 
