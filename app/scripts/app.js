@@ -48,31 +48,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
   window.addEventListener('paper-header-transform', function(e) {
-    //var appName = Polymer.dom(document).querySelector('#mainToolbar .app-name');
-    //var appLogo = Polymer.dom(document).querySelector('#mainToolbar .app-logo');
-    var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
-    var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
-    var detail = e.detail;
-    var heightDiff = detail.height - detail.condensedHeight;
-    var yRatio = Math.min(1, detail.y / heightDiff);
-    // appName max size when condensed. The smaller the number the smaller the condensed size.
-    //var maxMiddleScale = 0.40;
-    //var auxHeight = heightDiff - detail.y;
-    //var auxScale = heightDiff / (1 - maxMiddleScale);
-    //var scaleTop = 0 + yRatio;
-    //var scaleMiddle = Math.max(maxMiddleScale, auxHeight / auxScale + maxMiddleScale);
-    //var scaleBottom = 1 - yRatio;
-
-    // Move/translate middleContainer
-    Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
-
-    // Scale middleContainer appName
-    //Polymer.Base.transform('scale(' + scaleTop + ') translateZ(0)', appName);
-
-    // Scale middleContainer appName
-    //Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appLogo);
-    //appLogo.style.opacity = scaleBottom;
     if (app.desktop) {
+
+      var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
+      var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
+      var detail = e.detail;
+      var heightDiff = detail.height - detail.condensedHeight;
+      var yRatio = Math.min(1, detail.y / heightDiff);
+
+      // Move/translate middleContainer
+      Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
+
       naturguidenName.style.width = 100 - (yRatio * 50) + '%';
     }
 
@@ -101,6 +87,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.currentQueryMatches = app.queryMatches;
       var mainToolbar = Polymer.dom(document).querySelector('#mainToolbar');
       var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
+      var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
+      
       if (app.queryMatches) {
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)small(?!\S)/g , 'tall');
         app.desktop = true;
@@ -110,7 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)tall(?!\S)/g , 'small');
         naturguidenName.style.width = '50%';
       }
-      console.log('Desktop mode: ' + app.desktop);
+      Polymer.Base.transform('translate3d(0,' + 0 + '%,0)', middleContainer);
     }
   }
 
