@@ -88,7 +88,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       var mainToolbar = Polymer.dom(document).querySelector('#mainToolbar');
       var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
       var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
-      
       if (app.queryMatches) {
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)small(?!\S)/g , 'tall');
         app.desktop = true;
@@ -98,7 +97,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)tall(?!\S)/g , 'small');
         naturguidenName.style.width = '50%';
       }
+      app.$.headerPanelMain.condenses = app.desktop;
+      app.$.headerPanelMain.keepCondensedHeader = app.desktop;
+      app.$.headerPanelMain.noReveal = app.desktop;
+      app.$.headerPanelMain.fixed = !app.desktop;
       Polymer.Base.transform('translate3d(0,' + 0 + '%,0)', middleContainer);
+      app.$.headerPanelMain.measureHeaderHeight();
     }
   }
 
