@@ -795,7 +795,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">Naturguiden skating trips gives you the opportunity to experience the unique adventure of skating on natural ice on some of Sweden’s many lakes or the Baltic Sea.</p>
                         </div>
                         <div class="card-actions">
-                          <a href$="{{baseUrl}}before-trip/0">
+                          <a href$="{{baseUrl}}before-trip/0" data-route="before-trip">
                             <paper-button><iron-icon icon="info"></iron-icon> Read more</paper-button>
                           </a>
                         </div>
@@ -1190,7 +1190,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                         </div>
                         <div class="card-actions">
-                          <a href$="{{baseUrl}}before-trip/1">
+                          <a href$="{{baseUrl}}before-trip/1" data-route="before-trip">
                             <paper-button><iron-icon icon="info"></iron-icon> Read more</paper-button>
                           </a>
                         </div>
@@ -1325,7 +1325,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                         </div>
                         <div class="card-actions">
-                          <a href$="{{baseUrl}}before-trip/2">
+                          <a href$="{{baseUrl}}before-trip/2" data-route="before-trip">
                             <paper-button><iron-icon icon="info"></iron-icon> Read more</paper-button>
                           </a>
                         </div>
@@ -1607,7 +1607,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           <p class="lead">In this section we will try to give you the information you need to be able to bring right kind of cloth and equipment, but also give an idea about what you can expect.</p>
                         </div>
                         <div class="card-actions">
-                          <a href$="{{baseUrl}}before-trip/3">
+                          <a href$="{{baseUrl}}before-trip/3" data-route="before-trip">
                             <paper-button><iron-icon icon="info"></iron-icon> Read more</paper-button>
                           </a>
                         </div>
@@ -2248,8 +2248,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                       </paper-card>
                       <div class="row">
-                        <template is="dom-repeat" items="[[ajaxResponse.photos]]">
-                            <div class="col-sm-6">
+                        <div class="col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+                          <template is="dom-repeat" items="[[ajaxResponse.photos]]">
                               <paper-card heading="[[item.header]]" image="[[item.image_url]]">
                                 <!--<iron-image preload alt="[[item.link_alt]]" class="image-width-full image-height-md" sizing="cover" src="[[item.image_url]]" heading="[[item.header]]"></iron-image>-->
                                 <div class="card-content" hidden="[[!item.content]]">
@@ -2262,8 +2262,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                                   </a>
                                 </div>
                               </paper-card>
-                            </div>
-                        </template>
+                            </template>
+                          </div>
                       </div>
                     </section>
     <!-- #Before trip @before trip find-next-page -->
@@ -2507,6 +2507,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </li>
                       <li>
                         <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">Accommodations</a>
+                      </li>
+                      <li>
+                        <a href$="{{baseUrl}}before-trip/0" data-route="before-trip">Before the trip</a>
                       </li>
                     </ul>
                   </div>
