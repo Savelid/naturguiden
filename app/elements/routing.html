@@ -86,11 +86,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
     page('/', function() {
-      app.route = 'home';
+        app.route = 'home';
+        showSubmenu('submenuAdventure');
     });
 
     page(app.baseUrl, function() {
-      app.route = 'home';
+        app.route = 'home';
+        showSubmenu('submenuAdventure');
     });
 
     page('/adventures', function() {
@@ -160,9 +162,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       showSubmenu('submenuInfo');
     });
 
-    page('/learn-more', function() {
-      app.route = 'learn-more';
-      showSubmenu('submenuMore');
+    page('/info/about-sweden', function() {
+      app.route = 'about-sweden';
+      showSubmenu('submenuSweden');
     });
 
     page('/about-us', function() {

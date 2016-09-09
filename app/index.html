@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Naturguiden" />
-  <title>Ice-skating in Sweden</title>
+  <title>Ice-skating in Norway</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -113,13 +113,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
           </a>
 
-          <a href="{{baseUrl}}learn-more" data-route="learn-more">
-            <paper-item>
-              <iron-icon icon="custom-icons:explore"></iron-icon>
-              Learn more
-            </paper-item>
-          </a>
-
           <a href="{{baseUrl}}pictures" data-route="pictures">
             <paper-item>
               <iron-icon icon="custom-icons:collections"></iron-icon>
@@ -160,16 +153,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               Hiking
             </paper-item>
           </a>
-          <!-- <a href$="{{baseUrl}}adventures/mtb" data-route="mtb">
-            <paper-item>
-              Mountain bike
-            </paper-item>
-          </a>
-          <a href$="{{baseUrl}}adventures/multi" data-route="multi">
-            <paper-item>
-              Multi Activity
-            </paper-item>
-          </a> -->
 
           <div class="divider"></div>
 
@@ -190,6 +173,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <a href$="{{baseUrl}}info/accommodation" data-route="accommodation">
             <paper-item>
               Accommundation
+            </paper-item>
+          </a>
+          <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
+            <paper-item>
+              About Sweden
             </paper-item>
           </a>
 
@@ -225,9 +213,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <a href="https://www.facebook.com/Naturguiden/">
             <paper-icon-button class="large" icon="128-icons:facebook"></paper-icon-button>
           </a>
-          <a href="{{baseUrl}}pictures" data-route="pictures">
-            <paper-icon-button class="large" icon="custom-icons:collections" style="color:#CCC;"></paper-icon-button>
-          </a>
           <a href$="{{baseUrl}}about-us/contact" data-route="contact">
             <paper-icon-button class="large" icon="custom-icons:phone" style="color:#CCC;"></paper-icon-button>
           </a>
@@ -247,10 +232,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-tabs selected="[[route]]" class="bottom self-end hidden-sm hidden-xs main-tab-menu" link attr-for-selected="data-route" selectable="paper-tab, paper-menu-button">
               <paper-tab data-route="adventures" link><a href$="{{baseUrl}}adventures" class="link">Our adventures</a></paper-tab>
               <paper-tab data-route="info" link><a href$="{{baseUrl}}info" class="link">Information</a></paper-tab>
-              <paper-tab data-route="learn-more" link><a href$="{{baseUrl}}learn-more" class="link">Learn more</a></paper-tab>
-              <!--<paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>-->
+              <paper-tab data-route="pictures" link><a href$="{{baseUrl}}pictures" class="link">Photos</a></paper-tab>
               <paper-tab data-route="about-us" link><a href$="{{baseUrl}}about-us" class="link">About us</a></paper-tab>
-
             </paper-tabs>
             <div class="bottom tabs-right-spacing"></div>
         </paper-toolbar>
@@ -313,7 +296,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="col-md-8 content-right">
                 <div class="card-stack">
 
-                  <paper-card style="margin-bottom:6px;" id="subMenuCard">
+                  <paper-card style="margin-bottom:6px;">
+                  <div id="subMenuCard">
 
                     <paper-tabs selected="[[route]]" class="submenu center-block self-end" link attr-for-selected="data-route" selectable="paper-tab" no-bar noink id="submenuAdventure">
                       <paper-tab data-route="skating" link><a href$="{{baseUrl}}adventures/skating" class="link">
@@ -341,9 +325,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <span class="hidden-xs">Accommodation</span>
                         <span class="hidden-lg hidden-md hidden-sm">Housing</span>
                       </a></paper-tab>
+                      <paper-tab data-route="about-sweden" link><a href$="{{baseUrl}}info/about-sweden" class="link">About Sweden</a></paper-tab>
                     </paper-tabs>
 
-                    <paper-tabs class="submenu center-block self-end" selectable="paper-tab" no-bar noink id="submenuMore">
+                    <paper-tabs class="submenu center-block self-end" selectable="paper-tab" no-bar noink id="submenuSweden">
                       <paper-tab link onclick="_scrollToContent('#about_sweden')">About Sweden</paper-tab>
                       <paper-tab link onclick="_scrollToContent('#weather')">Weather in Sweden</paper-tab>
                     </paper-tabs>
@@ -354,6 +339,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-tab data-route="booking" link><a href$="{{baseUrl}}booking" class="link">Send an inquiry</a></paper-tab>
                     </paper-tabs>
 
+                  </div>
                   </paper-card>
 
                  <iron-pages attr-for-selected="data-route" selected="{{route}}">
@@ -433,12 +419,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </div>
                         <div class="card-actions">
                           <a href$="{{baseUrl}}adventures">
-                            <paper-button>Read more about our activities</paper-button>
+                            <paper-button>Read about our activities</paper-button>
                           </a>
                         </div>
                         <div class="card-actions">
                           <a href$="{{baseUrl}}info">
-                            <paper-button>Read more about Sweden</paper-button>
+                            <paper-button>Some other useful information</paper-button>
                           </a>
                         </div>
                       </my-left-image-paper-card>
@@ -1921,7 +1907,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </paper-card>
                     </section>
     <!-- #Learn more @learn more find-next-page -->
-                    <section data-route="learn-more">
+                    <section data-route="about-sweden">
                       <div class="scroll-to-container" id="about_sweden">
                         <paper-card>
                           <iron-image preload alt="Map of Sweden" src="http://naturguiden.com/images/stories/sweden-map.gif" class="left-image image-width-lg image-height-auto"></iron-image>
@@ -2511,17 +2497,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <li>
                         <a href$="{{baseUrl}}before-trip/0" data-route="before-trip">Before the trip</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <input class="footer-checkbox" type="checkbox" checked>
-                    <h3 class="footer-heading">Learn more</h3>
-                    <ul class="list-unstyled footer-list">
                       <li>
-                        <a href$="{{baseUrl}}learn-more" data-route="learn-more">About Sweden</a>
-                      </li>
-                      <li>
-                        <a href$="{{baseUrl}}learn-more/weather" data-route="learn-more">Weather in Sweden</a>
+                        <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">About Sweden</a>
                       </li>
                     </ul>
                   </div>
