@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
-    setHeaderProperties();
+    setHeaderProperties()
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -79,20 +79,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   };
 
   window.addEventListener('resize', function() {
-    setHeaderProperties();
+      setHeaderProperties();
   });
 
   function setHeaderProperties() {
-    if (app.currentQueryMatches !== app.queryMatches) {
+      var big = window.innerWidth > 768;
+    if (app.currentQueryMatches !== app.queryMatches || big) {
       app.currentQueryMatches = app.queryMatches;
       var mainToolbar = Polymer.dom(document).querySelector('#mainToolbar');
       var naturguidenName = Polymer.dom(document).querySelector('#mainToolbar .naturguiden_name');
       var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
-      if (app.queryMatches) {
+      if (app.queryMatches || big) {
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)small(?!\S)/g , 'tall');
         app.desktop = true;
         naturguidenName.style.width = '100%';
-      }else {
+      } else {
         app.desktop = false;
         mainToolbar.className = mainToolbar.className.replace(/(?:^|\s)tall(?!\S)/g , 'small');
         naturguidenName.style.width = '50%';
@@ -104,5 +105,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       Polymer.Base.transform('translate3d(0,0,0)', middleContainer);
     }
   }
-
 })(document);
