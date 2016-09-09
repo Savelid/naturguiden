@@ -371,28 +371,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://photos.smugmug.com/Blog-posts/i-KsqLq6d/2/X2/what-to-do-in-melbourne-australia-X2.jpg" alt="..1.">
+        <a href$="{{baseUrl}}adventures/skating" data-route="skating">
+            <img src="https://photos.smugmug.com/Blog-posts/i-KsqLq6d/2/X2/what-to-do-in-melbourne-australia-X2.jpg" alt="..1.">
+        </a>
         <div class="carousel-caption">
-          <a href$="{{baseUrl}}adventures/skating" data-route="skating" style="color:white;"><h3>Nordic Skating</h3></a>
+          <h3>Nordic Skating</h3>
           <p>Fantastic skating on the lakes of Sweden</p>
         </div>
       </div>
       <div class="item">
-        <img src="http://4.bp.blogspot.com/-XbbMqRzKxGI/VXhoPK7U1EI/AAAAAAAAAZg/ZhkW9a4xUtM/s1600/20150609_184325.jpg" alt="..2.">
+        <a href$="{{baseUrl}}adventures/kayak" data-route="skating">
+            <img src="http://4.bp.blogspot.com/-XbbMqRzKxGI/VXhoPK7U1EI/AAAAAAAAAZg/ZhkW9a4xUtM/s1600/20150609_184325.jpg" alt="..2.">
+        </a>
         <div class="carousel-caption">
           <h3>Kayak</h3>
           <p>Paddle amoung the islands of the Swedish arcepelago</p>
         </div>
       </div>
       <div class="item">
-        <img src="http://www.ptwe.org/wp-content/uploads/wppa/64.jpg?ver=6" alt="..2.">
+        <a href$="{{baseUrl}}adventures/hiking" data-route="skating">
+            <img src="http://www.ptwe.org/wp-content/uploads/wppa/64.jpg?ver=6" alt="..2.">
+        </a>
         <div class="carousel-caption">
           <h3>Hiking</h3>
           <p>Walk in the wilderness of northern Sweden</p>
         </div>
       </div>
       <div class="item">
-        <img src="http://lh3.ggpht.com/-7ogtBQtJO9E/VRe-bkip9qI/AAAAAAAAbLU/rG_AKTeb1tc/s1600/20150328_133105.jpg" alt="..2.">
+        <a href$="{{baseUrl}}adventures/skiing" data-route="skating">
+            <img src="http://lh3.ggpht.com/-7ogtBQtJO9E/VRe-bkip9qI/AAAAAAAAbLU/rG_AKTeb1tc/s1600/20150328_133105.jpg" alt="..2.">
+        </a>
         <div class="carousel-caption">
           <h3>Cross country skiing</h3>
           <p>Ski in the bla bla bla</p>
@@ -506,37 +514,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <section data-route="adventures">
                       <my-left-image-paper-card image="images/500/skating002.jpg">
                         <div class="card-content">
-                          <h1>Nordic skating</h1>
+                          <a href$="{{baseUrl}}adventures/skating">
+                            <h1>Nordic skating</h1>
+                          </a>
                           <p>Experience some amazing long distance ice-skating adventures in Sweden. The unspoiled countryside and the huge expanse of glossy ice – everything is here waiting for you. We skate on some of Sweden's many lakes, the Göta Kanal or in the beautiful archipelago.</p>
                         </div>
                         <div class="card-actions">
                           <a href$="{{baseUrl}}adventures/skating">
                             <paper-button>Read more</paper-button>
                           </a>
+                          <!--
                           <a href$="{{baseUrl}}adventures/skating_nl">
                             <paper-button><iron-icon icon="language"></iron-icon> Nederlands</paper-button>
                           </a>
                           <a href$="{{baseUrl}}adventures/skating_fr">
                             <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
                           </a>
+                              -->
                         </div>
                       </my-left-image-paper-card>
-                      <my-left-image-paper-card image="images/500/skiing001.jpg">
-                        <div class="card-content">
-                          <h1>Cross country skiing</h1>
-                          <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
+                      <a href$="{{baseUrl}}adventures/skiing" style="color:#757575;">
+                          <my-left-image-paper-card image="images/500/skiing001.jpg">
+                            <div class="card-content">
+                              <h1>Cross country skiing</h1>
+                              <p>Cross country skiing in the Swedish mountains during the best time of the year, the fifth season: still winter, but with long lasting sunshine days. Sun factor 20 is needed.</p>
 
-                          <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
-                        </div>
-                        <div class="card-actions">
-                          <a href$="{{baseUrl}}adventures/skiing">
-                            <paper-button>Read more</paper-button>
-                          </a>
-                          <a href$="{{baseUrl}}adventures/skiing_fr">
-                            <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
-                          </a>
-                        </div>
-                      </my-left-image-paper-card>
+                              <p>We cross the snowy mountains under a blue sky, take our breaks in dug couches of snow and spend the nights in mountain lodges. Days of enjoyment, experience and fantastic views!</p>
+                            </div>
+                            <!--<div class="card-actions">
+                              <a href$="{{baseUrl}}adventures/skiing">
+                                <paper-button>Read more</paper-button>
+                              </a>
+                                
+                              <a href$="{{baseUrl}}adventures/skiing_fr">
+                                <paper-button><iron-icon icon="language"></iron-icon> français</paper-button>
+                              </a>
+                                    
+                            </div>-->
+                          </my-left-image-paper-card>
+                      </a>
                       <my-left-image-paper-card image="images/500/kayak001_bad.jpg">
                         <div class="card-content">
                           <h1>Kayak</h1>
@@ -1635,7 +1651,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           </a>
                         </div>
                       </my-left-image-paper-card>
-                    </section>
+                      <a href$="{{baseUrl}}info/about-sweden" data-route="about-sweden">
+                            <my-left-image-paper-card image="images/500/lake002.jpg">
+                                <div class="card-content">
+                                    <h1>About Sweden</h1>
+                                    <p>Text</p>
+                                </div>
+                            </my-left-image-paper-card>
+                          </a>
+</section>
     <!-- #About our tours @about our tours find-next-page -->
                     <section data-route="about-tours">
                       <paper-card>
@@ -2465,12 +2489,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <li><a href$="{{baseUrl}}adventures" data-route="adventures">Overview</a></li>
                     <li>
                       <a href$="{{baseUrl}}adventures/skating" data-route="skating">Skating </a>
-                      <a href$="{{baseUrl}}adventures/skating_nl" data-route="skating-nl">- Dutch </a>
-                      <a href$="{{baseUrl}}adventures/skating_fr" data-route="skating-fr">- French </a>
+                      <!--<a href$="{{baseUrl}}adventures/skating_nl" data-route="skating-nl">- Dutch </a>-->
+                      <!--<a href$="{{baseUrl}}adventures/skating_fr" data-route="skating-fr">- French </a>-->
                     </li>
                     <li>
                       <a href$="{{baseUrl}}adventures/skiing" data-route="skiing">Skiing </a>
-                      <a href$="{{baseUrl}}adventures/skiing_fr" data-route="skiing-fr">- French </a>
+                      <!--<a href$="{{baseUrl}}adventures/skiing_fr" data-route="skiing-fr">- French </a>-->
                     </li>
                     <li>
                       <a href$="{{baseUrl}}adventures/kayak" data-route="kayak">Kayak</a>
