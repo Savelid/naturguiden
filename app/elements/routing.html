@@ -14,188 +14,188 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 <script>
-    window.addEventListener('WebComponentsReady', function () {
+  window.addEventListener('WebComponentsReady', function() {
 
-        // We use Page.js for routing. This is a Micro
-        // client-side router inspired by the Express router
-        // More info: https://visionmedia.github.io/page.js/
+    // We use Page.js for routing. This is a Micro
+    // client-side router inspired by the Express router
+    // More info: https://visionmedia.github.io/page.js/
 
-        // Removes end / from app.baseUrl which page.base requires for production
-        if (window.location.port === '') {  // if production
-            page.base(app.baseUrl.replace(/\/$/, ''));
-        }
+    // Removes end / from app.baseUrl which page.base requires for production
+    if (window.location.port === '') {  // if production
+      page.base(app.baseUrl.replace(/\/$/, ''));
+    }
 
-        // Middleware
-        function scrollToTop(ctx, next) {
-            app.scrollPageToTop();
-            next();
-        }
+    // Middleware
+    function scrollToTop(ctx, next) {
+      app.scrollPageToTop();
+      next();
+    }
 
-        // function scrollToCollapsedContent(data, next) {
-        //   app.params = data.params;
-        //   jQuery('#' + data.params.name).siblings('iron-collapse').hide();
-        //   jQuery('#' + data.params.name).show();
-        //   jQuery('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
-        //   jQuery('#' + data.params.name).attr('opened','true');
-        //
-        //   jQuery('#' + data.params.name).parent()[0].scrollIntoView({behavior: 'smooth'});
-        //   next();
-        // }
+    // function scrollToCollapsedContent(data, next) {
+    //   app.params = data.params;
+    //   jQuery('#' + data.params.name).siblings('iron-collapse').hide();
+    //   jQuery('#' + data.params.name).show();
+    //   jQuery('#' + data.params.name).siblings('iron-collapse').attr('opened','false');
+    //   jQuery('#' + data.params.name).attr('opened','true');
+    //
+    //   jQuery('#' + data.params.name).parent()[0].scrollIntoView({behavior: 'smooth'});
+    //   next();
+    // }
 
-        function closeDrawer(ctx, next) {
-            app.closeDrawer();
-            next();
-        }
+    function closeDrawer(ctx, next) {
+      app.closeDrawer();
+      next();
+    }
 
-        function hideSubmenu(ctx, next) {
-            jQuery('.submenu').hide();
-            jQuery('#subMenuCard').hide();
-            next();
-        }
+    function hideSubmenu(ctx, next) {
+      jQuery('.submenu').hide();
+      jQuery('#subMenuCard').hide();
+      next();
+    }
 
-        function showSubmenu(name) {
-            jQuery('#subMenuCard').show();
-            jQuery('#' + name).show();
-        }
+    function showSubmenu(name) {
+      jQuery('#subMenuCard').show();
+      jQuery('#' + name).show();
+    }
 
-        // Routes for adventure packages (scrolled down to content)
-        page('*', closeDrawer, hideSubmenu, function (ctx, next) {
-            next();
-        });
-
-        // page('/adventures/:type/:name', scrollToCollapsedContent, function(data) {
-        //   app.params = data.params;
-        //   app.route = app.params.type;
-        // });
-
-        page('/about-us/contact', function () {
-            app.route = 'about-us';
-            showSubmenu('submenuAbout');
-            app.scrollingTo('#contact');
-        });
-
-        page('/learn-more/weather', function () {
-            app.route = 'learn-more';
-            showSubmenu('submenuMore');
-            app.scrollingTo('#weather');
-        });
-
-        // Routes that scroll to top (like if loading a new page)
-        page('*', scrollToTop, function (ctx, next) {
-            next();
-        });
-
-        page('/', function () {
-            app.route = 'home';
-            showSubmenu('submenuAdventure');
-        });
-
-        page(app.baseUrl, function () {
-            app.route = 'home';
-            showSubmenu('submenuAdventure');
-        });
-
-        page('/adventures', function () {
-            app.route = 'adventures';
-            showSubmenu('submenuAdventure');
-        });
-
-        page('/adventures/skating', function () {
-            app.route = 'skating';
-            showSubmenu('submenuAdventure');
-        });
-
-        page('/adventures/skating_nl', function () {
-            //app.route = 'skating-nl';
-            app.route = 'page-not-done';
-        });
-        page('/adventures/skating_fr', function () {
-            //app.route = 'skating-fr';
-            app.route = 'page-not-done';
-        });
-
-        page('/adventures/skiing', function (data) {
-            app.route = 'skiing';
-            showSubmenu('submenuAdventure');
-            data.params.type = 0;
-            app.params = data.params;
-        });
-
-        page('/adventures/skiing/:type', function (data) {
-            app.route = 'skiing';
-            showSubmenu('submenuAdventure');
-            app.params = data.params;
-        });
-
-        page('/adventures/skiing_fr', function () {
-            //app.route = 'skiing-fr';
-            app.route = 'page-not-done';
-        });
-
-        page('/adventures/kayak', function () {
-            app.route = 'kayak';
-            showSubmenu('submenuAdventure');
-        });
-
-        page('/adventures/hiking', function () {
-            app.route = 'hiking';
-            showSubmenu('submenuAdventure');
-        });
-
-        page('/info', function () {
-            app.route = 'info';
-            showSubmenu('submenuInfo');
-        });
-
-        page('/info/about-tours', function () {
-            app.route = 'about-tours';
-            showSubmenu('submenuInfo');
-        });
-
-        page('/info/how-get-here', function () {
-            app.route = 'how-get-here';
-            showSubmenu('submenuInfo');
-        });
-
-        page('/info/accommodation', function () {
-            app.route = 'accommodation';
-            showSubmenu('submenuInfo');
-        });
-
-        page('/info/about-sweden', function () {
-            app.route = 'about-sweden';
-            showSubmenu('submenuSweden');
-        });
-
-        page('/about-us', function () {
-            app.route = 'about-us';
-            showSubmenu('submenuAbout');
-        });
-
-        page('/booking', function () {
-            app.route = 'booking';
-        });
-
-        page('/pictures', function () {
-            app.route = 'pictures';
-        });
-
-        page('/before-trip/:type', function (data) {
-            app.route = 'before-trip';
-            app.params = data.params;
-        });
-
-        // 404
-        page('*', function () {
-            app.$.toast.text = 'Can\'t find: ' + window.location.href + '. Redirected you to Home Page';
-            app.$.toast.show();
-            page.redirect(app.baseUrl);
-        });
-
-        // add #! before urls
-        page({
-            hashbang: true
-        });
-
+    // Routes for adventure packages (scrolled down to content)
+    page('*', closeDrawer, hideSubmenu, function(ctx, next) {
+      next();
     });
+
+    // page('/adventures/:type/:name', scrollToCollapsedContent, function(data) {
+    //   app.params = data.params;
+    //   app.route = app.params.type;
+    // });
+
+    page('/about-us/contact', function() {
+      app.route = 'about-us';
+      showSubmenu('submenuAbout');
+      app.scrollingTo('#contact');
+    });
+
+    page('/learn-more/weather', function() {
+      app.route = 'learn-more';
+      showSubmenu('submenuMore');
+      app.scrollingTo('#weather');
+    });
+
+    // Routes that scroll to top (like if loading a new page)
+    page('*', scrollToTop, function(ctx, next) {
+      next();
+    });
+
+    page('/', function() {
+      app.route = 'home';
+      showSubmenu('submenuAdventure');
+    });
+
+    page(app.baseUrl, function() {
+      app.route = 'home';
+      showSubmenu('submenuAdventure');
+    });
+
+    page('/adventures', function() {
+      app.route = 'adventures';
+      showSubmenu('submenuAdventure');
+    });
+
+    page('/adventures/skating', function() {
+      app.route = 'skating';
+      showSubmenu('submenuAdventure');
+    });
+
+    page('/adventures/skating_nl', function() {
+      //app.route = 'skating-nl';
+      app.route = 'page-not-done';
+    });
+    page('/adventures/skating_fr', function() {
+      //app.route = 'skating-fr';
+      app.route = 'page-not-done';
+    });
+
+    page('/adventures/skiing', function(data) {
+      app.route = 'skiing';
+      showSubmenu('submenuAdventure');
+      data.params.type = 0;
+      app.params = data.params;
+    });
+
+    page('/adventures/skiing/:type', function(data) {
+      app.route = 'skiing';
+      showSubmenu('submenuAdventure');
+      app.params = data.params;
+    });
+
+    page('/adventures/skiing_fr', function() {
+      //app.route = 'skiing-fr';
+      app.route = 'page-not-done';
+    });
+
+    page('/adventures/kayak', function() {
+      app.route = 'kayak';
+      showSubmenu('submenuAdventure');
+    });
+
+    page('/adventures/hiking', function() {
+      app.route = 'hiking';
+      showSubmenu('submenuAdventure');
+    });
+
+    page('/info', function() {
+      app.route = 'info';
+      showSubmenu('submenuInfo');
+    });
+
+    page('/info/about-tours', function() {
+      app.route = 'about-tours';
+      showSubmenu('submenuInfo');
+    });
+
+    page('/info/how-get-here', function() {
+      app.route = 'how-get-here';
+      showSubmenu('submenuInfo');
+    });
+
+    page('/info/accommodation', function() {
+      app.route = 'accommodation';
+      showSubmenu('submenuInfo');
+    });
+
+    page('/info/about-sweden', function() {
+      app.route = 'about-sweden';
+      showSubmenu('submenuSweden');
+    });
+
+    page('/about-us', function() {
+      app.route = 'about-us';
+      showSubmenu('submenuAbout');
+    });
+
+    page('/booking', function() {
+      app.route = 'booking';
+    });
+
+    page('/pictures', function() {
+      app.route = 'pictures';
+    });
+
+    page('/before-trip/:type', function(data) {
+      app.route = 'before-trip';
+      app.params = data.params;
+    });
+
+    // 404
+    page('*', function() {
+      app.$.toast.text = 'Can\'t find: ' + window.location.href  + '. Redirected you to Home Page';
+      app.$.toast.show();
+      page.redirect(app.baseUrl);
+    });
+
+    // add #! before urls
+    page({
+      hashbang: true
+    });
+
+  });
 </script>
